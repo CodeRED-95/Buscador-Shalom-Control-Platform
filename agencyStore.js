@@ -1,11 +1,9 @@
-const DEFAULT_GIST_ID = "acfb5aaccf90743075a8143511b48ae7";
-const DEFAULT_AEREO_GIST_ID = "27710267e825c3b205be8d3c8f0acc46";
 const AGENCY_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
 const AGENCY_CACHE_SCHEMA_VERSION = 3;
 const AGENCY_CACHE_V2_KEY = 'agencyCatalogCache';
 const AGENCY_CONFIG_KEY = 'agencyDataConfig';
 const DEFAULT_AGENCY_CONFIG = {
-    source: 'gist',
+    source: 'codered',
     apiBaseUrl: '',
     apiToken: '',
     cacheDurationMs: AGENCY_CACHE_TTL_MS,
@@ -15,7 +13,6 @@ const AGENCY_CACHE_KEYS = {
     terrestre: 'agenciasTerrestre',
     aereo: 'agenciasAereo',
     lastUpdated: 'agenciasLastUpdated',
-    gistIds: 'agenciasGistIds',
     v2: AGENCY_CACHE_V2_KEY
 };
 
@@ -147,19 +144,11 @@ const AGENCY_CACHE_KEYS = {
     const agencyHasChannel = (agency, channel) => Boolean(getChosenTextForChannel(agency, channel));
     const normalizeAgencyList = (agencies, context = {}) => (Array.isArray(agencies) ? agencies : []).map(agency => normalizeAgency(agency, context));
 
-    const getConfiguredGistIds = async () => {
-        const items = await storageGet(['gistIdTerr', 'gistIdAereo']);
-        return {
-            terrestre: items.gistIdTerr || DEFAULT_GIST_ID,
-            aereo: items.gistIdAereo || DEFAULT_AEREO_GIST_ID
-        };
-    };
-
     const sanitizeAgencyConfig = (config = {}) => {
         const source = toNullableString(config.source) || DEFAULT_AGENCY_CONFIG.source;
-        const normalizedSource = ['codered', 'codered-with-gist-fallback', 'gist'].includes(source) ? source : 'gist';
+        const normalizedSource = source === 'codered' ? 'codered' : 'codered';
         return {
-            source: normalizedSource,
+            source: 'codered',
             apiBaseUrl: toNullableString(config.apiBaseUrl) || '',
             apiToken: toNullableString(config.apiToken) || '',
             cacheDurationMs: toNumberOrNull(config.cacheDurationMs) || DEFAULT_AGENCY_CONFIG.cacheDurationMs,
@@ -182,11 +171,6 @@ const AGENCY_CACHE_KEYS = {
         await saveAgencyConfig(DEFAULT_AGENCY_CONFIG);
     };
 
-    const readLegacyAgencies = (cacheV2) => ({
-        terrestre: Array.isArray(cacheV2?.agenciasTerrestre) ? cacheV2.agenciasTerrestre : [],
-        aereo: Array.isArray(cacheV2?.agenciasAereo) ? cacheV2.agenciasAereo : []
-    });
-
     const getCachedAgencyData = async () => {
         const items = await storageGet([
             AGENCY_CACHE_KEYS.terrestre,
@@ -199,11 +183,8 @@ const AGENCY_CACHE_KEYS = {
         const cacheV2 = isPlainObject(items[AGENCY_CACHE_KEYS.v2]) ? items[AGENCY_CACHE_KEYS.v2] : null;
         const hasTerrestre = Array.isArray(items[AGENCY_CACHE_KEYS.terrestre]);
         const hasAereo = Array.isArray(items[AGENCY_CACHE_KEYS.aereo]);
-        const legacySplit = readLegacyAgencies(cacheV2);
         const v3Agencies = Array.isArray(cacheV2?.agencies) ? cacheV2.agencies : [];
-        const agencies = Number(cacheV2?.schemaVersion || 0) >= 3
-            ? v3Agencies
-            : (v3Agencies.length ? v3Agencies : [...legacySplit.terrestre, ...legacySplit.aereo]);
+        const agencies = v3Agencies;
 
         return {
             schemaVersion: Number(cacheV2?.schemaVersion || (hasTerrestre || hasAereo ? 2 : 0)),
@@ -217,7 +198,6 @@ const AGENCY_CACHE_KEYS = {
             terrestre: hasTerrestre ? items[AGENCY_CACHE_KEYS.terrestre] : [],
             aereo: hasAereo ? items[AGENCY_CACHE_KEYS.aereo] : [],
             lastUpdated: toTimestampOrNull(items[AGENCY_CACHE_KEYS.lastUpdated] || cacheV2?.syncedAt) || 0,
-            gistIds: items[AGENCY_CACHE_KEYS.gistIds] || null,
             hasTerrestre,
             hasAereo
         };
@@ -225,11 +205,6 @@ const AGENCY_CACHE_KEYS = {
 
     const isExpired = (lastUpdated, ttl = AGENCY_CACHE_TTL_MS) => !lastUpdated || (Date.now() - lastUpdated) >= ttl;
     const hasLocalCopy = (cache) => cache.hasTerrestre && cache.hasAereo;
-    const haveGistIdsChanged = (cacheIds, currentIds) => {
-        if (!cacheIds) return true;
-        return cacheIds.terrestre !== currentIds.terrestre || cacheIds.aereo !== currentIds.aereo;
-    };
-
     const getAgencyCacheStatus = async () => {
         const [cache, config] = await Promise.all([getCachedAgencyData(), getAgencyConfig()]);
         const ttl = config.cacheDurationMs || cache.cacheDurationMs || AGENCY_CACHE_TTL_MS;
@@ -251,45 +226,6 @@ const AGENCY_CACHE_KEYS = {
             updated: !stale && hasData,
             cacheSource: cache.source || null
         };
-    };
-
-    const readJsonFileFromGist = async (gistData, preferredNames) => {
-        if (!gistData || !gistData.files) {
-            throw new Error('Respuesta de Gist invalida');
-        }
-
-        const names = Array.isArray(preferredNames) ? preferredNames : [preferredNames];
-        const files = Object.values(gistData.files);
-        const file = names.map(name => gistData.files[name]).find(Boolean)
-            || files.find(f => f.filename && f.filename.toLowerCase().endsWith('.json'));
-
-        if (!file || (!file.content && !file.raw_url)) {
-            throw new Error('Archivo JSON no encontrado en el Gist');
-        }
-
-        let content = file.content;
-        if ((!content || file.truncated) && file.raw_url) {
-            const rawResponse = await fetch(file.raw_url);
-            if (!rawResponse.ok) {
-                throw new Error(`GitHub raw respondio ${rawResponse.status}`);
-            }
-            content = await rawResponse.text();
-        }
-
-        const agencies = JSON.parse(content);
-        if (!Array.isArray(agencies)) {
-            throw new Error('El archivo JSON de agencias debe ser una lista');
-        }
-
-        return agencies;
-    };
-
-    const fetchGistAgencies = async (gistId, preferredNames) => {
-        const response = await fetch(`https://api.github.com/gists/${gistId}`);
-        if (!response.ok) {
-            throw new Error(`GitHub respondio ${response.status}`);
-        }
-        return readJsonFileFromGist(await response.json(), preferredNames);
     };
 
     const fetchCodeRedAgencies = async (config) => {
@@ -366,63 +302,6 @@ const AGENCY_CACHE_KEYS = {
             [AGENCY_CACHE_KEYS.lastUpdated]: next.syncedAt || next.lastCheckedAt || 0
         });
         return getCachedAgencyData();
-    };
-
-    const refreshGistAgencyCache = async ({ force = false } = {}) => {
-        const [cache, gistIds] = await Promise.all([getCachedAgencyData(), getConfiguredGistIds()]);
-
-        if (!force && hasLocalCopy(cache) && !isExpired(cache.lastUpdated, cache.cacheDurationMs) && !haveGistIdsChanged(cache.gistIds, gistIds)) {
-            return { ...cache, updated: false, errors: [] };
-        }
-
-        const [terrestreResult, aereoResult] = await Promise.allSettled([
-            fetchGistAgencies(gistIds.terrestre, ['agencias_terrestre.json', 'agencias.json']),
-            fetchGistAgencies(gistIds.aereo, ['agencias_aereo.json'])
-        ]);
-
-        const nextCache = {
-            terrestre: terrestreResult.status === 'fulfilled' ? normalizeAgencyList(terrestreResult.value, { segmento: 'TERRESTRE', source: 'gist' }) : cache.terrestre,
-            aereo: aereoResult.status === 'fulfilled' ? normalizeAgencyList(aereoResult.value, { segmento: 'AEREO', source: 'gist' }) : cache.aereo,
-            lastUpdated: cache.lastUpdated,
-            gistIds
-        };
-
-        const errors = [];
-        if (terrestreResult.status === 'rejected') errors.push({ tipo: 'TERRESTRE', message: terrestreResult.reason.message });
-        if (aereoResult.status === 'rejected') errors.push({ tipo: 'AEREO', message: aereoResult.reason.message });
-
-        const hasFreshData = terrestreResult.status === 'fulfilled' || aereoResult.status === 'fulfilled';
-        const fullyUpdated = terrestreResult.status === 'fulfilled' && aereoResult.status === 'fulfilled';
-        if (hasFreshData) {
-            nextCache.lastUpdated = fullyUpdated ? Date.now() : cache.lastUpdated;
-            nextCache.gistIds = fullyUpdated ? gistIds : cache.gistIds;
-
-            const storageUpdate = {
-                [AGENCY_CACHE_KEYS.lastUpdated]: nextCache.lastUpdated,
-                [AGENCY_CACHE_KEYS.gistIds]: nextCache.gistIds,
-                [AGENCY_CACHE_KEYS.v2]: {
-                    schemaVersion: AGENCY_CACHE_SCHEMA_VERSION,
-                    source: 'gist',
-                    apiSchemaVersion: 1,
-                    syncedAt: nextCache.lastUpdated || null,
-                    lastCheckedAt: nextCache.lastUpdated || null,
-                    agencies: [...nextCache.terrestre, ...nextCache.aereo],
-                    agenciasTerrestre: nextCache.terrestre,
-                    agenciasAereo: nextCache.aereo
-                }
-            };
-
-            if (terrestreResult.status === 'fulfilled') {
-                storageUpdate[AGENCY_CACHE_KEYS.terrestre] = nextCache.terrestre;
-            }
-            if (aereoResult.status === 'fulfilled') {
-                storageUpdate[AGENCY_CACHE_KEYS.aereo] = nextCache.aereo;
-            }
-
-            await storageSet(storageUpdate);
-        }
-
-        return { ...nextCache, updated: fullyUpdated, errors, schemaVersion: AGENCY_CACHE_SCHEMA_VERSION, source: 'gist', syncedAt: nextCache.lastUpdated || null, lastCheckedAt: nextCache.lastUpdated || null, agencies: [...nextCache.terrestre, ...nextCache.aereo] };
     };
 
     const refreshCodeRedAgencyCache = async ({ force = false } = {}) => {
@@ -513,39 +392,38 @@ const AGENCY_CACHE_KEYS = {
     };
 
     const refreshAgencyCache = async ({ force = false } = {}) => {
-        const [cache, agencyConfig] = await Promise.all([getCachedAgencyData(), getAgencyConfig()]);
-
-        if (agencyConfig.source === 'codered' || agencyConfig.source === 'codered-with-gist-fallback') {
-            try {
-                const refreshed = await refreshCodeRedAgencyCache({ force });
-                await saveAgencyConfig({
-                    ...agencyConfig,
-                    lastSyncAt: new Date(refreshed.syncedAt || Date.now()).toISOString()
-                });
-                return {
-                    ...refreshed,
-                    source: agencyConfig.source,
-                    updated: true,
-                    errors: []
-                };
-            } catch (error) {
-                const cached = await getCachedAgencyData();
-                const hasValidCache = Array.isArray(cached.agencies) && cached.agencies.length > 0;
-                if (agencyConfig.source === 'codered-with-gist-fallback' && !hasValidCache) {
-                    const fallback = await refreshGistAgencyCache({ force });
-                    fallback.errors = [...(fallback.errors || []), { tipo: 'CODERED', message: error.message }];
-                    return fallback;
-                }
-                return {
-                    ...cached,
-                    updated: false,
-                    source: agencyConfig.source,
-                    errors: [...(cached.errors || []), { tipo: 'CODERED', message: error.message }]
-                };
-            }
+        const [, agencyConfig] = await Promise.all([getCachedAgencyData(), getAgencyConfig()]);
+        try {
+            const refreshed = await refreshCodeRedAgencyCache({ force });
+            await saveAgencyConfig({
+                ...agencyConfig,
+                source: 'codered',
+                lastSyncAt: new Date(refreshed.syncedAt || Date.now()).toISOString()
+            });
+            return {
+                ...refreshed,
+                source: 'codered',
+                updated: true,
+                errors: []
+            };
+        } catch (error) {
+            const cached = await getCachedAgencyData();
+            const fallbackEntry = {
+                type: 'fallback_used',
+                source: 'codered',
+                reason: 'code_red_unavailable',
+                checkedAt: new Date().toISOString()
+            };
+            await storageSet({
+                agencyFallbackState: fallbackEntry
+            });
+            return {
+                ...cached,
+                updated: false,
+                source: 'codered',
+                errors: [...(cached.errors || []), { tipo: 'CODERED', message: error.message }]
+            };
         }
-
-        return refreshGistAgencyCache({ force });
     };
 
     const ensureAgencyCache = async ({ force = false, allowRefresh = true } = {}) => {
@@ -565,17 +443,15 @@ const AGENCY_CACHE_KEYS = {
     };
 
     const saveAgencyCache = async ({ terrestre, aereo, gistIds, lastUpdated = Date.now(), cacheDurationMs = AGENCY_CACHE_TTL_MS }) => {
-        const currentIds = gistIds || await getConfiguredGistIds();
         const normalizedTerrestre = normalizeAgencyList(terrestre, { segmento: 'TERRESTRE', source: 'local' });
         const normalizedAereo = normalizeAgencyList(aereo, { segmento: 'AEREO', source: 'local' });
         await storageSet({
             [AGENCY_CACHE_KEYS.terrestre]: normalizedTerrestre,
             [AGENCY_CACHE_KEYS.aereo]: normalizedAereo,
             [AGENCY_CACHE_KEYS.lastUpdated]: lastUpdated,
-            [AGENCY_CACHE_KEYS.gistIds]: currentIds,
             [AGENCY_CACHE_KEYS.v2]: {
                 schemaVersion: AGENCY_CACHE_SCHEMA_VERSION,
-                source: 'gist',
+                source: 'codered',
                 apiSchemaVersion: 1,
                 syncedAt: lastUpdated,
                 lastCheckedAt: lastUpdated,
@@ -594,10 +470,9 @@ const AGENCY_CACHE_KEYS = {
             [AGENCY_CACHE_KEYS.terrestre]: [],
             [AGENCY_CACHE_KEYS.aereo]: [],
             [AGENCY_CACHE_KEYS.lastUpdated]: 0,
-            [AGENCY_CACHE_KEYS.gistIds]: null,
             [AGENCY_CACHE_KEYS.v2]: {
                 schemaVersion: AGENCY_CACHE_SCHEMA_VERSION,
-                source: 'gist',
+                source: 'codered',
                 apiSchemaVersion: 1,
                 syncedAt: null,
                 lastCheckedAt: null,
@@ -613,7 +488,7 @@ const AGENCY_CACHE_KEYS = {
         const cache = await getCachedAgencyData();
         return {
             schemaVersion: AGENCY_CACHE_SCHEMA_VERSION,
-            source: cache.source || 'gist',
+            source: cache.source || 'codered',
             syncedAt: cache.syncedAt || null,
             lastCheckedAt: cache.lastCheckedAt || null,
             etag: cache.etag || null,
@@ -653,12 +528,9 @@ const AGENCY_CACHE_KEYS = {
     };
 
     globalScope.ShalomAgencyStore = {
-        DEFAULT_GIST_ID,
-        DEFAULT_AEREO_GIST_ID,
         AGENCY_CACHE_TTL_MS,
         AGENCY_CACHE_SCHEMA_VERSION,
         AGENCY_CACHE_V2_KEY,
-        getConfiguredGistIds,
         getAgencyConfig,
         saveAgencyConfig,
         clearAgencyConfig,

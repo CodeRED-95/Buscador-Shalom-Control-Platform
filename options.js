@@ -31,7 +31,7 @@ const setSyncSummary = (text) => {
 
 const formatSyncSummary = (status, cache) => {
     if (!status) return 'Última sincronización: nunca';
-    const sourceLabel = status.source === 'codered' ? 'CodeRED Platform' : status.source === 'codered-with-gist-fallback' ? 'CodeRED + Gist fallback' : 'Gist';
+    const sourceLabel = status.source === 'codered' ? 'CodeRED Platform' : 'Caché local';
     const total = cache?.agencies?.length ?? cache?.total ?? 0;
     const syncedAt = status.syncedAt || cache?.syncedAt || cache?.lastSyncAt || null;
     return `Fuente activa: ${sourceLabel} · ${total} agencias · última sincronización: ${syncedAt || 'nunca'}`;
@@ -40,7 +40,7 @@ const formatSyncSummary = (status, cache) => {
 const updateStatusUI = async () => {
     try {
         const { status, cache } = await sendMessage('CATALOG_STATUS');
-        const modeLabel = status.source === 'codered' ? 'CodeRED Platform' : status.source === 'codered-with-gist-fallback' ? 'CodeRED Platform · Gist fallback' : 'Gist';
+        const modeLabel = status.source === 'codered' ? 'CodeRED Platform' : 'Caché local';
         const freshnessLabel = status.stale ? 'vencida' : 'vigente';
         const offlineLabel = status.offline ? ' - modo offline' : '';
         setStatusText(`Estado de caché: ${modeLabel} / ${freshnessLabel}${offlineLabel}`);
@@ -59,15 +59,14 @@ const refreshLocalLists = async () => {
 };
 
 window.onload = async () => {
-    chrome.storage.local.get(['ghToken', 'pref_tema', 'agencyDataConfig', CHANNEL_STORAGE_KEY], async (items) => {
-        if (items.ghToken) document.getElementById('ghToken').value = items.ghToken;
+    chrome.storage.local.get(['pref_tema', 'agencyDataConfig', CHANNEL_STORAGE_KEY], async (items) => {
         if (items.pref_tema === 'dark') document.body.classList.add('dark-theme');
         const savedChannel = ['AUTO', 'TERRESTRE', 'AEREO'].includes(items[CHANNEL_STORAGE_KEY]) ? items[CHANNEL_STORAGE_KEY] : 'TERRESTRE';
         chrome.storage.local.set({ [CHANNEL_STORAGE_KEY]: savedChannel });
 
         try {
             const config = items.agencyDataConfig || (await sendMessage('CONFIG_GET')).config;
-            document.getElementById('dataSource').value = config.source || 'codered-with-gist-fallback';
+            document.getElementById('dataSource').value = 'codered';
             document.getElementById('apiBaseUrl').value = config.apiBaseUrl || '';
             document.getElementById('apiToken').value = config.apiToken || '';
             await refreshLocalLists();
@@ -97,7 +96,7 @@ document.getElementById('toggleApiToken').onclick = () => {
 document.getElementById('saveDataSourceBtn').onclick = async () => {
     try {
         const config = {
-            source: document.getElementById('dataSource').value,
+            source: 'codered',
             apiBaseUrl: CodeRedApi.normalizeBaseUrl(document.getElementById('apiBaseUrl').value),
             apiToken: document.getElementById('apiToken').value,
             cacheDurationMs: ShalomAgencyStore.AGENCY_CACHE_TTL_MS
@@ -258,48 +257,16 @@ document.getElementById('confirmBtn').onclick = () => {
     renderTable();
 };
 
-document.getElementById('saveGistBtn').onclick = async () => {
-    const token = document.getElementById('ghToken').value;
-    const gistIds = await ShalomAgencyStore.getConfiguredGistIds();
-    if (!token) return alert('Por favor ingresa tu Token de GitHub');
-
-    const updateGist = async (id, data, filename) => {
-        const response = await fetch(`https://api.github.com/gists/${id}`, {
-            method: 'PATCH',
-            headers: {
-                Accept: 'application/vnd.github+json',
-                Authorization: `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ files: { [filename]: { content: JSON.stringify(data, null, 2) } } })
-        });
-        if (!response.ok) throw new Error(`GitHub respondio ${response.status} al guardar ${filename}`);
-    };
-
-    try {
-        await updateGist(gistIds.terrestre, agenciasTerrestre, 'agencias_terrestre.json');
-        await updateGist(gistIds.aereo, agenciasAereo, 'agencias_aereo.json');
-        await ShalomAgencyStore.saveAgencyCache({ terrestre: agenciasTerrestre, aereo: agenciasAereo, gistIds });
-        chrome.storage.local.set({ ghToken: token }, () => alert('¡Ambos Gists actualizados con éxito!'));
-    } catch (err) {
-        console.error('Error al sincronizar con GitHub:', err);
-        alert('Error al sincronizar. Revisa tu token de GitHub.');
-    }
-};
-
-document.getElementById('refreshConfiguredSourceBtn').remove?.();
 const btnRefresh = document.createElement('button');
 btnRefresh.id = 'refreshConfiguredSourceBtn';
 btnRefresh.className = 'btn btn-edit';
-btnRefresh.textContent = '↻ Sincronizar Fuente';
+btnRefresh.textContent = '↻ Sincronizar CodeRED';
 document.getElementById('saveDataSourceBtn').insertAdjacentElement('afterend', btnRefresh);
 btnRefresh.onclick = async () => {
     try {
         const result = await sendMessage('CATALOG_SYNC');
         await refreshLocalLists();
         await updateStatusUI();
-        agenciasTerrestre = result.source === 'gist' ? agenciasTerrestre : [];
-        agenciasAereo = result.source === 'gist' ? agenciasAereo : [];
         alert(`Sincronización completada. Total de agencias: ${result.total || 0}.`);
         renderTable();
     } catch (err) {

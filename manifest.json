@@ -13,8 +13,6 @@
     "alarms"
   ],
   "host_permissions": [
-    "https://api.github.com/gists/*",
-    "https://gist.githubusercontent.com/*",
     "https://*.shalom.pe/*",
     "https://*.shalomcontrol.com/*"
   ],

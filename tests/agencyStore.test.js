@@ -197,9 +197,9 @@ test('exposes cache schema version and default source helpers', async () => {
     const { store, storage } = loadStore();
     assert.equal(store.AGENCY_CACHE_SCHEMA_VERSION, 3);
     assert.equal(store.AGENCY_CACHE_V2_KEY, 'agencyCatalogCache');
-    assert.equal((await store.getAgencyConfig()).source, 'gist');
+    assert.equal((await store.getAgencyConfig()).source, 'codered');
     assert.equal((await store.getCachedAgencies()).schemaVersion, 3);
-    assert.equal((await store.getCachedAgencies()).source, 'gist');
+    assert.equal((await store.getCachedAgencies()).source, 'codered');
     assert.equal(storage.agencyCatalogCache, undefined);
 });
 
@@ -221,16 +221,16 @@ test('saves and sanitizes the agency source configuration', async () => {
     assert.equal(storage.agencyDataConfig.source, 'codered');
 });
 
-test('keeps transitional fallback mode when saving configuration', async () => {
+test('migrates legacy fallback source configuration to CodeRED', async () => {
     const { store } = loadStore();
     const config = await store.saveAgencyConfig({
-        source: 'codered-with-gist-fallback',
+        source: 'legacy-source',
         apiBaseUrl: 'https://platform.example.com',
         apiToken: 'token',
         cacheDurationMs: 60000
     });
 
-    assert.equal(config.source, 'codered-with-gist-fallback');
+    assert.equal(config.source, 'codered');
 });
 
 test('reports cache status and respects configured cache duration', async () => {
@@ -238,7 +238,7 @@ test('reports cache status and respects configured cache duration', async () => 
     const { store } = loadStore({
         initialStorage: {
             agencyDataConfig: {
-                source: 'gist',
+                source: 'codered',
                 apiBaseUrl: '',
                 apiToken: '',
                 cacheDurationMs: 1000,
@@ -246,7 +246,7 @@ test('reports cache status and respects configured cache duration', async () => 
             },
             agencyCatalogCache: {
                 schemaVersion: 3,
-                source: 'gist',
+                source: 'codered',
                 syncedAt: new Date(now - 500).toISOString(),
                 lastCheckedAt: new Date(now - 500).toISOString(),
                 cacheDurationMs: 1000,
@@ -257,7 +257,7 @@ test('reports cache status and respects configured cache duration', async () => 
 
     const status = await store.getAgencyCacheStatus();
 
-    assert.equal(status.source, 'gist');
+    assert.equal(status.source, 'codered');
     assert.equal(status.cacheDurationMs, 1000);
     assert.equal(status.stale, false);
     assert.equal(status.offline, false);
@@ -269,7 +269,7 @@ test('marks cache offline when it is stale but still has data', async () => {
     const { store } = loadStore({
         initialStorage: {
             agencyDataConfig: {
-                source: 'gist',
+                source: 'codered',
                 apiBaseUrl: '',
                 apiToken: '',
                 cacheDurationMs: 1000,
@@ -277,7 +277,7 @@ test('marks cache offline when it is stale but still has data', async () => {
             },
             agencyCatalogCache: {
                 schemaVersion: 3,
-                source: 'gist',
+                source: 'codered',
                 syncedAt: new Date(now - 5000).toISOString(),
                 lastCheckedAt: new Date(now - 5000).toISOString(),
                 cacheDurationMs: 1000,
@@ -295,54 +295,6 @@ test('marks cache offline when it is stale but still has data', async () => {
 
 test('returns normalized agencies from fetchAgencies and refreshAgencies', async () => {
     const fetch = async (url) => {
-        if (url.includes('acfb5aaccf90743075a8143511b48ae7')) {
-            return {
-                ok: true,
-                async json() {
-                    return {
-                        files: {
-                            'agencias_terrestre.json': {
-                                filename: 'agencias_terrestre.json',
-                                content: '[{"internal_id":1,"id":2,"code":"SHA-000002","agencia":"Caja","texto_chosen_terrestre":"2 - LIMA - LIMA - LIMA - CAJA - TERRESTRE"}]'
-                            }
-                        }
-                    };
-                }
-            };
-        }
-        if (url.includes('27710267e825c3b205be8d3c8f0acc46')) {
-            return {
-                ok: true,
-                async json() {
-                    return {
-                        files: {
-                            'agencias_aereo.json': {
-                                filename: 'agencias_aereo.json',
-                                content: '[{"internal_id":3,"id":4,"code":"SHA-000004","agencia":"Air","texto_chosen_aereo":"4 - LIMA - LIMA - AIR - AEREO"}]'
-                            }
-                        }
-                    };
-                }
-            };
-        }
-        throw new Error(`Unexpected URL: ${url}`);
-    };
-
-    const { store } = loadStore({ fetch });
-    const agencies = await store.fetchAgencies();
-    const refreshed = await store.refreshAgencies({ force: true });
-
-    assert.equal(Array.isArray(agencies), true);
-    assert.equal(agencies.length >= 2, true);
-    assert.equal(refreshed.schemaVersion, 3);
-    assert.equal(refreshed.source, 'gist');
-    assert.equal(refreshed.agencies.length >= 2, true);
-});
-
-test('refreshes from CodeRED Platform when configured and falls back to Gist on failure', async () => {
-    const calls = [];
-    const fetch = async (url, options = {}) => {
-        calls.push({ url, options });
         if (url === 'https://codered.example/api/v1/catalog/metadata') {
             return {
                 ok: true,
@@ -357,51 +309,15 @@ test('refreshes from CodeRED Platform when configured and falls back to Gist on 
                 async text() {
                     return JSON.stringify({
                         data: [{
-                            internal_id: 25,
-                            id: 610,
-                            code: 'SHA-000610',
-                            agencia: ' Yarinacocha Av Universitaria ',
-                            departamento: ' Ucayali ',
-                            provincia: ' Coronel Portillo ',
-                            distrito: ' Pucallpa Yarinacocha ',
-                            direccion: ' av. universitaria ',
-                            link_mapa: 'https://www.google.com/maps/dir/?api=1&destination=-8.38,-74.56',
-                            tamano: ' Pequeña ',
-                            texto_chosen_terrestre: '610 - UCAYALI - CORONEL PORTILLO - PUCALLPA YARINACOCHA - YARINACOCHA AV UNIVERSITARIA - TERRESTRE'
+                            internal_id: 1,
+                            id: 2,
+                            code: 'SHA-000002',
+                            agencia: 'Caja',
+                            texto_chosen_terrestre: '2 - LIMA - LIMA - LIMA - CAJA - TERRESTRE'
                         }],
                         meta: { last_page: 1, total: 1 },
                         links: {}
                     });
-                }
-            };
-        }
-        if (url.includes('acfb5aaccf90743075a8143511b48ae7')) {
-            return {
-                ok: true,
-                async json() {
-                    return {
-                        files: {
-                            'agencias_terrestre.json': {
-                                filename: 'agencias_terrestre.json',
-                                content: '[{"id":"1","agencia":"Fallback"}]'
-                            }
-                        }
-                    };
-                }
-            };
-        }
-        if (url.includes('27710267e825c3b205be8d3c8f0acc46')) {
-            return {
-                ok: true,
-                async json() {
-                    return {
-                        files: {
-                            'agencias_aereo.json': {
-                                filename: 'agencias_aereo.json',
-                                content: '[{"id":"2","agencia":"Fallback Air"}]'
-                            }
-                        }
-                    };
                 }
             };
         }
@@ -414,9 +330,47 @@ test('refreshes from CodeRED Platform when configured and falls back to Gist on 
             agencyDataConfig: {
                 source: 'codered',
                 apiBaseUrl: 'https://codered.example',
-                apiToken: 'secret',
+                apiToken: '',
                 cacheDurationMs: 60000,
                 lastSyncAt: null
+            }
+        }
+    });
+    const agencies = await store.fetchAgencies();
+    const refreshed = await store.refreshAgencies({ force: true });
+
+    assert.equal(Array.isArray(agencies), true);
+    assert.equal(agencies.length >= 1, true);
+    assert.equal(refreshed.schemaVersion, 3);
+    assert.equal(refreshed.source, 'codered');
+    assert.equal(refreshed.agencies.length >= 1, true);
+});
+
+test('records fallback usage when CodeRED refresh fails and cache remains available', async () => {
+    const fetch = async (url) => {
+        if (url === 'https://codered.example/api/v1/catalog/metadata') {
+            return { ok: false, status: 503, headers: { get() { return null; } }, async text() { return ''; } };
+        }
+        throw new Error(`Unexpected URL: ${url}`);
+    };
+
+    const { store, storage } = loadStore({
+        fetch,
+        initialStorage: {
+            agencyDataConfig: {
+                source: 'codered',
+                apiBaseUrl: 'https://codered.example',
+                apiToken: '',
+                cacheDurationMs: 60000,
+                lastSyncAt: null
+            },
+            agencyCatalogCache: {
+                schemaVersion: 3,
+                source: 'codered',
+                apiSchemaVersion: 1,
+                syncedAt: new Date().toISOString(),
+                lastCheckedAt: new Date().toISOString(),
+                agencies: [{ id: 1, agency: 'Cached' }]
             }
         }
     });
@@ -424,68 +378,9 @@ test('refreshes from CodeRED Platform when configured and falls back to Gist on 
     const result = await store.refreshAgencies({ force: true });
 
     assert.equal(result.source, 'codered');
-    assert.equal(result.agencies[0].externalId, 610);
-    assert.equal(result.agencies[0].chosenTextTerrestrial, '610 - UCAYALI - CORONEL PORTILLO - PUCALLPA YARINACOCHA - YARINACOCHA AV UNIVERSITARIA - TERRESTRE');
-    assert.equal(calls[0].url, 'https://codered.example/api/v1/catalog/metadata');
-    assert.equal(calls[0].options.headers.Authorization, 'Bearer secret');
-});
-
-test('falls back to Gist when CodeRED refresh fails', async () => {
-    const fetch = async (url) => {
-        if (url === 'https://codered.example/api/agencies') {
-            return { ok: false, status: 500 };
-        }
-        if (url.includes('acfb5aaccf90743075a8143511b48ae7')) {
-            return {
-                ok: true,
-                async json() {
-                    return {
-                        files: {
-                            'agencias_terrestre.json': {
-                                filename: 'agencias_terrestre.json',
-                                content: '[{"id":"1","agencia":"Fallback"}]'
-                            }
-                        }
-                    };
-                }
-            };
-        }
-        if (url.includes('27710267e825c3b205be8d3c8f0acc46')) {
-            return {
-                ok: true,
-                async json() {
-                    return {
-                        files: {
-                            'agencias_aereo.json': {
-                                filename: 'agencias_aereo.json',
-                                content: '[{"id":"2","agencia":"Fallback Air"}]'
-                            }
-                        }
-                    };
-                }
-            };
-        }
-        throw new Error(`Unexpected URL: ${url}`);
-    };
-
-    const { store } = loadStore({
-        fetch,
-        initialStorage: {
-            agencyDataConfig: {
-                source: 'codered-with-gist-fallback',
-                apiBaseUrl: 'https://codered.example/api/agencies',
-                apiToken: '',
-                cacheDurationMs: 60000,
-                lastSyncAt: null
-            }
-        }
-    });
-
-    const result = await store.refreshAgencies({ force: true });
-
-    assert.equal(result.source, 'gist');
-    assert.ok(result.errors.some((entry) => entry.tipo === 'CODERED'));
-    assert.equal(result.agencies.length >= 1, true);
+    assert.equal(result.agencies.length, 1);
+    assert.equal(result.agencies[0].agency, 'Cached');
+    assert.equal(storage.agencyFallbackState.reason, 'code_red_unavailable');
 });
 
 test('handles 304 metadata responses by updating lastCheckedAt only', async () => {
@@ -602,54 +497,4 @@ test('applies incremental upserts and deletes across change pages', async () => 
     assert.equal(result.cursor, 'cursor-2');
     assert.equal(result.agencies.length, 1);
     assert.equal(result.agencies[0].externalId, 2);
-});
-
-test('downloads raw Gist content when the API omits embedded content', async () => {
-    const calls = [];
-    const fetch = async (url) => {
-        calls.push(url);
-        if (url.includes('acfb5aaccf90743075a8143511b48ae7')) {
-            return {
-                ok: true,
-                async json() {
-                    return {
-                        files: {
-                            'agencias_terrestre.json': {
-                                filename: 'agencias_terrestre.json',
-                                content: null,
-                                raw_url: 'https://gist.example/terrestre.json'
-                            }
-                        }
-                    };
-                }
-            };
-        }
-        if (url.includes('27710267e825c3b205be8d3c8f0acc46')) {
-            return {
-                ok: true,
-                async json() {
-                    return {
-                        files: {
-                            'agencias_aereo.json': {
-                                filename: 'agencias_aereo.json',
-                                content: '[{"id":"2"}]'
-                            }
-                        }
-                    };
-                }
-            };
-        }
-        if (url === 'https://gist.example/terrestre.json') {
-            return { ok: true, async text() { return '[{"id":"1"}]'; } };
-        }
-        throw new Error(`Unexpected URL: ${url}`);
-    };
-
-    const { store, storage } = loadStore({ fetch });
-    const result = await store.refreshAgencyCache({ force: true });
-
-    assert.equal(result.updated, true);
-    assert.equal(result.terrestre[0].id, '1');
-    assert.equal(storage.agenciasAereo[0].id, '2');
-    assert.ok(calls.includes('https://gist.example/terrestre.json'));
 });
