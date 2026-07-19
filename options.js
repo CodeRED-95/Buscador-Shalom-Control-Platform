@@ -1,6 +1,7 @@
 let agenciasTerrestre = [];
 let agenciasAereo = [];
 let currentType = 'TERRESTRE';
+const CHANNEL_STORAGE_KEY = 'pref_canal_agencia';
 
 const sendMessage = (type, payload = {}) => new Promise((resolve, reject) => {
     chrome.runtime.sendMessage({ type, payload }, (response) => {
@@ -58,9 +59,11 @@ const refreshLocalLists = async () => {
 };
 
 window.onload = async () => {
-    chrome.storage.local.get(['ghToken', 'pref_tema', 'agencyDataConfig'], async (items) => {
+    chrome.storage.local.get(['ghToken', 'pref_tema', 'agencyDataConfig', CHANNEL_STORAGE_KEY], async (items) => {
         if (items.ghToken) document.getElementById('ghToken').value = items.ghToken;
         if (items.pref_tema === 'dark') document.body.classList.add('dark-theme');
+        const savedChannel = ['AUTO', 'TERRESTRE', 'AEREO'].includes(items[CHANNEL_STORAGE_KEY]) ? items[CHANNEL_STORAGE_KEY] : 'TERRESTRE';
+        chrome.storage.local.set({ [CHANNEL_STORAGE_KEY]: savedChannel });
 
         try {
             const config = items.agencyDataConfig || (await sendMessage('CONFIG_GET')).config;
@@ -161,11 +164,14 @@ function renderTable(filter = '') {
         if (normalizedFilter && !ShalomAgencyStore.normalizeText(a.agency || a.agencia).includes(normalizedFilter)) return;
         const tr = document.createElement('tr');
         const escape = ShalomAgencyStore.escapeHtml;
+        const hasTerr = Boolean(ShalomAgencyStore.getChosenTextForChannel(a, 'TERRESTRE'));
+        const hasAereo = Boolean(ShalomAgencyStore.getChosenTextForChannel(a, 'AEREO'));
+        const canalBadge = hasTerr && hasAereo ? 'Ambos' : hasTerr ? 'Terrestre' : hasAereo ? 'Aéreo' : 'Sin identificador';
         const badgeCO = isCO(a.co) ? '<span style="background:#e8f5e9;color:#2e7d32;padding:2px 6px;border-radius:4px;font-size:10px;margin-left:5px;border:1px solid #c8e6c9;font-weight:bold;">🛡️ AGENCIA CO</span>' : '';
         const tamanoText = a.size || a.tamano ? `<br><small>Tamaño: ${escape(a.size || a.tamano)}</small>` : '';
 
         tr.innerHTML = `
-            <td><strong>${escape(a.agency || a.agencia)}</strong> ${badgeCO}<br><small>${escape(a.externalId || a.id)}</small>${tamanoText}</td>
+            <td><strong>${escape(a.agency || a.agencia)}</strong> <span style="display:inline-block;background:#eceff1;color:#37474f;padding:2px 6px;border-radius:4px;font-size:10px;border:1px solid #cfd8dc;font-weight:bold;">${escape(canalBadge)}</span> ${badgeCO}<br><small>${escape(a.externalId || a.id)}</small>${tamanoText}</td>
             <td>${escape(a.department || a.departamento)} / ${escape(a.province || a.provincia)}</td>
             <td class="acciones-td"></td>
         `;
@@ -203,7 +209,7 @@ const abrirModal = (index = -1) => {
     document.getElementById('modalTitle').innerText = isEdit ? 'Editar Agencia' : 'Nueva Agencia';
     document.getElementById('editIndex').value = index;
     const lista = currentType === 'AEREO' ? agenciasAereo : agenciasTerrestre;
-    const a = isEdit ? lista[index] : { id: '', agencia: '', departamento: '', provincia: '', distrito: '', direccion: '', texto_chosen: '' };
+    const a = isEdit ? lista[index] : { id: '', agencia: '', departamento: '', provincia: '', distrito: '', direccion: '', texto_chosen: '', texto_chosen_terrestre: '', texto_chosen_aereo: '' };
 
     document.getElementById('fieldId').value = a.externalId || a.id || '';
     document.getElementById('fieldAgencia').value = a.agency || a.agencia || '';
@@ -238,6 +244,8 @@ document.getElementById('confirmBtn').onclick = () => {
         distrito: document.getElementById('fieldDist').value.trim(),
         direccion: document.getElementById('fieldDir').value.trim(),
         texto_chosen: textoChosenManual || `${document.getElementById('fieldId').value} - ${document.getElementById('fieldDep').value.trim()} - ${document.getElementById('fieldProv').value.trim()} - ${document.getElementById('fieldDist').value.trim()} - ${document.getElementById('fieldAgencia').value.trim()} - ${currentType}`,
+        texto_chosen_terrestre: currentType === 'TERRESTRE' ? (textoChosenManual || `${document.getElementById('fieldId').value} - ${document.getElementById('fieldDep').value.trim()} - ${document.getElementById('fieldProv').value.trim()} - ${document.getElementById('fieldDist').value.trim()} - ${document.getElementById('fieldAgencia').value.trim()} - TERRESTRE`) : (document.getElementById('fieldTextoChosen').value.trim() || ''),
+        texto_chosen_aereo: currentType === 'AEREO' ? (textoChosenManual || `${document.getElementById('fieldId').value} - ${document.getElementById('fieldDep').value.trim()} - ${document.getElementById('fieldProv').value.trim()} - ${document.getElementById('fieldDist').value.trim()} - ${document.getElementById('fieldAgencia').value.trim()} - AEREO`) : (document.getElementById('fieldTextoChosen').value.trim() || ''),
         link_mapa: document.getElementById('fieldMaps').value.trim(),
         tamano: document.getElementById('fieldTamano').value,
         co: document.getElementById('fieldEsCO').checked

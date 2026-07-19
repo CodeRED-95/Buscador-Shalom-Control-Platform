@@ -2,6 +2,7 @@ let listaAgencias = [];
 let currentType = 'TERRESTRE';
 let currentChosenChannel = 'AUTO';
 let ultimaCargaSolicitada = 0;
+const CHANNEL_STORAGE_KEY = 'pref_canal_agencia';
 
 // 1. Cargar la data desde la copia local.
 async function cargarDatos(tipo = 'TERRESTRE') {
@@ -13,9 +14,7 @@ async function cargarDatos(tipo = 'TERRESTRE') {
 
         const agencias = tipo === 'AEREO' ? cache.aereo : cache.terrestre;
         listaAgencias = ShalomAgencyStore.prepareAgencies(agencias, tipo);
-        if (currentChosenChannel !== 'AUTO') {
-            actualizarSelectorCanal(currentChosenChannel);
-        }
+        actualizarSelectorCanal(currentChosenChannel);
 
         if (cache.errors && cache.errors.length) {
             console.warn("[Shalom Pro] Se usara la ultima copia local disponible:", cache.errors);
@@ -34,13 +33,14 @@ const canalDisponibleParaAgencia = (agencia, canal) => ShalomAgencyStore.agencyH
 const obtenerTextoChosen = (agencia, canal) => {
     if (!agencia) return '';
     if (canal === 'AUTO') {
-        return ShalomAgencyStore.getChosenTextForChannel(agencia, currentType) || ShalomAgencyStore.getChosenTextForChannel(agencia, 'TERRESTRE') || ShalomAgencyStore.getChosenTextForChannel(agencia, 'AEREO') || '';
+        return ShalomAgencyStore.getChosenTextForChannel(agencia, currentType) || '';
     }
     return ShalomAgencyStore.getChosenTextForChannel(agencia, canal) || '';
 };
 
 function actualizarSelectorCanal(canal) {
     currentChosenChannel = canal;
+    chrome.storage.local.set({ [CHANNEL_STORAGE_KEY]: canal });
     const selector = document.getElementById('selector-canal-chosen');
     if (!selector) return;
     selector.value = canal;
@@ -176,7 +176,7 @@ async function inicializarInyeccion() {
             div.innerHTML = `
                 <div class="buscador-wrapper">
                     <input type="text" id="buscador" placeholder="🔍 Buscar agencia..." autocomplete="off">
-                    <select id="selector-canal-chosen" title="Canal de selección" style="margin-left:8px;border:none;background:transparent;font-size:12px;max-width:110px;">
+                    <select id="selector-canal-chosen" title="Canal de selección" aria-label="Canal de selección" style="margin-left:8px;border:none;background:transparent;font-size:12px;max-width:110px;">
                         <option value="AUTO">Auto</option>
                         <option value="TERRESTRE">Terrestre</option>
                         <option value="AEREO">Aéreo</option>
@@ -206,6 +206,13 @@ async function inicializarInyeccion() {
                 actualizarSelectorCanal(e.target.value);
             };
 
+            chrome.storage.local.get([CHANNEL_STORAGE_KEY], (stored) => {
+                const saved = stored?.[CHANNEL_STORAGE_KEY];
+                const next = ['AUTO', 'TERRESTRE', 'AEREO'].includes(saved) ? saved : 'TERRESTRE';
+                selectorCanal.value = next;
+                actualizarSelectorCanal(next);
+            });
+
             input.addEventListener('input', (e) => {
                 const val = e.target.value;
                 if (val.length < 2) { grid.style.display = 'none'; return; }
@@ -220,8 +227,9 @@ async function inicializarInyeccion() {
                     const chosenTextAereo = ShalomAgencyStore.getChosenTextForChannel(a, 'AEREO');
                     const hasTerr = Boolean(chosenTextTerr);
                     const hasAereo = Boolean(chosenTextAereo);
+                    const badgeCanal = hasTerr && hasAereo ? 'Ambos' : hasTerr ? 'Terrestre' : hasAereo ? 'Aéreo' : 'Sin identificador';
                     return `
-                    <div class="tarjeta" data-texto-chosen="${escape(a.texto_chosen)}" data-texto-chosen-terrestre="${escape(chosenTextTerr)}" data-texto-chosen-aereo="${escape(chosenTextAereo)}">
+                    <div class="tarjeta" tabindex="0" role="button" aria-label="${escape(String(a.agencia || ''))}" data-texto-chosen="${escape(a.texto_chosen)}" data-texto-chosen-terrestre="${escape(chosenTextTerr)}" data-texto-chosen-aereo="${escape(chosenTextAereo)}">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
                             <b style="flex-grow: 1;">${escape(String(a.agencia || '').toUpperCase())}</b>
                             ${mapUrl ? `
@@ -229,6 +237,7 @@ async function inicializarInyeccion() {
                             ` : ''}
                         </div>
                         <div style="margin-bottom: 6px; display: flex; gap: 6px; flex-wrap: wrap;">
+                            <span style="background:#eceff1;color:#37474f;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:bold;border:1px solid #cfd8dc;">${escape(badgeCanal)}</span>
                             ${isCO(a.co) ? '<span style="background:#e8f5e9;color:#2e7d32;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:bold;border:1px solid #c8e6c9;">🛡️ AGENCIA CO</span>' : ''}
                             <span style="background:#e3f2fd;color:#1565c0;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:bold;border:1px solid #bbdefb;">📏 ${escape(a.tamano || 'Mediana')}</span>
                             ${hasTerr ? '<span style="background:#fff3e0;color:#ef6c00;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:bold;border:1px solid #ffcc80;">🚛 Terrestre</span>' : ''}
@@ -275,7 +284,10 @@ function seleccionarAgencia(tarjeta, input, grid) {
         texto_chosen_aereo: tarjeta.dataset.textoChosenAereo || ''
     }, canalSeleccionado);
     if (!textoBuscado) {
-        console.warn('[Shalom Pro] La agencia seleccionada no tiene texto elegido para el canal actual.');
+        const label = canalSeleccionado === 'AUTO' ? 'canal activo' : canalSeleccionado === 'TERRESTRE' ? 'Terrestre' : 'Aéreo';
+        const message = `[Shalom Pro] La agencia seleccionada no tiene texto elegido para ${label}.`;
+        console.warn(message);
+        alert(message);
         return;
     }
     const select = document.querySelector('select[id*="osProDestino"]');

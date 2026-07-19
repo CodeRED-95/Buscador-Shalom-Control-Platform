@@ -21,6 +21,15 @@ async function init() {
 
 const isCO = (val) => val === true || String(val).toUpperCase() === 'TRUE' || String(val).toUpperCase() === 'SI' || String(val).toUpperCase() === 'S' || val === '1' || val === 1;
 
+const getChannelBadge = (agency) => {
+    const hasTerr = Boolean(ShalomAgencyStore.getChosenTextForChannel(agency, 'TERRESTRE'));
+    const hasAereo = Boolean(ShalomAgencyStore.getChosenTextForChannel(agency, 'AEREO'));
+    if (hasTerr && hasAereo) return 'Ambos';
+    if (hasTerr) return 'Terrestre';
+    if (hasAereo) return 'Aéreo';
+    return 'Sin identificador';
+};
+
 function render() {
     const searchVal = document.getElementById('search').value;
     const normalizedSearch = ShalomAgencyStore.normalizeText(searchVal);
@@ -43,6 +52,7 @@ function render() {
         <div class="card" data-index="${index}" style="cursor: pointer;">
             <div style="margin-bottom: 10px;">
                 <span class="badge badge-segment">${a.segmento === 'AEREO' ? '✈️ Aéreo' : '🚛 Terrestre'}</span>
+                <span class="badge" style="background:#eceff1;color:#37474f;border:1px solid #cfd8dc;">${getChannelBadge(a)}</span>
                 ${isCO(a.co) ? '<span class="badge badge-co">🛡️ AGENCIA CO</span>' : ''}
                 <span class="badge badge-tamano">📏 ${escape(a.tamano || 'Mediana')}</span>
             </div>
@@ -84,6 +94,7 @@ const openDetail = (index) => {
     body.innerHTML = `
         <div style="margin-bottom: 20px; display: flex; gap: 8px; flex-wrap: wrap;">
             <span class="badge badge-segment" style="font-size: 15px; padding: 4px 12px;">${a.segmento === 'AEREO' ? '✈️ Aéreo' : '🚛 Terrestre'}</span>
+            <span class="badge" style="font-size: 15px; padding: 4px 12px; background:#eceff1;color:#37474f;border:1px solid #cfd8dc;">${getChannelBadge(a)}</span>
             ${isCO(a.co) ? '<span class="badge badge-co" style="font-size: 15px; padding: 4px 12px;">🛡️ AGENCIA CO</span>' : ''}
             <span class="badge badge-tamano" style="font-size: 15px; padding: 4px 12px;">📏 Tamaño: ${escape(a.tamano || 'Mediana')}</span>
         </div>

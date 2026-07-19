@@ -162,3 +162,74 @@ test('content helpers choose the right channel text and perform DOM selection', 
     assert.equal(grid.style.display, 'none');
     assert.equal(input.value, '');
 });
+
+test('content helpers do not fall back to another channel when the selected one is missing', async () => {
+    const document = createMockDocument();
+    const alerts = [];
+    const globalScope = {};
+
+    runInNewContext(source, {
+        self: globalScope,
+        document,
+        window: {
+            location: { hostname: 'shalom.pe' },
+            jQuery: null
+        },
+        chrome: {
+            storage: {
+                local: {
+                    async get() {
+                        return {};
+                    },
+                    async set() {}
+                }
+            }
+        },
+        MutationObserver: class { observe() {} },
+        console,
+        alert(message) { alerts.push(message); },
+        URL,
+        Event: class {
+            constructor(type, init = {}) {
+                this.type = type;
+                this.bubbles = Boolean(init.bubbles);
+            }
+        },
+        ShalomAgencyStore: {
+            ensureAgencyCache: async () => ({ terrestre: [], aereo: [], errors: [] }),
+            prepareAgencies: (agencies) => agencies,
+            filterBySearchText: (agencies) => agencies,
+            escapeHtml: (value) => String(value),
+            getSafeExternalUrl: () => '',
+            getChosenTextForChannel: (agency, canal) => {
+                if (canal === 'TERRESTRE') return agency.texto_chosen_terrestre || '';
+                if (canal === 'AEREO') return agency.texto_chosen_aereo || '';
+                return agency.texto_chosen || '';
+            },
+            agencyHasChannel: (agency, canal) => Boolean(canal === 'TERRESTRE' ? agency.texto_chosen_terrestre : agency.texto_chosen_aereo)
+        }
+    });
+
+    const helpers = globalScope.ShalomContentHelpers;
+    helpers.seleccionarAgencia({
+        dataset: {
+            textoChosen: '',
+            textoChosenTerrestre: '610 - UCAYALI - CORONEL PORTILLO - PUCALLPA YARINACOCHA - YARINACOCHA AV UNIVERSITARIA - TERRESTRE',
+            textoChosenAereo: ''
+        }
+    }, { value: '' }, { style: { display: 'grid' } });
+
+    assert.equal(alerts.length, 0);
+    const selector = document.getElementById('selector-canal-chosen');
+    selector.value = 'AEREO';
+    helpers.seleccionarAgencia({
+        dataset: {
+            textoChosen: '',
+            textoChosenTerrestre: '610 - UCAYALI - CORONEL PORTILLO - PUCALLPA YARINACOCHA - YARINACOCHA AV UNIVERSITARIA - TERRESTRE',
+            textoChosenAereo: ''
+        }
+    }, { value: '' }, { style: { display: 'grid' } });
+
+    assert.equal(alerts.length, 1);
+    assert.match(alerts[0], /Aéreo/);
+});
