@@ -67,7 +67,7 @@ const CODE_RED_MAX_PAGES = 100;
                 };
                 throw createError(typeByStatus[response.status] || 'HTTP_ERROR', 'Solicitud fallida', response.status);
             }
-            return { response, json };
+            return { response, json, text };
         } catch (error) {
             if (error?.name === 'AbortError') {
                 throw createError('TIMEOUT', 'La solicitud excedió el tiempo permitido');
@@ -88,8 +88,66 @@ const CODE_RED_MAX_PAGES = 100;
     };
 
     const fetchCatalogMetadata = async (baseUrl, token) => {
-        const { json } = await request(baseUrl, 'catalog/metadata', { token });
-        return json;
+        const { response, json } = await request(baseUrl, 'catalog/metadata', { token });
+        return {
+            status: response.status,
+            etag: response.headers?.get?.('etag') || response.headers?.get?.('ETag') || null,
+            json
+        };
+    };
+
+    const fetchCatalogMetadataIfChanged = async (baseUrl, token, etag = '') => {
+        const headers = {};
+        if (etag) headers['If-None-Match'] = etag;
+        const { response, json } = await request(baseUrl, 'catalog/metadata', { token, headers });
+        return {
+            status: response.status,
+            etag: response.headers?.get?.('etag') || response.headers?.get?.('ETag') || null,
+            json
+        };
+    };
+
+    const fetchAgenciesChangesPage = async (baseUrl, token, cursor = '', perPage = 100) => {
+        const params = { per_page: perPage };
+        if (cursor) params.cursor = cursor;
+        const { response, json } = await request(baseUrl, 'agencies/changes', { token, params });
+        const data = Array.isArray(json?.upserted) || Array.isArray(json?.deleted)
+            ? json
+            : (Array.isArray(json?.data) ? json : { upserted: [], deleted: [] });
+        return {
+            status: response.status,
+            json: data
+        };
+    };
+
+    const fetchAllAgenciesChanges = async (baseUrl, token, { cursor = '', perPage = 100, maxPages = CODE_RED_MAX_PAGES, onProgress = null } = {}) => {
+        const pages = [];
+        let currentCursor = cursor || '';
+        for (let page = 1; page <= maxPages; page += 1) {
+            const result = await fetchAgenciesChangesPage(baseUrl, token, currentCursor, perPage);
+            const payload = result.json || {};
+            pages.push(payload);
+            const nextCursor = payload.next_cursor || payload.cursor || payload.meta?.next_cursor || null;
+            if (typeof onProgress === 'function') {
+                onProgress({
+                    page,
+                    cursor: currentCursor || null,
+                    nextCursor: nextCursor || null,
+                    upserted: Array.isArray(payload.upserted) ? payload.upserted.length : 0,
+                    deleted: Array.isArray(payload.deleted) ? payload.deleted.length : 0
+                });
+            }
+            if (!nextCursor) break;
+            currentCursor = nextCursor;
+        }
+        if (pages.length >= maxPages) {
+            const last = pages[pages.length - 1] || {};
+            const nextCursor = last.next_cursor || last.cursor || last.meta?.next_cursor || null;
+            if (nextCursor) {
+                throw createError('MAX_PAGES_EXCEEDED', 'Se superó el límite de páginas permitido');
+            }
+        }
+        return pages;
     };
 
     const fetchAgenciesPage = async (baseUrl, token, page = 1, perPage = CODE_RED_DEFAULT_PER_PAGE) => {
@@ -150,6 +208,9 @@ const CODE_RED_MAX_PAGES = 100;
         request,
         fetchCurrentTokenInfo,
         fetchCatalogMetadata,
+        fetchCatalogMetadataIfChanged,
+        fetchAgenciesChangesPage,
+        fetchAllAgenciesChanges,
         fetchAgenciesPage,
         fetchAllAgencies
     };

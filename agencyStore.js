@@ -1,7 +1,7 @@
 const DEFAULT_GIST_ID = "acfb5aaccf90743075a8143511b48ae7";
 const DEFAULT_AEREO_GIST_ID = "27710267e825c3b205be8d3c8f0acc46";
 const AGENCY_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
-const AGENCY_CACHE_SCHEMA_VERSION = 2;
+const AGENCY_CACHE_SCHEMA_VERSION = 3;
 const AGENCY_CACHE_V2_KEY = 'agencyCatalogCache';
 const AGENCY_CONFIG_KEY = 'agencyDataConfig';
 const DEFAULT_AGENCY_CONFIG = {
@@ -145,7 +145,6 @@ const AGENCY_CACHE_KEYS = {
     };
 
     const agencyHasChannel = (agency, channel) => Boolean(getChosenTextForChannel(agency, channel));
-
     const normalizeAgencyList = (agencies, context = {}) => (Array.isArray(agencies) ? agencies : []).map(agency => normalizeAgency(agency, context));
 
     const getConfiguredGistIds = async () => {
@@ -183,6 +182,11 @@ const AGENCY_CACHE_KEYS = {
         await saveAgencyConfig(DEFAULT_AGENCY_CONFIG);
     };
 
+    const readLegacyAgencies = (cacheV2) => ({
+        terrestre: Array.isArray(cacheV2?.agenciasTerrestre) ? cacheV2.agenciasTerrestre : [],
+        aereo: Array.isArray(cacheV2?.agenciasAereo) ? cacheV2.agenciasAereo : []
+    });
+
     const getCachedAgencyData = async () => {
         const items = await storageGet([
             AGENCY_CACHE_KEYS.terrestre,
@@ -195,14 +199,21 @@ const AGENCY_CACHE_KEYS = {
         const cacheV2 = isPlainObject(items[AGENCY_CACHE_KEYS.v2]) ? items[AGENCY_CACHE_KEYS.v2] : null;
         const hasTerrestre = Array.isArray(items[AGENCY_CACHE_KEYS.terrestre]);
         const hasAereo = Array.isArray(items[AGENCY_CACHE_KEYS.aereo]);
-        const v2Agencies = Array.isArray(cacheV2?.agencies) ? cacheV2.agencies : [];
+        const legacySplit = readLegacyAgencies(cacheV2);
+        const v3Agencies = Array.isArray(cacheV2?.agencies) ? cacheV2.agencies : [];
+        const agencies = Number(cacheV2?.schemaVersion || 0) >= 3
+            ? v3Agencies
+            : (v3Agencies.length ? v3Agencies : [...legacySplit.terrestre, ...legacySplit.aereo]);
 
         return {
-            schemaVersion: Number(cacheV2?.schemaVersion || (hasTerrestre || hasAereo ? AGENCY_CACHE_SCHEMA_VERSION : 0)),
+            schemaVersion: Number(cacheV2?.schemaVersion || (hasTerrestre || hasAereo ? 2 : 0)),
             source: cacheV2?.source || null,
             syncedAt: cacheV2?.syncedAt || null,
+            lastCheckedAt: cacheV2?.lastCheckedAt || null,
+            etag: cacheV2?.etag || null,
+            cursor: cacheV2?.cursor || null,
             cacheDurationMs: cacheV2?.cacheDurationMs || AGENCY_CACHE_TTL_MS,
-            agencies: v2Agencies,
+            agencies,
             terrestre: hasTerrestre ? items[AGENCY_CACHE_KEYS.terrestre] : [],
             aereo: hasAereo ? items[AGENCY_CACHE_KEYS.aereo] : [],
             lastUpdated: toTimestampOrNull(items[AGENCY_CACHE_KEYS.lastUpdated] || cacheV2?.syncedAt) || 0,
@@ -210,6 +221,13 @@ const AGENCY_CACHE_KEYS = {
             hasTerrestre,
             hasAereo
         };
+    };
+
+    const isExpired = (lastUpdated, ttl = AGENCY_CACHE_TTL_MS) => !lastUpdated || (Date.now() - lastUpdated) >= ttl;
+    const hasLocalCopy = (cache) => cache.hasTerrestre && cache.hasAereo;
+    const haveGistIdsChanged = (cacheIds, currentIds) => {
+        if (!cacheIds) return true;
+        return cacheIds.terrestre !== currentIds.terrestre || cacheIds.aereo !== currentIds.aereo;
     };
 
     const getAgencyCacheStatus = async () => {
@@ -224,19 +242,15 @@ const AGENCY_CACHE_KEYS = {
             cacheDurationMs: ttl,
             lastUpdated: cache.lastUpdated || null,
             syncedAt: cache.syncedAt || null,
+            lastCheckedAt: cache.lastCheckedAt || null,
+            etag: cache.etag || null,
+            cursor: cache.cursor || null,
             stale,
             hasData,
             offline: stale && hasData,
             updated: !stale && hasData,
             cacheSource: cache.source || null
         };
-    };
-
-    const hasLocalCopy = (cache) => cache.hasTerrestre && cache.hasAereo;
-    const isExpired = (lastUpdated, ttl = AGENCY_CACHE_TTL_MS) => !lastUpdated || (Date.now() - lastUpdated) >= ttl;
-    const haveGistIdsChanged = (cacheIds, currentIds) => {
-        if (!cacheIds) return true;
-        return cacheIds.terrestre !== currentIds.terrestre || cacheIds.aereo !== currentIds.aereo;
     };
 
     const readJsonFileFromGist = async (gistData, preferredNames) => {
@@ -275,7 +289,6 @@ const AGENCY_CACHE_KEYS = {
         if (!response.ok) {
             throw new Error(`GitHub respondio ${response.status}`);
         }
-
         return readJsonFileFromGist(await response.json(), preferredNames);
     };
 
@@ -302,6 +315,57 @@ const AGENCY_CACHE_KEYS = {
         }
 
         return agencies;
+    };
+
+    const normalizeAgencyKey = (agency) => {
+        const key = agency?.externalId ?? agency?.id ?? agency?.internalId ?? agency?.code;
+        return key === null || key === undefined || key === '' ? null : String(key);
+    };
+
+    const applyAgencyChanges = (agencies, { upserted = [], deleted = [], source = 'codered' } = {}) => {
+        const map = new Map();
+        normalizeAgencyList(agencies, { source }).forEach((agency) => {
+            const key = normalizeAgencyKey(agency);
+            if (key) map.set(key, agency);
+        });
+        (Array.isArray(upserted) ? upserted : []).forEach((agency) => {
+            const normalized = normalizeAgency(agency, { source });
+            const key = normalizeAgencyKey(normalized);
+            if (key) map.set(key, normalized);
+        });
+        (Array.isArray(deleted) ? deleted : []).forEach((item) => {
+            const key = item && typeof item === 'object'
+                ? normalizeAgencyKey(normalizeAgency(item, { source }))
+                : (item === null || item === undefined || item === '' ? null : String(item));
+            if (key) map.delete(key);
+        });
+        return Array.from(map.values());
+    };
+
+    const buildV3Cache = (cache, patch = {}) => ({
+        schemaVersion: AGENCY_CACHE_SCHEMA_VERSION,
+        source: patch.source || cache.source || 'gist',
+        apiSchemaVersion: 1,
+        etag: patch.etag ?? cache.etag ?? null,
+        cursor: patch.cursor ?? cache.cursor ?? null,
+        syncedAt: patch.syncedAt ?? cache.syncedAt ?? null,
+        lastCheckedAt: patch.lastCheckedAt ?? cache.lastCheckedAt ?? null,
+        lastAgencyUpdate: patch.lastAgencyUpdate ?? cache.lastAgencyUpdate ?? null,
+        cacheDurationMs: patch.cacheDurationMs ?? cache.cacheDurationMs ?? AGENCY_CACHE_TTL_MS,
+        agencies: Array.isArray(patch.agencies) ? patch.agencies : (Array.isArray(cache.agencies) ? cache.agencies : []),
+        agenciasTerrestre: Array.isArray(patch.terrestre) ? patch.terrestre : (Array.isArray(cache.terrestre) ? cache.terrestre : []),
+        agenciasAereo: Array.isArray(patch.aereo) ? patch.aereo : (Array.isArray(cache.aereo) ? cache.aereo : []),
+        gistIds: patch.gistIds ?? cache.gistIds ?? null
+    });
+
+    const saveV3CacheAtomically = async (cachePatch) => {
+        const current = await getCachedAgencyData();
+        const next = buildV3Cache(current, cachePatch);
+        await storageSet({
+            [AGENCY_CACHE_KEYS.v2]: next,
+            [AGENCY_CACHE_KEYS.lastUpdated]: next.syncedAt || next.lastCheckedAt || 0
+        });
+        return getCachedAgencyData();
     };
 
     const refreshGistAgencyCache = async ({ force = false } = {}) => {
@@ -339,8 +403,12 @@ const AGENCY_CACHE_KEYS = {
                 [AGENCY_CACHE_KEYS.v2]: {
                     schemaVersion: AGENCY_CACHE_SCHEMA_VERSION,
                     source: 'gist',
+                    apiSchemaVersion: 1,
                     syncedAt: nextCache.lastUpdated || null,
-                    agencies: [...nextCache.terrestre, ...nextCache.aereo]
+                    lastCheckedAt: nextCache.lastUpdated || null,
+                    agencies: [...nextCache.terrestre, ...nextCache.aereo],
+                    agenciasTerrestre: nextCache.terrestre,
+                    agenciasAereo: nextCache.aereo
                 }
             };
 
@@ -354,7 +422,94 @@ const AGENCY_CACHE_KEYS = {
             await storageSet(storageUpdate);
         }
 
-        return { ...nextCache, updated: fullyUpdated, errors, schemaVersion: AGENCY_CACHE_SCHEMA_VERSION, source: 'gist', syncedAt: nextCache.lastUpdated || null, agencies: [...nextCache.terrestre, ...nextCache.aereo] };
+        return { ...nextCache, updated: fullyUpdated, errors, schemaVersion: AGENCY_CACHE_SCHEMA_VERSION, source: 'gist', syncedAt: nextCache.lastUpdated || null, lastCheckedAt: nextCache.lastUpdated || null, agencies: [...nextCache.terrestre, ...nextCache.aereo] };
+    };
+
+    const refreshCodeRedAgencyCache = async ({ force = false } = {}) => {
+        const [cache, agencyConfig] = await Promise.all([getCachedAgencyData(), getAgencyConfig()]);
+        if (!agencyConfig.apiBaseUrl) {
+            throw new Error('apiBaseUrl no configurada para CodeRED Platform');
+        }
+
+        if (!cache.agencies || !cache.agencies.length || force || !cache.etag) {
+            const metadata = await CodeRedApi.fetchCatalogMetadata(agencyConfig.apiBaseUrl, agencyConfig.apiToken);
+            const fullSync = await CodeRedApi.fetchAllAgencies(agencyConfig.apiBaseUrl, agencyConfig.apiToken, { onProgress: () => {} });
+            const agencies = normalizeAgencyList(fullSync, { source: 'codered' });
+            const syncedAt = Date.now();
+            return saveV3CacheAtomically({
+                source: 'codered',
+                cacheDurationMs: agencyConfig.cacheDurationMs,
+                etag: metadata.etag,
+                cursor: metadata.json?.cursor || metadata.json?.next_cursor || null,
+                syncedAt,
+                lastCheckedAt: syncedAt,
+                lastAgencyUpdate: syncedAt,
+                agencies,
+                terrestre: [],
+                aereo: []
+            });
+        }
+
+        const metadata = await CodeRedApi.fetchCatalogMetadataIfChanged(agencyConfig.apiBaseUrl, agencyConfig.apiToken, cache.etag);
+        const checkedAt = Date.now();
+        if (metadata.status === 304) {
+            return saveV3CacheAtomically({
+                source: 'codered',
+                cacheDurationMs: agencyConfig.cacheDurationMs,
+                lastCheckedAt: checkedAt
+            });
+        }
+
+        const metadataCursor = metadata.json?.cursor || metadata.json?.next_cursor || cache.cursor || null;
+        if (metadata.json?.full_sync_required) {
+            const fullSync = await CodeRedApi.fetchAllAgencies(agencyConfig.apiBaseUrl, agencyConfig.apiToken, { onProgress: () => {} });
+            const agencies = normalizeAgencyList(fullSync, { source: 'codered' });
+            return saveV3CacheAtomically({
+                source: 'codered',
+                cacheDurationMs: agencyConfig.cacheDurationMs,
+                etag: metadata.etag,
+                cursor: metadataCursor,
+                syncedAt: checkedAt,
+                lastCheckedAt: checkedAt,
+                lastAgencyUpdate: checkedAt,
+                agencies,
+                terrestre: [],
+                aereo: []
+            });
+        }
+
+        const pages = await CodeRedApi.fetchAllAgenciesChanges(agencyConfig.apiBaseUrl, agencyConfig.apiToken, {
+            cursor: cache.cursor || metadataCursor || '',
+            onProgress: () => {}
+        });
+        let agencies = Array.isArray(cache.agencies) ? [...cache.agencies] : [];
+        let nextCursor = cache.cursor || metadataCursor || null;
+        for (const page of pages) {
+            agencies = applyAgencyChanges(agencies, {
+                upserted: page.upserted || page.data?.upserted || [],
+                deleted: page.deleted || page.data?.deleted || [],
+                source: 'codered'
+            });
+            nextCursor = page.next_cursor || page.cursor || page.meta?.next_cursor || nextCursor;
+            if (page.full_sync_required) {
+                const fullSync = await CodeRedApi.fetchAllAgencies(agencyConfig.apiBaseUrl, agencyConfig.apiToken, { onProgress: () => {} });
+                agencies = normalizeAgencyList(fullSync, { source: 'codered' });
+                break;
+            }
+        }
+
+        return saveV3CacheAtomically({
+            source: 'codered',
+            cacheDurationMs: agencyConfig.cacheDurationMs,
+            etag: metadata.etag,
+            cursor: nextCursor,
+            syncedAt: checkedAt,
+            lastCheckedAt: checkedAt,
+            lastAgencyUpdate: checkedAt,
+            agencies,
+            terrestre: [],
+            aereo: []
+        });
     };
 
     const refreshAgencyCache = async ({ force = false } = {}) => {
@@ -362,36 +517,14 @@ const AGENCY_CACHE_KEYS = {
 
         if (agencyConfig.source === 'codered' || agencyConfig.source === 'codered-with-gist-fallback') {
             try {
-                const rawAgencies = await fetchCodeRedAgencies(agencyConfig);
-                const normalizedAgencies = normalizeAgencyList(rawAgencies, { segmento: null, source: 'codered' });
-                const syncedAt = Date.now();
-
-                await storageSet({
-                    [AGENCY_CACHE_KEYS.v2]: {
-                        schemaVersion: AGENCY_CACHE_SCHEMA_VERSION,
-                        source: 'codered',
-                        syncedAt,
-                        cacheDurationMs: agencyConfig.cacheDurationMs,
-                        agencies: normalizedAgencies
-                    },
-                    [AGENCY_CACHE_KEYS.lastUpdated]: syncedAt
-                });
-
+                const refreshed = await refreshCodeRedAgencyCache({ force });
                 await saveAgencyConfig({
                     ...agencyConfig,
-                    lastSyncAt: new Date(syncedAt).toISOString()
+                    lastSyncAt: new Date(refreshed.syncedAt || Date.now()).toISOString()
                 });
-
                 return {
-                    schemaVersion: AGENCY_CACHE_SCHEMA_VERSION,
+                    ...refreshed,
                     source: agencyConfig.source,
-                    syncedAt,
-                    cacheDurationMs: agencyConfig.cacheDurationMs,
-                    agencies: normalizedAgencies,
-                    terrestre: [],
-                    aereo: [],
-                    lastUpdated: syncedAt,
-                    gistIds: null,
                     updated: true,
                     errors: []
                 };
@@ -443,9 +576,13 @@ const AGENCY_CACHE_KEYS = {
             [AGENCY_CACHE_KEYS.v2]: {
                 schemaVersion: AGENCY_CACHE_SCHEMA_VERSION,
                 source: 'gist',
+                apiSchemaVersion: 1,
                 syncedAt: lastUpdated,
+                lastCheckedAt: lastUpdated,
                 cacheDurationMs,
-                agencies: [...normalizedTerrestre, ...normalizedAereo]
+                agencies: [...normalizedTerrestre, ...normalizedAereo],
+                agenciasTerrestre: normalizedTerrestre,
+                agenciasAereo: normalizedAereo
             }
         });
 
@@ -461,9 +598,13 @@ const AGENCY_CACHE_KEYS = {
             [AGENCY_CACHE_KEYS.v2]: {
                 schemaVersion: AGENCY_CACHE_SCHEMA_VERSION,
                 source: 'gist',
+                apiSchemaVersion: 1,
                 syncedAt: null,
+                lastCheckedAt: null,
                 cacheDurationMs: AGENCY_CACHE_TTL_MS,
-                agencies: []
+                agencies: [],
+                agenciasTerrestre: [],
+                agenciasAereo: []
             }
         });
     };
@@ -474,6 +615,9 @@ const AGENCY_CACHE_KEYS = {
             schemaVersion: AGENCY_CACHE_SCHEMA_VERSION,
             source: cache.source || 'gist',
             syncedAt: cache.syncedAt || null,
+            lastCheckedAt: cache.lastCheckedAt || null,
+            etag: cache.etag || null,
+            cursor: cache.cursor || null,
             cacheDurationMs: cache.cacheDurationMs || AGENCY_CACHE_TTL_MS,
             agencies: Array.isArray(cache.agencies) && cache.agencies.length ? cache.agencies : [...normalizeAgencyList(cache.terrestre, { segmento: 'TERRESTRE', source: cache.source || 'gist' }), ...normalizeAgencyList(cache.aereo, { segmento: 'AEREO', source: cache.source || 'gist' })]
         };
@@ -528,6 +672,8 @@ const AGENCY_CACHE_KEYS = {
         refreshAgencyCache,
         refreshAgencies,
         refreshAgenciesFromConfiguredSource,
+        refreshCodeRedAgencyCache,
+        applyAgencyChanges,
         saveAgencyCache,
         normalizeAgency,
         getChosenTextForChannel,

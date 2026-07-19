@@ -37,35 +37,13 @@ const getCatalogPayload = async () => {
 const syncCatalog = async () => {
     if (activeSyncPromise) return activeSyncPromise;
     activeSyncPromise = (async () => {
-        const config = await ShalomAgencyStore.getAgencyConfig();
-        if (!config || !config.source) {
-            throw new Error('Configuración de fuente incompleta');
-        }
-        if (config.source === 'codered') {
-            const agencies = await CodeRedApi.fetchAllAgencies(config.apiBaseUrl, config.apiToken, { onProgress: () => {} });
-            const normalized = ShalomAgencyStore.normalizeAgencyList(agencies, { source: 'codered' });
-            const syncedAt = Date.now();
-            await chrome.storage.local.set({
-                agencyCatalogCache: {
-                    schemaVersion: ShalomAgencyStore.AGENCY_CACHE_SCHEMA_VERSION,
-                    source: 'codered',
-                    apiSchemaVersion: 1,
-                    syncedAt: new Date(syncedAt).toISOString(),
-                    lastCheckedAt: new Date(syncedAt).toISOString(),
-                    lastAgencyUpdate: new Date(syncedAt).toISOString(),
-                    total: normalized.length,
-                    cacheDurationMs: config.cacheDurationMs,
-                    agencies: normalized
-                },
-                agencyDataConfig: {
-                    ...config,
-                    lastSyncAt: new Date(syncedAt).toISOString()
-                }
-            });
-            return { source: 'codered', total: normalized.length, syncedAt, errors: [] };
-        }
         const result = await ShalomAgencyStore.refreshAgencyCache({ force: true });
-        return { source: result.source || 'gist', total: Array.isArray(result.agencies) ? result.agencies.length : 0, syncedAt: result.syncedAt || Date.now(), errors: result.errors || [] };
+        return {
+            source: result.source || 'gist',
+            total: Array.isArray(result.agencies) ? result.agencies.length : 0,
+            syncedAt: result.syncedAt || Date.now(),
+            errors: result.errors || []
+        };
     })().finally(() => {
         activeSyncPromise = null;
     });

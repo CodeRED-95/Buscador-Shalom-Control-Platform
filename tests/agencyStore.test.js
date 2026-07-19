@@ -4,6 +4,7 @@ const { runInNewContext } = require('node:vm');
 const test = require('node:test');
 
 const source = readFileSync('agencyStore.js', 'utf8');
+const apiSource = readFileSync('coderedApi.js', 'utf8');
 
 function loadStore({ initialStorage = {}, fetch } = {}) {
     const storage = { ...initialStorage };
@@ -24,11 +25,21 @@ function loadStore({ initialStorage = {}, fetch } = {}) {
         }
     };
 
+    runInNewContext(apiSource, {
+        self: globalScope,
+        fetch: fetch || (() => Promise.reject(new Error('Unexpected fetch'))),
+        URL,
+        AbortController,
+        setTimeout,
+        clearTimeout
+    });
+
     runInNewContext(source, {
         chrome,
         fetch: fetch || (() => Promise.reject(new Error('Unexpected fetch'))),
         self: globalScope,
-        URL
+        URL,
+        CodeRedApi: globalScope.CodeRedApi
     });
 
     return { store: globalScope.ShalomAgencyStore, storage };
@@ -95,7 +106,7 @@ test('normalizes the new CodeRED agency contract without mutating the input', ()
     assert.equal(agency.texto_chosen_terrestre, agency.chosenTextTerrestrial);
     assert.equal(agency.texto_chosen_aereo, null);
     assert.equal(agency.texto_chosen, null);
-    assert.equal(agency.schemaVersion, 2);
+    assert.equal(agency.schemaVersion, 3);
     assert.equal(agency.source, 'codered');
 });
 
@@ -184,10 +195,10 @@ test('selects the correct chosen text per channel', () => {
 
 test('exposes cache schema version and default source helpers', async () => {
     const { store, storage } = loadStore();
-    assert.equal(store.AGENCY_CACHE_SCHEMA_VERSION, 2);
+    assert.equal(store.AGENCY_CACHE_SCHEMA_VERSION, 3);
     assert.equal(store.AGENCY_CACHE_V2_KEY, 'agencyCatalogCache');
     assert.equal((await store.getAgencyConfig()).source, 'gist');
-    assert.equal((await store.getCachedAgencies()).schemaVersion, 2);
+    assert.equal((await store.getCachedAgencies()).schemaVersion, 3);
     assert.equal((await store.getCachedAgencies()).source, 'gist');
     assert.equal(storage.agencyCatalogCache, undefined);
 });
@@ -234,9 +245,10 @@ test('reports cache status and respects configured cache duration', async () => 
                 lastSyncAt: null
             },
             agencyCatalogCache: {
-                schemaVersion: 2,
+                schemaVersion: 3,
                 source: 'gist',
                 syncedAt: new Date(now - 500).toISOString(),
+                lastCheckedAt: new Date(now - 500).toISOString(),
                 cacheDurationMs: 1000,
                 agencies: [{ id: 1 }]
             }
@@ -264,9 +276,10 @@ test('marks cache offline when it is stale but still has data', async () => {
                 lastSyncAt: null
             },
             agencyCatalogCache: {
-                schemaVersion: 2,
+                schemaVersion: 3,
                 source: 'gist',
                 syncedAt: new Date(now - 5000).toISOString(),
+                lastCheckedAt: new Date(now - 5000).toISOString(),
                 cacheDurationMs: 1000,
                 agencies: [{ id: 1 }]
             }
@@ -321,7 +334,7 @@ test('returns normalized agencies from fetchAgencies and refreshAgencies', async
 
     assert.equal(Array.isArray(agencies), true);
     assert.equal(agencies.length >= 2, true);
-    assert.equal(refreshed.schemaVersion, 2);
+    assert.equal(refreshed.schemaVersion, 3);
     assert.equal(refreshed.source, 'gist');
     assert.equal(refreshed.agencies.length >= 2, true);
 });
@@ -330,23 +343,35 @@ test('refreshes from CodeRED Platform when configured and falls back to Gist on 
     const calls = [];
     const fetch = async (url, options = {}) => {
         calls.push({ url, options });
-        if (url === 'https://codered.example/api/agencies') {
+        if (url === 'https://codered.example/api/v1/catalog/metadata') {
             return {
                 ok: true,
-                async json() {
-                    return [{
-                        internal_id: 25,
-                        id: 610,
-                        code: 'SHA-000610',
-                        agencia: ' Yarinacocha Av Universitaria ',
-                        departamento: ' Ucayali ',
-                        provincia: ' Coronel Portillo ',
-                        distrito: ' Pucallpa Yarinacocha ',
-                        direccion: ' av. universitaria ',
-                        link_mapa: 'https://www.google.com/maps/dir/?api=1&destination=-8.38,-74.56',
-                        tamano: ' Pequeña ',
-                        texto_chosen_terrestre: '610 - UCAYALI - CORONEL PORTILLO - PUCALLPA YARINACOCHA - YARINACOCHA AV UNIVERSITARIA - TERRESTRE'
-                    }];
+                status: 200,
+                headers: { get(name) { return name.toLowerCase() === 'etag' ? 'etag-1' : null; } },
+                async text() { return JSON.stringify({ cursor: 'cursor-1' }); }
+            };
+        }
+        if (url === 'https://codered.example/api/v1/agencies?page=1&per_page=100') {
+            return {
+                ok: true,
+                async text() {
+                    return JSON.stringify({
+                        data: [{
+                            internal_id: 25,
+                            id: 610,
+                            code: 'SHA-000610',
+                            agencia: ' Yarinacocha Av Universitaria ',
+                            departamento: ' Ucayali ',
+                            provincia: ' Coronel Portillo ',
+                            distrito: ' Pucallpa Yarinacocha ',
+                            direccion: ' av. universitaria ',
+                            link_mapa: 'https://www.google.com/maps/dir/?api=1&destination=-8.38,-74.56',
+                            tamano: ' Pequeña ',
+                            texto_chosen_terrestre: '610 - UCAYALI - CORONEL PORTILLO - PUCALLPA YARINACOCHA - YARINACOCHA AV UNIVERSITARIA - TERRESTRE'
+                        }],
+                        meta: { last_page: 1, total: 1 },
+                        links: {}
+                    });
                 }
             };
         }
@@ -388,7 +413,7 @@ test('refreshes from CodeRED Platform when configured and falls back to Gist on 
         initialStorage: {
             agencyDataConfig: {
                 source: 'codered',
-                apiBaseUrl: 'https://codered.example/api/agencies',
+                apiBaseUrl: 'https://codered.example',
                 apiToken: 'secret',
                 cacheDurationMs: 60000,
                 lastSyncAt: null
@@ -401,7 +426,7 @@ test('refreshes from CodeRED Platform when configured and falls back to Gist on 
     assert.equal(result.source, 'codered');
     assert.equal(result.agencies[0].externalId, 610);
     assert.equal(result.agencies[0].chosenTextTerrestrial, '610 - UCAYALI - CORONEL PORTILLO - PUCALLPA YARINACOCHA - YARINACOCHA AV UNIVERSITARIA - TERRESTRE');
-    assert.equal(calls[0].url, 'https://codered.example/api/agencies');
+    assert.equal(calls[0].url, 'https://codered.example/api/v1/catalog/metadata');
     assert.equal(calls[0].options.headers.Authorization, 'Bearer secret');
 });
 
@@ -461,6 +486,122 @@ test('falls back to Gist when CodeRED refresh fails', async () => {
     assert.equal(result.source, 'gist');
     assert.ok(result.errors.some((entry) => entry.tipo === 'CODERED'));
     assert.equal(result.agencies.length >= 1, true);
+});
+
+test('handles 304 metadata responses by updating lastCheckedAt only', async () => {
+    const now = Date.now();
+    const fetch = async (url, options = {}) => {
+        if (url === 'https://codered.example/api/v1/catalog/metadata') {
+            return {
+                ok: true,
+                status: 304,
+                headers: { get(name) { return name.toLowerCase() === 'etag' ? 'etag-1' : null; } },
+                async json() { return {}; },
+                async text() { return ''; }
+            };
+        }
+        throw new Error(`Unexpected URL: ${url}`);
+    };
+
+    const { store } = loadStore({
+        fetch,
+        initialStorage: {
+            agencyDataConfig: {
+                source: 'codered',
+                apiBaseUrl: 'https://codered.example',
+                apiToken: 'secret',
+                cacheDurationMs: 60000,
+                lastSyncAt: null
+            },
+            agencyCatalogCache: {
+                schemaVersion: 3,
+                source: 'codered',
+                apiSchemaVersion: 1,
+                etag: 'etag-1',
+                cursor: 'cursor-1',
+                syncedAt: new Date(now - 1000).toISOString(),
+                lastCheckedAt: new Date(now - 1000).toISOString(),
+                agencies: [{ id: 1, agency: 'Old' }]
+            }
+        }
+    });
+
+    const result = await store.refreshCodeRedAgencyCache();
+
+    assert.equal(result.etag, 'etag-1');
+    assert.equal(result.agencies.length, 1);
+    assert.equal(result.lastCheckedAt !== null, true);
+});
+
+test('applies incremental upserts and deletes across change pages', async () => {
+    const fetch = async (url) => {
+        if (url === 'https://codered.example/api/v1/catalog/metadata') {
+            return {
+                ok: true,
+                status: 200,
+                headers: { get(name) { return name.toLowerCase() === 'etag' ? 'etag-2' : null; } },
+                async text() { return JSON.stringify({ cursor: 'cursor-2' }); }
+            };
+        }
+        if (url === 'https://codered.example/api/v1/agencies/changes?per_page=100&cursor=cursor-1') {
+            return {
+                ok: true,
+                status: 200,
+                headers: { get() { return null; } },
+                async text() {
+                    return JSON.stringify({
+                        upserted: [{ id: 2, agencia: 'New A' }],
+                        deleted: [1],
+                        next_cursor: 'cursor-2'
+                    });
+                },
+            };
+        }
+        if (url === 'https://codered.example/api/v1/agencies/changes?per_page=100&cursor=cursor-2') {
+            return {
+                ok: true,
+                status: 200,
+                headers: { get() { return null; } },
+                async text() {
+                    return JSON.stringify({
+                        upserted: [],
+                        deleted: [],
+                        next_cursor: null
+                    });
+                },
+            };
+        }
+        throw new Error(`Unexpected URL: ${url}`);
+    };
+
+    const { store } = loadStore({
+        fetch,
+        initialStorage: {
+            agencyDataConfig: {
+                source: 'codered',
+                apiBaseUrl: 'https://codered.example',
+                apiToken: 'secret',
+                cacheDurationMs: 60000,
+                lastSyncAt: null
+            },
+            agencyCatalogCache: {
+                schemaVersion: 3,
+                source: 'codered',
+                apiSchemaVersion: 1,
+                etag: 'etag-1',
+                cursor: 'cursor-1',
+                syncedAt: new Date().toISOString(),
+                lastCheckedAt: new Date().toISOString(),
+                agencies: [{ id: 1, agencia: 'Old' }]
+            }
+        }
+    });
+
+    const result = await store.refreshCodeRedAgencyCache();
+
+    assert.equal(result.cursor, 'cursor-2');
+    assert.equal(result.agencies.length, 1);
+    assert.equal(result.agencies[0].externalId, 2);
 });
 
 test('downloads raw Gist content when the API omits embedded content', async () => {

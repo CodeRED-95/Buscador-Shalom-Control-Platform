@@ -66,6 +66,60 @@ test('fetches and paginates agencies safely', async () => {
     assert.equal(calls[0].options.headers.Authorization, 'Bearer token');
 });
 
+test('fetches metadata etag and incremental changes pages', async () => {
+    const calls = [];
+    const fetch = async (url, options = {}) => {
+        calls.push({ url, options });
+        if (url.includes('/api/v1/catalog/metadata')) {
+            return {
+                ok: true,
+                status: 200,
+                headers: { get(name) { return name.toLowerCase() === 'etag' ? 'etag-9' : null; } },
+                async text() { return JSON.stringify({ cursor: 'cursor-9' }); }
+            };
+        }
+        if (url.includes('/api/v1/agencies/changes?per_page=2&cursor=cursor-9')) {
+            return {
+                ok: true,
+                status: 200,
+                headers: { get() { return null; } },
+                async text() {
+                    return JSON.stringify({
+                        upserted: [{ id: 10 }],
+                        deleted: [3],
+                        next_cursor: 'cursor-10'
+                    });
+                }
+            };
+        }
+        if (url.includes('/api/v1/agencies/changes?per_page=2&cursor=cursor-10')) {
+            return {
+                ok: true,
+                status: 200,
+                headers: { get() { return null; } },
+                async text() {
+                    return JSON.stringify({
+                        upserted: [],
+                        deleted: [],
+                        next_cursor: null
+                    });
+                }
+            };
+        }
+        throw new Error(`Unexpected URL: ${url}`);
+    };
+    const api = loadApi(fetch);
+    const metadata = await api.fetchCatalogMetadataIfChanged('https://platform.example.com', 'token', 'etag-1');
+    const changes = await api.fetchAllAgenciesChanges('https://platform.example.com', 'token', { cursor: 'cursor-9', perPage: 2 });
+
+    assert.equal(metadata.etag, 'etag-9');
+    assert.equal(metadata.status, 200);
+    assert.equal(changes.length, 2);
+    assert.equal(changes[0].next_cursor, 'cursor-10');
+    assert.equal(calls[0].options.headers.Authorization, 'Bearer token');
+    assert.equal(calls[0].options.headers['If-None-Match'], 'etag-1');
+});
+
 test('returns useful errors for invalid JSON', async () => {
     const api = loadApi(async () => ({
         ok: true,
