@@ -39,7 +39,7 @@ const syncCatalog = async () => {
     activeSyncPromise = (async () => {
         const result = await ShalomAgencyStore.refreshAgencyCache({ force: true });
         return {
-            source: result.source || 'gist',
+            source: result.source || 'codered',
             total: Array.isArray(result.agencies) ? result.agencies.length : 0,
             syncedAt: result.syncedAt || Date.now(),
             errors: result.errors || []

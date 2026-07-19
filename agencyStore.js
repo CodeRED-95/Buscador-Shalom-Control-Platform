@@ -228,31 +228,6 @@ const AGENCY_CACHE_KEYS = {
         };
     };
 
-    const fetchCodeRedAgencies = async (config) => {
-        const agencyConfig = sanitizeAgencyConfig(config);
-        if (!agencyConfig.apiBaseUrl) {
-            throw new Error('apiBaseUrl no configurada para CodeRED Platform');
-        }
-
-        const headers = { Accept: 'application/json' };
-        if (agencyConfig.apiToken) {
-            headers.Authorization = `Bearer ${agencyConfig.apiToken}`;
-        }
-
-        const response = await fetch(agencyConfig.apiBaseUrl, { headers });
-        if (!response.ok) {
-            throw new Error(`CodeRED respondio ${response.status}`);
-        }
-
-        const payload = await response.json();
-        const agencies = Array.isArray(payload) ? payload : (Array.isArray(payload?.agencies) ? payload.agencies : null);
-        if (!Array.isArray(agencies)) {
-            throw new Error('La respuesta de CodeRED debe ser una lista o contener agencies[]');
-        }
-
-        return agencies;
-    };
-
     const normalizeAgencyKey = (agency) => {
         const key = agency?.externalId ?? agency?.id ?? agency?.internalId ?? agency?.code;
         return key === null || key === undefined || key === '' ? null : String(key);
@@ -442,7 +417,7 @@ const AGENCY_CACHE_KEYS = {
         }
     };
 
-    const saveAgencyCache = async ({ terrestre, aereo, gistIds, lastUpdated = Date.now(), cacheDurationMs = AGENCY_CACHE_TTL_MS }) => {
+    const saveAgencyCache = async ({ terrestre, aereo, lastUpdated = Date.now(), cacheDurationMs = AGENCY_CACHE_TTL_MS }) => {
         const normalizedTerrestre = normalizeAgencyList(terrestre, { segmento: 'TERRESTRE', source: 'local' });
         const normalizedAereo = normalizeAgencyList(aereo, { segmento: 'AEREO', source: 'local' });
         await storageSet({
@@ -504,7 +479,6 @@ const AGENCY_CACHE_KEYS = {
     };
 
     const refreshAgencies = async (options = {}) => refreshAgencyCache(options);
-    const refreshAgenciesFromConfiguredSource = async () => refreshAgencyCache({ force: true });
 
     const prepareAgencies = (agencies, segmento) => normalizeAgencyList(agencies, { segmento, source: 'cache' }).map(agency => ({
         ...agency,
@@ -539,11 +513,9 @@ const AGENCY_CACHE_KEYS = {
         getCachedAgencies,
         clearAgencyCache,
         fetchAgencies,
-        fetchCodeRedAgencies,
         ensureAgencyCache,
         refreshAgencyCache,
         refreshAgencies,
-        refreshAgenciesFromConfiguredSource,
         refreshCodeRedAgencyCache,
         applyAgencyChanges,
         saveAgencyCache,

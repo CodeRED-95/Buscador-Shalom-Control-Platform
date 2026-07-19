@@ -2,6 +2,8 @@
 
 Extensión de Chrome para buscar, consultar y administrar agencias de **Shalom Control** desde una interfaz rápida, simple y centralizada.
 
+Versión estable: `2.0.0`
+
 ## Características
 
 - Búsqueda de agencias terrestres y aéreas.
@@ -9,7 +11,7 @@ Extensión de Chrome para buscar, consultar y administrar agencias de **Shalom C
 - Selección rápida de agencias dentro del sistema.
 - Enlaces seguros a Google Maps.
 - Panel de administración para agregar, editar y eliminar registros.
-- Actualización automática del catálogo.
+- Actualización automática del catálogo desde CodeRED Platform.
 - Tema claro y oscuro.
 - Caché local para mejorar la experiencia de consulta.
 
@@ -77,14 +79,12 @@ La extensión solicita estos permisos y accesos:
 
 - `storage`: guardar configuración local, caché y preferencias.
 - `alarms`: actualizar automáticamente el catálogo.
-- `https://api.github.com/gists/*`: leer y actualizar el catálogo alojado en Gist.
-- `https://gist.githubusercontent.com/*`: compatibilidad con contenido crudo de Gist.
 - `https://*.shalom.pe/*` y `https://*.shalomcontrol.com/*`: integrar la búsqueda dentro de los sitios donde opera la extensión.
 
 ## Notas
 
 - La extensión no depende de código remoto ejecutable; el catálogo remoto se usa como datos.
-- Las pruebas incluidas validan el manifiesto y la lógica principal de normalización.
+- Las pruebas incluidas validan el manifiesto, la normalización, la sincronización incremental y la migración de almacenamiento.
 
 ## Licencia
 
