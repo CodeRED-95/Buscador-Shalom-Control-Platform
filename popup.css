@@ -1,0 +1,141 @@
+:root {
+    --bg-popup: #ffffff;
+    --text-main: #222;
+    --text-muted: #666;
+    --bg-status: #f4f7f6;
+    --border-color: #eeeeee;
+    --primary-red: #d32f2f;
+    --primary-hover: #b71c1c;
+}
+
+body.dark-theme {
+    --bg-popup: #1e1e1e;
+    --text-main: #e0e0e0;
+    --text-muted: #aaaaaa;
+    --bg-status: #2d2d2d;
+    --border-color: #333333;
+}
+
+body {
+    width: 280px;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-popup);
+    color: var(--text-main);
+    transition: background 0.3s, color 0.3s;
+}
+
+.popup-container {
+    position: relative;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.popup-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('code_red_desing.png');
+    background-size: 200px; /* Ajuste del tamaño del logo de fondo */
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.12; /* Opacidad sutil para marca de agua */
+    z-index: -1;
+    pointer-events: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 4px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 14px;
+    color: var(--primary-red);
+    font-weight: 700;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--text-main);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.icon-btn:hover {
+    background-color: var(--bg-status);
+    transform: scale(1.1);
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 8px 0;
+}
+
+.status-text {
+    margin: 0;
+    font-weight: bold;
+    font-size: 13px;
+    color: #2e7d32; /* Verde éxito */
+}
+
+small {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.btn-main {
+    background-color: var(--primary-red);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.2s;
+    width: 100%;
+}
+
+.btn-main:hover {
+    background-color: var(--primary-hover);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 8px;
+}
+
+.footer-details {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.4;
+    font-weight: 500;
+}

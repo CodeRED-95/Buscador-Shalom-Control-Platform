@@ -1,0 +1,112 @@
+#mi-buscador-contenedor {
+    /* Variables para Tema Claro (Default) */
+    --bg-buscador: #ffffff;
+    --text-agencia: #d32f2f;
+    --text-ubicacion: #222;
+    --text-direccion: #444;
+    --text-input: #000;
+    --border-buscador: #e0e0e0;
+    --shadow-grid: rgba(0,0,0,0.2);
+    --hover-tarjeta: #fff9f9;
+
+    position: relative;
+    margin: 0 auto;
+    flex-grow: 1;
+    max-width: 450px;
+}
+
+#mi-buscador-contenedor.dark-theme {
+    /* Variables para Tema Oscuro */
+    --bg-buscador: #252525;
+    --text-agencia: #ff5252;
+    --text-ubicacion: #ccc;
+    --text-direccion: #888;
+    --text-input: #eeeeee;
+    --border-buscador: #444444;
+    --shadow-grid: rgba(0,0,0,0.5);
+    --hover-tarjeta: #332b2b;
+}
+
+.buscador-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#buscador {
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 25px;
+    border: 2px solid var(--border-buscador);
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: var(--bg-buscador);
+    color: var(--text-input);
+}
+
+#buscador:focus {
+    border-color: #f44336; /* Color representativo de Shalom */
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+#theme-toggle {
+    background: var(--bg-buscador);
+    border: 1px solid var(--border-buscador);
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    transition: all 0.3s;
+}
+
+#resultado-grid {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    max-width: 95vw;
+    background: var(--bg-buscador);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px var(--shadow-grid);
+    z-index: 9999;
+    max-height: 550px;
+    overflow-y: auto;
+    margin-top: 10px;
+    border: 1px solid var(--border-buscador);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+
+.tarjeta {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-buscador);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta:hover {
+    background-color: var(--hover-tarjeta);
+    border-color: var(--text-agencia);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-grid);
+}
+
+.tarjeta b { color: var(--text-agencia); font-size: 1.25em; }
+.tarjeta span.ubicacion { color: var(--text-ubicacion); font-size: 1.1em; margin: 6px 0; font-weight: 500; }
+.tarjeta small.direccion { color: var(--text-direccion); font-size: 1em; font-style: italic; }
+
+/* Scrollbar personalizado para el grid */
+#resultado-grid::-webkit-scrollbar { width: 8px; }
+#resultado-grid::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }

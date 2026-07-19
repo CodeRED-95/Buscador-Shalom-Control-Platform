@@ -1,0 +1,16 @@
+ESTRUCTURA DE ARCHIVOS PARA EL .ZIP DE CHROME STORE:
+
+/
+├── manifest.json
+├── content.js
+├── popup.html
+├── popup.js
+├── popup.css
+├── options.html
+├── options.js
+├── grid.html
+├── grid.js
+└── icons/
+    ├── icon16.png
+    ├── icon48.png
+    └── icon128.png

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Configuración Shalom Pro</title>
+    <style>
+        :root {
+            --bg-body: #f4f7f6;
+            --bg-container: #ffffff;
+            --text-main: #222;
+            --text-secondary: #555;
+            --border-color: #ddd;
+            --bg-th: #f8f9fa;
+            --bg-modal: #ffffff;
+            --input-bg: #ffffff;
+            --tr-hover: #fcfcfc;
+        }
+
+        body.dark-theme {
+            --bg-body: #121212;
+            --bg-container: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --border-color: #333;
+            --bg-th: #252525;
+            --bg-modal: #1e1e1e;
+            --input-bg: #2d2d2d;
+            --tr-hover: #252525;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg-body); padding: 20px; color: var(--text-main); transition: 0.3s; }
+        .container { max-width: 900px; margin: 0 auto; background: var(--bg-container); padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: 0.3s; }
+        h3 { margin-top: 0; color: #d32f2f; display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 20px; }
+        
+        .config-header { display: flex; gap: 10px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); }
+        input[type="password"], input[type="text"] { padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; flex-grow: 1; background: var(--input-bg); color: var(--text-main); }
+        
+        .actions-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .btn { padding: 10px 18px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: 0.2s; }
+        .btn-primary { background: #d32f2f; color: white; }
+        .btn-primary:hover { background: #b71c1c; }
+        .btn-success { background: #2e7d32; color: white; }
+        .btn-danger { background: #c62828; color: white; padding: 5px 10px; font-size: 12px; }
+        .btn-edit { background: #1976d2; color: white; padding: 5px 10px; font-size: 12px; margin-right: 5px; }
+        
+        #theme-toggle-opt { background: none; border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; font-size: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: var(--text-main); transition: 0.3s; }
+
+        /* Tabs de Selección de Tipo */
+        .tabs-container { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+        .tab-btn { padding: 10px 20px; border: none; background: var(--bg-th); color: var(--text-secondary); cursor: pointer; border-radius: 8px; font-weight: 600; display: flex; align-items: center; gap: 8px; font-size: 16px; }
+        .tab-btn.active { background: #d32f2f; color: white; }
+        .tab-btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th { background: var(--bg-th); text-align: left; padding: 12px; border-bottom: 2px solid var(--border-color); color: var(--text-secondary); }
+        td { padding: 12px; border-bottom: 1px solid var(--border-color); font-size: 14px; }
+        small { color: var(--text-secondary); }
+        tr:hover { background: var(--tr-hover); }
+
+        /* Modal Styles */
+        #modalEditor { 
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.5); align-items: center; justify-content: center; z-index: 1000;
+        }
+        .modal-content { background: var(--bg-modal); padding: 25px; border-radius: 12px; width: 400px; display: flex; flex-direction: column; gap: 10px; color: var(--text-main); }
+        .modal-content input { width: 100%; box-sizing: border-box; }
+        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>
+            <span>⚙️ Panel de Control de Agencias</span>
+            <button id="theme-toggle-opt" title="Cambiar tema">🌓</button>
+        </h3>
+        
+        <div class="config-header">
+            <input type="password" id="ghToken" placeholder="GitHub Personal Access Token">
+            <button id="saveGistBtn" class="btn btn-success">☁️ Sincronizar con Nube</button>
+        </div>
+
+        <div class="config-header">
+            <select id="dataSource" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--input-bg); color: var(--text-main);">
+                <option value="codered">CodeRED Platform</option>
+                <option value="codered-with-gist-fallback">CodeRED + Gist fallback</option>
+                <option value="gist">GitHub Gist</option>
+            </select>
+            <input type="text" id="apiBaseUrl" placeholder="CodeRED API Base URL">
+            <input type="password" id="apiToken" placeholder="CodeRED API Token">
+            <button id="toggleApiToken" class="btn btn-edit" type="button">Mostrar</button>
+            <button id="testConnectionBtn" class="btn btn-edit">Probar conexión</button>
+            <button id="saveDataSourceBtn" class="btn btn-primary">Guardar configuración</button>
+            <button id="syncNowBtn" class="btn btn-success">Sincronizar ahora</button>
+        </div>
+
+        <div class="tabs-container">
+            <button class="tab-btn active" data-type="TERRESTRE">
+                <svg viewBox="0 0 640 640"><path d="M32 160C32 124.7 60.7 96 96 96L384 96C419.3 96 448 124.7 448 160L448 192L498.7 192C515.7 192 532 198.7 544 210.7L589.3 256C601.3 268 608 284.3 608 301.3L608 448C608 483.3 579.3 512 544 512L540.7 512C530.3 548.9 496.3 576 456 576C415.7 576 381.8 548.9 371.3 512L268.7 512C258.3 548.9 224.3 576 184 576C143.7 576 109.8 548.9 99.3 512L96 512C60.7 512 32 483.3 32 448L32 160zM544 352L544 301.3L498.7 256L448 256L448 352L544 352zM224 488C224 465.9 206.1 448 184 448C161.9 448 144 465.9 144 488C144 510.1 161.9 528 184 528C206.1 528 224 510.1 224 488zM456 528C478.1 528 496 510.1 496 488C496 465.9 478.1 448 456 448C433.9 448 416 465.9 416 488C416 510.1 433.9 528 456 528z"></path></svg>
+                Terrestres
+            </button>
+            <button class="tab-btn" data-type="AEREO">
+                <svg viewBox="0 0 640 640"><path d="M552 264C582.9 264 608 289.1 608 320C608 350.9 582.9 376 552 376L424.7 376L265.5 549.6C259.4 556.2 250.9 560 241.9 560L198.2 560C187.3 560 179.6 549.3 183 538.9L237.3 376L137.6 376L84.8 442C81.8 445.8 77.2 448 72.3 448L52.5 448C42.1 448 34.5 438.2 37 428.1L64 320L37 211.9C34.4 201.8 42.1 192 52.5 192L72.3 192C77.2 192 81.8 194.2 84.8 198L137.6 264L237.3 264L183 101.1C179.6 90.7 187.3 80 198.2 80L241.9 80C250.9 80 259.4 83.8 265.5 90.4L424.7 264L552 264z"></path></svg>
+                Aéreos
+            </button>
+        </div>
+
+        <div class="actions-bar">
+            <input type="text" id="searchAgencia" placeholder="🔍 Filtrar agencias localmente...">
+            <button id="addBtn" class="btn btn-primary">+ Agregar Agencia</button>
+            <button id="viewGridBtn" class="btn btn-edit">👁️ Ver Cuadrícula</button>
+        </div>
+
+        <div id="cacheStatus" style="margin-bottom: 15px; font-size: 13px; color: var(--text-secondary);">
+            Estado de caché: cargando...
+        </div>
+        <div id="syncSummary" style="margin-bottom: 15px; font-size: 13px; color: var(--text-secondary);">
+            Última sincronización: nunca
+        </div>
+
+        <div style="max-height: 500px; overflow-y: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Agencia</th>
+                        <th>Ubicación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="agenciasTableBody">
+                    <!-- Se llena con JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal para Agregar/Editar -->
+    <div id="modalEditor">
+        <div class="modal-content">
+            <h4 id="modalTitle">Editar Agencia</h4>
+            <input type="hidden" id="editIndex">
+            <input type="text" id="fieldId" placeholder="ID (ej. 356)">
+            <input type="text" id="fieldAgencia" placeholder="Nombre de la Agencia">
+            <input type="text" id="fieldDep" placeholder="Departamento">
+            <input type="text" id="fieldProv" placeholder="Provincia">
+            <input type="text" id="fieldDist" placeholder="Distrito">
+            <input type="text" id="fieldDir" placeholder="Dirección">
+            <input type="text" id="fieldTextoChosen" placeholder="Texto Chosen (ID - DEP - PROV - DIST - AGENCIA - TERRESTRE)">
+            <input type="text" id="fieldMaps" placeholder="Link de Google Maps (URL)">
+            
+            <select id="fieldTamano" style="padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--input-bg); color: var(--text-main); font-size: 16px;">
+                <option value="Grande">Grande</option>
+                <option value="Mediana" selected>Mediana</option>
+                <option value="Micro">Micro</option>
+                <option value="Mini-micro">Mini-micro</option>
+                <option value="Pequeña">Pequeña</option>
+                <option value="Punto Pro">Punto Pro</option>
+                <option value="Terminal">Terminal</option>
+            </select>
+            <label style="display: flex; align-items: center; gap: 10px; font-size: 16px;">
+                <input type="checkbox" id="fieldEsCO"> ¿Es Centro de Operaciones (CO)?
+            </label>
+
+            <div class="modal-actions">
+                <button id="cancelBtn" class="btn">Cancelar</button>
+                <button id="confirmBtn" class="btn btn-primary">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="agencyStore.js"></script>
+    <script src="coderedApi.js"></script>
+    <script src="options.js"></script>
+</body>
+</html>

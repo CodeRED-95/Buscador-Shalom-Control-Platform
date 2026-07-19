@@ -1,0 +1,3899 @@
+[
+  {
+    "agencia": "Calle Emaus",
+    "departamento": "Piura ",
+    "provincia": "Piura",
+    "distrito": "26 De Octubre",
+    "direccion": "calle tres n° 102, sublote n° 1d mz. y - zona industrial ii, distrito 26 de octubre - referencia: al costado de senati",
+    "texto_chosen": "10 - PIURA - PIURA - 26 DE OCTUBRE - CALLE EMAÚS - TERRESTRE"
+  },
+  {
+    "agencia": "La Union",
+    "departamento": "Piura ",
+    "provincia": "Piura",
+    "distrito": "La Union",
+    "direccion": "av. lima n° 590  referencia : frente a tiendas chancafe",
+    "texto_chosen": "100 - PIURA - PIURA - LA UNION - LA UNION - TERRESTRE"
+  },
+  {
+    "agencia": "Catacaos",
+    "departamento": "Piura ",
+    "provincia": "Piura",
+    "distrito": "Catacaos",
+    "direccion": "av. francisco bolognesi mz. 60 lt. 37 catacaos - piura - piura, ref. al lado del ex pronei",
+    "texto_chosen": "101 - PIURA - PIURA - CATACAOS - CATACAOS - TERRESTRE"
+  },
+  {
+    "agencia": "Paita",
+    "departamento": "Piura ",
+    "provincia": "Paita",
+    "distrito": "Paita",
+    "direccion": "mz. h lt. 14 urb. sol y mar  - paita, referencia: al costado de la empresa san miguel",
+    "texto_chosen": "102 - PIURA - PAITA - PAITA - PAITA - TERRESTRE"
+  },
+  {
+    "agencia": "Morropon",
+    "departamento": "Piura ",
+    "provincia": "Morropon",
+    "distrito": "Morropon",
+    "direccion": "jr. adrianzen n° 099, morropon - morropon - piura, ref, a espaldas de del terminal terrestre de trampsa",
+    "texto_chosen": "103 - PIURA - MORROPON - MORROPON - MORROPON - TERRESTRE"
+  },
+  {
+    "agencia": "Parad Los Licenciados",
+    "departamento": "Callao ",
+    "provincia": "Callao",
+    "distrito": "Ventanilla",
+    "direccion": "calle 19, mz. j lt. 26 zn - urb. coop. de la marina, referencia: al costado de lubricentro pablito romero",
+    "texto_chosen": "104 - CALLAO - CALLAO - VENTANILLA - PARAD. LOS LICENCIADOS - TERRESTRE"
+  },
+  {
+    "agencia": "Av La Marina",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Pueblo Libre",
+    "direccion": "av. la marina 1640 - referencia :  a una cuadra del centro comercial plaza san miguel",
+    "texto_chosen": "105 - LIMA - LIMA - PUEBLO LIBRE - AV. LA MARINA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Canta Callao Con Alisos",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. canta callao, mz. a lt. 3 urb. arizona - 2da etapa",
+    "texto_chosen": "106 - LIMA - LIMA - SAN MARTIN DE PORRES - AV. CANTA CALLAO CON ALISOS - TERRESTRE"
+  },
+  {
+    "agencia": "Av Bertello Smp",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. alejandro bertello bollati mz. h lt. 2-a - asoc. de viv. san remo ii etapa, san martin de porres - lima - lima, ref. a media cdra. del cruce con av. canta callao",
+    "texto_chosen": "107 - LIMA - LIMA - SAN MARTIN DE PORRES - AV BERTELLO SMP - TERRESTRE"
+  },
+  {
+    "agencia": "Carabayllo Establo",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "direccion": "av. tupac amaru n? 441 - 443, mz. o2 lt. 35, referencia: paradero establo, a una cuadra de la urb. santa isabel",
+    "texto_chosen": "108 - LIMA - LIMA - CARABAYLLO - CARABAYLLO ESTABLO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Marco Puente",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Atevitarte",
+    "direccion": "av. marco puente llanos 309, mz. a, lt. 03",
+    "texto_chosen": "109 - LIMA - LIMA - ATE-VITARTE - AV MARCO PUENTE - TERRESTRE"
+  },
+  {
+    "agencia": "Cerro De Pasco",
+    "departamento": "Pasco ",
+    "provincia": "Pasco",
+    "distrito": "Chaupimarca",
+    "direccion": "jr. huaricapcha s/n a.h. tupac amaru chaupimarca, referencia: frente al nuevo terminal",
+    "texto_chosen": "11 - PASCO - PASCO - CHAUPIMARCA - CERRO DE PASCO - TERRESTRE"
+  },
+  {
+    "agencia": "Rep De Panama",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Surquillo",
+    "direccion": "av republica de panama n° 5115, referencia: costado del grifo repsol.",
+    "texto_chosen": "111 - LIMA - LIMA - SURQUILLO - REP. DE PANAMA - TERRESTRE"
+  },
+  {
+    "agencia": "Chao",
+    "departamento": "La Libertad ",
+    "provincia": "Viru",
+    "distrito": "Chao",
+    "direccion": "av. victor raul haya de la torre 575 chao - viru, ref. a media cdra. de la comisaria de chao",
+    "texto_chosen": "112 - LA LIBERTAD - VIRU - CHAO - CHAO - TERRESTRE"
+  },
+  {
+    "agencia": "Puente Nuevo",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "El Agustino",
+    "direccion": "av 1° de mayo 3071 - urb huancayo  referencia : frente al grifo repsol",
+    "texto_chosen": "116 - LIMA - LIMA - EL AGUSTINO - PUENTE NUEVO - TERRESTRE"
+  },
+  {
+    "agencia": "Otuzco",
+    "departamento": "La Libertad ",
+    "provincia": "Otuzco",
+    "distrito": "Otuzco",
+    "direccion": "av. alfredo gutierrez n° 120 - otuzco - otuzco - la libertad.",
+    "texto_chosen": "117 - LA LIBERTAD - OTUZCO - OTUZCO - OTUZCO - TERRESTRE"
+  },
+  {
+    "agencia": "Huamachuco",
+    "departamento": "La Libertad ",
+    "provincia": "Sanchez Carrion",
+    "distrito": "Huamachuco",
+    "direccion": "jr. simon bolivar 763, huamachuco sanchez carrion - la libertad, ref. entre jr. independecia y jr. alfonso ugarte",
+    "texto_chosen": "118 - LA LIBERTAD - SANCHEZ CARRION - HUAMACHUCO - HUAMACHUCO - TERRESTRE"
+  },
+  {
+    "agencia": "Cajamarca Co",
+    "departamento": "Cajamarca ",
+    "provincia": "Cajamarca",
+    "distrito": "Cajamarca",
+    "direccion": "av. independencia n° 787 barrio santa elena",
+    "texto_chosen": "12 - CAJAMARCA - CAJAMARCA - CAJAMARCA - CAJAMARCA CO - TERRESTRE"
+  },
+  {
+    "agencia": "Paijan",
+    "departamento": "La Libertad ",
+    "provincia": "Ascope",
+    "distrito": "Paijan",
+    "direccion": "av. panamericana norte n° 1320 - paijan",
+    "texto_chosen": "121 - LA LIBERTAD - ASCOPE - PAIJAN - PAIJAN - TERRESTRE"
+  },
+  {
+    "agencia": "Nuevo Lurin",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Lurin",
+    "direccion": "av. antigua panamericana sur km 37 mz c lt 17 - fundo las salinas  - referencia a cuadra y media del mercado virgen de las mercedes.",
+    "texto_chosen": "122 - LIMA - LIMA - LURIN - NUEVO LURIN - TERRESTRE"
+  },
+  {
+    "agencia": "Av Venezuela",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Brena",
+    "direccion": "av. venezuela 1670 - brena, referencia: al costado del policlinico de brena",
+    "texto_chosen": "123 - LIMA - LIMA - BRENA - AV VENEZUELA - TERRESTRE"
+  },
+  {
+    "agencia": "Huaral",
+    "departamento": "Lima ",
+    "provincia": "Huaral",
+    "distrito": "Huaral",
+    "direccion": "av. jorge chavez 647, referencia: entre la av. grau y bolognesi (cerca al paradero moto naturales)",
+    "texto_chosen": "124 - LIMA - HUARAL - HUARAL - HUARAL - TERRESTRE"
+  },
+  {
+    "agencia": "Huaraz",
+    "departamento": "Ancash ",
+    "provincia": "Huaraz",
+    "distrito": "Huaraz",
+    "direccion": "av. 27 de noviembre cdra. 20 s/n - villon bajo, referencia: al costado del grifo primax",
+    "texto_chosen": "125 - ANCASH - HUARAZ - HUARAZ - HUARAZ - TERRESTRE"
+  },
+  {
+    "agencia": "Cutervo",
+    "departamento": "Cajamarca ",
+    "provincia": "Cutervo",
+    "distrito": "Cutervo",
+    "direccion": "av. salomon vilchez murga  s/n. cdra 9  referencia : frente a la clinica cutervo",
+    "texto_chosen": "128 - CAJAMARCA - CUTERVO - CUTERVO - CUTERVO - TERRESTRE"
+  },
+  {
+    "agencia": "Jauja",
+    "departamento": "Junin ",
+    "provincia": "Jauja",
+    "distrito": "Jauja",
+    "direccion": "jr. estanislao marquez 286, yauyos - jauja - junin, ref. esquina con jr. 4 de enero",
+    "texto_chosen": "13 - JUNIN - JAUJA - JAUJA - JAUJA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Circunvalacion Nazca",
+    "departamento": "Ica ",
+    "provincia": "Nazca",
+    "distrito": "Nazca",
+    "direccion": "en la esquina de la av. circunvalacion con calle s/n, hoy calle las mercedes s/n nasca - referencia: al lado de la iep jean piaget",
+    "texto_chosen": "130 - ICA - NAZCA - NAZCA - AV CIRCUNVALACION NAZCA - TERRESTRE"
+  },
+  {
+    "agencia": "San Juan De Marcona",
+    "departamento": "Ica ",
+    "provincia": "Nazca",
+    "distrito": "Marcona",
+    "direccion": "aa.hh. san martin de porres e-4 san juan de marcona - nazca - ica, ref. cruce de av. las orquideas con av. san martin de porras a dos puertas del hotel san martin",
+    "texto_chosen": "131 - ICA - NAZCA - MARCONA - SAN JUAN DE MARCONA - TERRESTRE"
+  },
+  {
+    "agencia": "Huayllay",
+    "departamento": "Pasco ",
+    "provincia": "Pasco",
+    "distrito": "Huayllay",
+    "direccion": "calle lima s/n barrio arenales  huayllay  pasco   - referencia: al costado del colegio cesar vallejo",
+    "texto_chosen": "132 - PASCO - PASCO - HUAYLLAY - HUAYLLAY - TERRESTRE"
+  },
+  {
+    "agencia": "El Alto",
+    "departamento": "Piura ",
+    "provincia": "Talara",
+    "distrito": "El Alto",
+    "direccion": "av. bolognesi o-37 centro el alto, referencia: a espaldas de la municipalidad de el alto",
+    "texto_chosen": "133 - PIURA - TALARA - EL ALTO - EL ALTO - TERRESTRE"
+  },
+  {
+    "agencia": "Aguas Verdes",
+    "departamento": "Tumbes ",
+    "provincia": "Zarumilla",
+    "distrito": "Aguas Verdes",
+    "direccion": "av tumbes s/n lote 09 mz 17 , a.h tomas arizola olaya , sector ii - referencia : a una cuadra del parque tomas arizola.",
+    "texto_chosen": "134 - TUMBES - ZARUMILLA - AGUAS VERDES - AGUAS VERDES - TERRESTRE"
+  },
+  {
+    "agencia": "Los Organos",
+    "departamento": "Piura ",
+    "provincia": "Talara",
+    "distrito": "Los Organos",
+    "direccion": "av. panamericana norte p-29 - urb. cercado zona urbana,  referencia al frente de grifo de troncos o grifo san pedro",
+    "texto_chosen": "135 - PIURA - TALARA - LOS ORGANOS - LOS ORGANOS - TERRESTRE"
+  },
+  {
+    "agencia": "Zorritos",
+    "departamento": "Tumbes ",
+    "provincia": "Contralmirante Villa",
+    "distrito": "Zorritos",
+    "direccion": "av. 28 de julio n° 205 mz. 14 lt. 04 los pinos tumbes, contralmiraante villar - zorritos - tumbes",
+    "texto_chosen": "136 - TUMBES - CONTRALMIRANTE VILLA - ZORRITOS - ZORRITOS - TERRESTRE"
+  },
+  {
+    "agencia": "Ambo",
+    "departamento": "Huanuco ",
+    "provincia": "Ambo",
+    "distrito": "Ambo",
+    "direccion": "av. las americas 501, ref. al frente del colegio juan jose crespo y castillo",
+    "texto_chosen": "137 - HUANUCO - AMBO - AMBO - AMBO - TERRESTRE"
+  },
+  {
+    "agencia": "Ferrenafe",
+    "departamento": "Lambayeque ",
+    "provincia": "Ferrenafe",
+    "distrito": "Ferrenafe",
+    "direccion": "av. andres a. caceres n°550a, referencia: al costado del grifo primax",
+    "texto_chosen": "138 - LAMBAYEQUE - FERRENAFE - FERRENAFE - FERREÑAFE - TERRESTRE"
+  },
+  {
+    "agencia": "San Ignacio",
+    "departamento": "Cajamarca ",
+    "provincia": "San Ignacio",
+    "distrito": "San Ignacio",
+    "direccion": "pasaje tres n° 113 urb santa rosa, cajamarca - san ignacio, ref. frente al estado municipal",
+    "texto_chosen": "139 - CAJAMARCA - SAN IGNACIO - SAN IGNACIO - SAN IGNACIO"
+  },
+  {
+    "agencia": "Ovalo Orquideas Co",
+    "departamento": "San Martin ",
+    "provincia": "Moyobamba",
+    "distrito": "Moyobamba",
+    "direccion": "jr. 20 de abril  2138 -  referencia : altura de la  pampa del  hambre",
+    "texto_chosen": "14 - SAN MARTIN - MOYOBAMBA - MOYOBAMBA - OVALO ORQUIDEAS CO - TERRESTRE"
+  },
+  {
+    "agencia": "Ciudad Municipal",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "direccion": "mz. a, sub lt. 2 a, asentamiento poblacional asociacion centro industrial las canteras, cerro colorado - arequipa, ref. al costado del grifo primax",
+    "texto_chosen": "140 - AREQUIPA - AREQUIPA - CERRO COLORADO - CIUDAD MUNICIPAL - TERRESTRE"
+  },
+  {
+    "agencia": "Paramonga",
+    "departamento": "Lima ",
+    "provincia": "Barranca",
+    "distrito": "Paramonga",
+    "direccion": "av. central n° 305 mz. n1 lt. 17, ref. urb. miguel grau",
+    "texto_chosen": "141 - LIMA - BARRANCA - PARAMONGA - PARAMONGA - TERRESTRE"
+  },
+  {
+    "agencia": "Asoc Las Flores Av 54",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "direccion": "asoc. las flores zn.2  mz.j  lt.8  - cerro colorado  -  referencia: av 54 - a media cuadra de ferreteria gino",
+    "texto_chosen": "142 - AREQUIPA - AREQUIPA - CERRO COLORADO - ASOC LAS FLORES - AV 54 - TERRESTRE"
+  },
+  {
+    "agencia": "Huanta",
+    "departamento": "Ayacucho ",
+    "provincia": "Huanta",
+    "distrito": "Huanta",
+    "direccion": "jr. gervasio santillana n°976 - huanta - ayacucho. ref, cruce con jr. revolucion",
+    "texto_chosen": "143 - AYACUCHO - HUANTA - HUANTA - HUANTA - TERRESTRE"
+  },
+  {
+    "agencia": "Cruz De Motupe",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "av. fernando wiesse mz. q lote 1 aa.hh. cruz de motupe",
+    "texto_chosen": "144 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - CRUZ&nbsp;DE MOTUPE - TERRESTRE"
+  },
+  {
+    "agencia": "Plaza La Tomilla",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Cayma",
+    "direccion": "av. ramon castilla n° 1000 - b  la tomilla  cayma  -  referencia: en la misma plaza tomilla",
+    "texto_chosen": "146 - AREQUIPA - AREQUIPA - CAYMA - PLAZA LA TOMILLA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Pumacahua",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "direccion": "urb. san felipe av pumacahua lt 14, cerro colorado arequipa, ref. a dos cdras. antes de llegar al metro cencosud / ex notaria concha revilla.",
+    "texto_chosen": "148 - AREQUIPA - AREQUIPA - CERRO COLORADO - AV PUMACAHUA - TERRESTRE"
+  },
+  {
+    "agencia": "Abancay",
+    "departamento": "Apurimac ",
+    "provincia": "Abancay",
+    "distrito": "Abancay",
+    "direccion": "av. panamericana s/n - abancay - apurimac, ref. a 100 metros de la comisaria de bellavista, al costado de maderera vega",
+    "texto_chosen": "15 - APURIMAC - ABANCAY - ABANCAY - ABANCAY - TERRESTRE"
+  },
+  {
+    "agencia": "Higuereta",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Santiago De Surco",
+    "direccion": "calle barlovento n° 134 referencia: a 3 cdras de polvos rosados, cerca al ovalo higuereta, surco",
+    "texto_chosen": "151 - LIMA - LIMA - SANTIAGO DE SURCO - HIGUERETA - TERRESTRE"
+  },
+  {
+    "agencia": "Mancora",
+    "departamento": "Piura ",
+    "provincia": "Talara",
+    "distrito": "Mancora",
+    "direccion": "av. grau nro. 432 mancora - talara - piura, ref. frente al paradero de autos de los organos en toda la panamericana norte.",
+    "texto_chosen": "152 - PIURA - TALARA - MANCORA - MÁNCORA - TERRESTRE"
+  },
+  {
+    "agencia": "Mariano Melgar",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Mariano Melgar",
+    "direccion": "calle ancash n° 202 - mariano melgar, ref. a la altura del coliseo del nino",
+    "texto_chosen": "153 - AREQUIPA - AREQUIPA - MARIANO MELGAR - MARIANO MELGAR - TERRESTRE"
+  },
+  {
+    "agencia": "Av Socabaya Los Toritos",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Socabaya",
+    "direccion": "av. socabaya 301 - urb. san martin de socabaya, ref. al frente del parque victor barriga",
+    "texto_chosen": "155 - AREQUIPA - AREQUIPA - SOCABAYA - AV SOCABAYA - LOS TORITOS - TERRESTRE"
+  },
+  {
+    "agencia": "Mala",
+    "departamento": "Lima ",
+    "provincia": "Canete",
+    "distrito": "Mala",
+    "direccion": "av. marchand # 250, distrito de mala .    referencia:  a unas casas frente a la distribuidora primax gas",
+    "texto_chosen": "156 - LIMA - CAÑETE - MALA - MALA - TERRESTRE"
+  },
+  {
+    "agencia": "Olmos",
+    "departamento": "Lambayeque ",
+    "provincia": "Lambayeque",
+    "distrito": "Olmos",
+    "direccion": "av. augusto b. leguia mz. 87 lt. 32  - olmos - lambayeque, ref. al frente de la comisaria de olmos.",
+    "texto_chosen": "157 - LAMBAYEQUE - LAMBAYEQUE - OLMOS - OLMOS - TERRESTRE"
+  },
+  {
+    "agencia": "Miraflores Chiclayo",
+    "departamento": "Lambayeque ",
+    "provincia": "Chiclayo",
+    "distrito": "Chiclayo",
+    "direccion": "av. panamericana 975 pp jj luis alberto sanchez, chiclayo - chiclayo - lambayeque, ref. a media cdra. del ovalo senor de sipan / al frente de derco center",
+    "texto_chosen": "158 - LAMBAYEQUE - CHICLAYO - CHICLAYO - MIRAFLORES CHICLAYO - TERRESTRE"
+  },
+  {
+    "agencia": "Sjl Las Flores",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "av. canto grande n°. 2570 - urb. ganimedes, referencia: a 3 cdras. de plaza vea",
+    "texto_chosen": "159 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - SJL- LAS FLORES - TERRESTRE"
+  },
+  {
+    "agencia": "Barranca",
+    "departamento": "Lima ",
+    "provincia": "Barranca",
+    "distrito": "Barranca",
+    "direccion": "jr. andres reyes buitron 416. barranca - barranca – lima, ref. a 2 cdrs. del parque el olvivar / a mtrs. de la casa del maestro",
+    "texto_chosen": "16 - LIMA - BARRANCA - BARRANCA - BARRANCA - TERRESTRE"
+  },
+  {
+    "agencia": "Motupe",
+    "departamento": "Lambayeque ",
+    "provincia": "Lambayeque",
+    "distrito": "Motupe",
+    "direccion": "calle los pinos n°116 - lotizacion la primavera  referencia :  a media cuadra de la panamericana carretera fernando belaunde terry",
+    "texto_chosen": "160 - LAMBAYEQUE - LAMBAYEQUE - MOTUPE - MOTUPE - TERRESTRE"
+  },
+  {
+    "agencia": "Chancay",
+    "departamento": "Lima ",
+    "provincia": "Huaral",
+    "distrito": "Chancay",
+    "direccion": "prolongacion san martin n°403 chancay - referencia: a una cdra. de la av. panamericana norte",
+    "texto_chosen": "161 - LIMA - HUARAL - CHANCAY - CHANCAY - TERRESTRE"
+  },
+  {
+    "agencia": "Miraflores Arequipa",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Miraflores",
+    "direccion": "urb. residencial felipe santiago salaverry - calle teniente rodriguez mz. h lt. 11, miraflores - arequipa - arequipa, ref. a media cdra. de la compania de bombero de miraflores",
+    "texto_chosen": "162 - AREQUIPA - AREQUIPA - MIRAFLORES - MIRAFLORES AREQUIPA - TERRESTRE"
+  },
+  {
+    "agencia": "Urb Manuel Prado",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Paucarpata",
+    "direccion": "calle belen n°100 - a urb. manuel prado - paucarpata  referencia: a espaldas del cc. mall aventura porongoche",
+    "texto_chosen": "163 - AREQUIPA - AREQUIPA - PAUCARPATA - URB MANUEL PRADO - TERRESTRE"
+  },
+  {
+    "agencia": "Satipo",
+    "departamento": "Junin ",
+    "provincia": "Satipo",
+    "distrito": "Satipo",
+    "direccion": "jr. francisco irazola 1077 - junin , ref. fabrica la satipena",
+    "texto_chosen": "164 - JUNIN - SATIPO - SATIPO - SATIPO - TERRESTRE"
+  },
+  {
+    "agencia": "San Ramon",
+    "departamento": "Junin ",
+    "provincia": "Chanchamayo",
+    "distrito": "San Ramon",
+    "direccion": "jr. ucayali 102 - san ramon, referencia: frente a la caja huancayo y el parque el avion",
+    "texto_chosen": "165 - JUNIN - CHANCHAMAYO - SAN RAMON - SAN RAMÓN - TERRESTRE"
+  },
+  {
+    "agencia": "La Merced",
+    "departamento": "Junin ",
+    "provincia": "Chanchamayo",
+    "distrito": "La Merced",
+    "direccion": "av. peru 931 sector pampa del carmen, la merced  -chanchamayo - junin, ref. frente a la cooperativa chanchamayo",
+    "texto_chosen": "166 - JUNIN - CHANCHAMAYO - LA MERCED - LA MERCED - TERRESTRE"
+  },
+  {
+    "agencia": "Pichanaki",
+    "departamento": "Junin ",
+    "provincia": "Chanchamayo",
+    "distrito": "Bajo Pichanaqui",
+    "direccion": "av. venus lt. 20 ciudad satelite - ref. ( a 1 cuadra y media del parque de satelite)",
+    "texto_chosen": "167 - JUNIN - CHANCHAMAYO - BAJO PICHANAQUI - PICHANAKI - TERRESTRE"
+  },
+  {
+    "agencia": "Tarma",
+    "departamento": "Junin ",
+    "provincia": "Tarma",
+    "distrito": "Tarma",
+    "direccion": "jr. amazonas nro. 1164 tarma - junin, ref. entre jr. amazonas con av. vienrich",
+    "texto_chosen": "168 - JUNIN - TARMA - TARMA - TARMA - TERRESTRE"
+  },
+  {
+    "agencia": "Chosica",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Lurigancho",
+    "direccion": "el sol 124 (parque echenique) lurigancho - chosica",
+    "texto_chosen": "169 - LIMA - LIMA - LURIGANCHO - CHOSICA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Enrique Meiggs",
+    "departamento": "Ancash ",
+    "provincia": "Santa",
+    "distrito": "Chimbote",
+    "direccion": "av. enrique meiggs n° 2457.",
+    "texto_chosen": "17 - ANCASH - SANTA - CHIMBOTE - AV ENRIQUE MEIGGS - TERRESTRE"
+  },
+  {
+    "agencia": "Chorrillos Los Faisanes",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Chorrillos",
+    "direccion": "av. los faisanes 420, referencia: al costado de la tienda john holden",
+    "texto_chosen": "170 - LIMA - LIMA - CHORRILLOS - CHORRILLOS LOS FAISANES - TERRESTRE"
+  },
+  {
+    "agencia": "Lambayeque Panamericana",
+    "departamento": "Lambayeque ",
+    "provincia": "Lambayeque",
+    "distrito": "Lambayeque",
+    "direccion": "calle paraguay mz. d lt 2a unidad vecinal indoamerica - lambayeque, ref. al costado de la fabrica de kinkones bruning / a 01 cuadra del puente lambayeque",
+    "texto_chosen": "171 - LAMBAYEQUE - LAMBAYEQUE - LAMBAYEQUE - LAMBAYEQUE PANAMERICANA - TERRESTRE"
+  },
+  {
+    "agencia": "La Cincuenta",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Independencia",
+    "direccion": "av. tupac amaru n° 4708 - 4710, ref. a una cdra. del paradero estacion naranjal",
+    "texto_chosen": "172 - LIMA - LIMA - INDEPENDENCIA - LA CINCUENTA - TERRESTRE"
+  },
+  {
+    "agencia": "Pro",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "direccion": "av. los proceres mz. pp2 lt.21, urb. puertas de pro - los olivos",
+    "texto_chosen": "175 - LIMA - LIMA - LOS OLIVOS - PRO - TERRESTRE"
+  },
+  {
+    "agencia": "Rimac Av Amancaes",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Rimac",
+    "direccion": "av. amancaes nro. 644 urb. ciudad y campo - rimac",
+    "texto_chosen": "176 - LIMA - LIMA - RIMAC - RIMAC AV. AMANCAES - TERRESTRE"
+  },
+  {
+    "agencia": "Ovalo De La Familia",
+    "departamento": "Ancash ",
+    "provincia": "Santa",
+    "distrito": "Nuevo Chimbote",
+    "direccion": "urbanizacion jose carlos mariategui (ex unicreto) mz r 3 lt 3 ref. a una cuadra del ovalo la familia",
+    "texto_chosen": "177 - ANCASH - SANTA - NUEVO CHIMBOTE - OVALO DE LA FAMILIA - TERRESTRE"
+  },
+  {
+    "agencia": "Cusco Parque Industrial",
+    "departamento": "Cusco ",
+    "provincia": "Cusco",
+    "distrito": "Wanchaq",
+    "direccion": "av. las americas mz. e lt. 20, 2da etapa, urb. parque industrial, wanchaq - cusco, ref. al frente de talleres pfuro, al frente de mederera urpi, paralela a la av via expresa.",
+    "texto_chosen": "18 - CUSCO - CUSCO - WANCHAQ - CUSCO PARQUE INDUSTRIAL - TERRESTRE"
+  },
+  {
+    "agencia": "Huancayo Jr Ica",
+    "departamento": "Junin ",
+    "provincia": "Huancayo",
+    "distrito": "Huancayo",
+    "direccion": "jr. ica nº 1143 - huancayo, referencia: entre el jr. ica y el jr. tacna",
+    "texto_chosen": "181 - JUNIN - HUANCAYO - HUANCAYO - HUANCAYO JR. ICA - TERRESTRE"
+  },
+  {
+    "agencia": "Huarmey",
+    "departamento": "Ancash ",
+    "provincia": "Huarmey",
+    "distrito": "Huarmey",
+    "direccion": "carr. panamericana norte n° km 293 sect. panamericana huarmey – ancash, ref. a 4 cdras. del terminal terrestre de sur a norte",
+    "texto_chosen": "183 - ANCASH - HUARMEY - HUARMEY - HUARMEY - TERRESTRE"
+  },
+  {
+    "agencia": "Mariscal Nieto",
+    "departamento": "Lambayeque ",
+    "provincia": "Chiclayo",
+    "distrito": "Chiclayo",
+    "direccion": "calle mariscal nieto n° 390, referencia: entre mariscal nieto y miguel grau",
+    "texto_chosen": "184 - LAMBAYEQUE - CHICLAYO - CHICLAYO - MARISCAL NIETO - TERRESTRE"
+  },
+  {
+    "agencia": "Pesquero",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Villa Maria Del Triunfo",
+    "direccion": "av. pachacutec n° 3548, referencia: frente a real plaza, a 1 cdra. de mayorsa",
+    "texto_chosen": "185 - LIMA - LIMA - VILLA MARIA DEL TRIUNFO - PESQUERO - TERRESTRE"
+  },
+  {
+    "agencia": "Magdalena Del Mar",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Magdalena Del Mar",
+    "direccion": "jr. ayacucho n° 756, referencia: a una cdra. del mercado modelo de magdalesy a 3 cdras. de la iglesia cupula de sucre",
+    "texto_chosen": "186 - LIMA - LIMA - MAGDALENA DEL MAR - MAGDALENA DEL MAR - TERRESTRE"
+  },
+  {
+    "agencia": "Calle Tahuantinsuyo",
+    "departamento": "Lambayeque ",
+    "provincia": "Chiclayo",
+    "distrito": "Jose Leonardo Ortiz",
+    "direccion": "calle tahuantinsuyo 995 - urb. san lorenzo - jose leonardo ortiz - chiclayo - lambayeque, ref. entre la cdra. 2 de av. america y la calle tahuantinsuyo/a media cdra. de la iglesia los mormones",
+    "texto_chosen": "187 - LAMBAYEQUE - CHICLAYO - JOSE LEONARDO ORTIZ - CALLE TAHUANTINSUYO - TERRESTRE"
+  },
+  {
+    "agencia": "Casma",
+    "departamento": "Ancash ",
+    "provincia": "Casma",
+    "distrito": "Casma",
+    "direccion": "av. miguel grau mz. d 4 lt. 1 casma - ancash, ref. frente al jardin de infancia",
+    "texto_chosen": "188 - ANCASH - CASMA - CASMA - CASMA - TERRESTRE"
+  },
+  {
+    "agencia": "Salaverry Huacho Co",
+    "departamento": "Lima ",
+    "provincia": "Huaura",
+    "distrito": "Huacho",
+    "direccion": "prolongacion salaverry  n° 764  huacho -  referencia : cruce con la av la paz",
+    "texto_chosen": "19 - LIMA - HUAURA - HUACHO - SALAVERRY HUACHO CO - TERRESTRE"
+  },
+  {
+    "agencia": "Smp av Proceres",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. proceres n° 588 urb. covicem, ref. a 2 cdras. de tomas valle",
+    "texto_chosen": "193 - LIMA - LIMA - SAN MARTIN DE PORRES - SMP-AV. PROCERES - TERRESTRE"
+  },
+  {
+    "agencia": "Tuman",
+    "departamento": "Lambayeque ",
+    "provincia": "Chiclayo",
+    "distrito": "Tuman",
+    "direccion": "av. chota n° 288 sector acapulco, tuman - chiclayo - lambayeque, ref. al costado del restaurant manos chotanas",
+    "texto_chosen": "197 - LAMBAYEQUE - CHICLAYO - TUMAN - TUMAN - TERRESTRE"
+  },
+  {
+    "agencia": "Zapallal",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Puente Piedra",
+    "direccion": "av. ancon 678, ref. a la espalda del precio uno de fundicion",
+    "texto_chosen": "198 - LIMA - LIMA - PUENTE PIEDRA - ZAPALLAL - TERRESTRE"
+  },
+  {
+    "agencia": "Tambo Grande",
+    "departamento": "Piura ",
+    "provincia": "Piura",
+    "distrito": "Tambo Grande",
+    "direccion": "av. arambulo santin n° 100, mz. d lt. e aa. hh. andres razuri referencia: a dos cuadras del estadio deportivo",
+    "texto_chosen": "199 - PIURA - PIURA - TAMBO GRANDE - TAMBO GRANDE - TERRESTRE"
+  },
+  {
+    "agencia": "Bambamarca",
+    "departamento": "Cajamarca ",
+    "provincia": "Hualgayoc",
+    "distrito": "Bambamarca",
+    "direccion": "av. tupac amaru 1105, referencia: al costado del paradero al cumbe",
+    "texto_chosen": "2 - CAJAMARCA - HUALGAYOC - BAMBAMARCA - BAMBAMARCA - TERRESTRE"
+  },
+  {
+    "agencia": "Ilo Co Pampa Inalambrica",
+    "departamento": "Moquegua ",
+    "provincia": "Ilo",
+    "distrito": "Ilo",
+    "direccion": "urb. ciudad del pescador, mz. j lt. 18-19, referencia: a dos cuadras del poder judicial",
+    "texto_chosen": "20 - MOQUEGUA - ILO - ILO - ILO CO PAMPA INALAMBRICA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Luis Eguiguren",
+    "departamento": "Piura ",
+    "provincia": "Piura",
+    "distrito": "Piura",
+    "direccion": "av. malaga mz. a lt.20 int. 105 piura, ref. a media cuadra de honda del peru s.a. en el cruce de av. luis eguiguren con sullana norte",
+    "texto_chosen": "200 - PIURA - PIURA - PIURA - AV. LUIS EGUIGUREN - TERRESTRE"
+  },
+  {
+    "agencia": "Puente Santa Anita",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Atevitarte",
+    "direccion": "av. nicolas ayllon n° 3080  - ate vitarte",
+    "texto_chosen": "202 - LIMA - LIMA - ATE-VITARTE - PUENTE SANTA ANITA - TERRESTRE"
+  },
+  {
+    "agencia": "San Jeronimo",
+    "departamento": "Cusco ",
+    "provincia": "Cusco",
+    "distrito": "San Jeronimo",
+    "direccion": "calle ciro alegria 226 - 224, ref. una cuadra antes del paradero penal en el carril de bajada",
+    "texto_chosen": "203 - CUSCO - CUSCO - SAN JERONIMO - SAN JERONIMO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Grau",
+    "departamento": "Piura ",
+    "provincia": "Piura",
+    "distrito": "Piura",
+    "direccion": "av. grau manzana n, lote 33 - urbanizacion la alborada. ref. grau con marcavelica",
+    "texto_chosen": "208 - PIURA - PIURA - PIURA - AV. GRAU - TERRESTRE"
+  },
+  {
+    "agencia": "Ayacucho Co",
+    "departamento": "Ayacucho ",
+    "provincia": "Huamanga",
+    "distrito": "Ayacucho",
+    "direccion": "aa.hh  complejo artesanal t1 lt1 - ayacucho  -  referencia :  a una cuadra de la puerta 2 del terminal terrestre libertadores de america",
+    "texto_chosen": "21 - AYACUCHO - HUAMANGA - AYACUCHO - AYACUCHO CO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Tahuantinsuyo",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "La Esperanza",
+    "direccion": "av. tahuantinsuyo n° 739, la esperanza – trujillo – la libertad, ref. diagonal a grifo el amigo. / entre pasaje santa ana y av. los laureles",
+    "texto_chosen": "211 - LA LIBERTAD - TRUJILLO - LA ESPERANZA - AV TAHUANTINSUYO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Hermanos Angulo",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "El Porvenir",
+    "direccion": "av. hermanos angulo 628, trujillo, ref. a espaldas de la municipalidad el porvenir",
+    "texto_chosen": "212 - LA LIBERTAD - TRUJILLO - EL PORVENIR - AV HERMANOS ANGULO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Antonio Lorena",
+    "departamento": "Cusco ",
+    "provincia": "Cusco",
+    "distrito": "Santiago",
+    "direccion": "prolongacion av. antonio lorena # 140 - santiago, cusco, referencia: al frente del cementerio almudena",
+    "texto_chosen": "213 - CUSCO - CUSCO - SANTIAGO - AV ANTONIO LORENA - TERRESTRE"
+  },
+  {
+    "agencia": "Chilca Huancayo",
+    "departamento": "Junin ",
+    "provincia": "Huancayo",
+    "distrito": "Chilca",
+    "direccion": "jr. 28 de julio n° 935, ref. esquina 28 de julio y santos chocano",
+    "texto_chosen": "214 - JUNIN - HUANCAYO - CHILCA - CHILCA HUANCAYO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Lima Vmt",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Villa Maria Del Triunfo",
+    "direccion": "av. lima 2208 jose galvez- villa maria  del triunfo, referencia: a dos cdras. de la curva jose galvez",
+    "texto_chosen": "215 - LIMA - LIMA - VILLA MARIA DEL TRIUNFO - AV. LIMA - VMT - TERRESTRE"
+  },
+  {
+    "agencia": "Huaycan Av Jose C Mariategui",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Atevitarte",
+    "direccion": "av. jose carlos mariategui z. e lt. 23 ucv 5 (zona comercio) - pueblo joven \"proyecto especial huaycan\" ate vitarte - lima, ref. a dos cdras. del cruce con av. 15 de julio",
+    "texto_chosen": "216 - LIMA - LIMA - ATE-VITARTE - HUAYCAN AV JOSE C MARIATEGUI - TERRESTRE"
+  },
+  {
+    "agencia": "Los Sauces",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Atevitarte",
+    "direccion": "av. santa rosa n°773 manzana “a” lote 6 urb los sauces - ate - referencia: cruce con la av separadora industrial",
+    "texto_chosen": "217 - LIMA - LIMA - ATE-VITARTE - LOS SAUCES - TERRESTRE"
+  },
+  {
+    "agencia": "Av Tacna",
+    "departamento": "Piura ",
+    "provincia": "Piura",
+    "distrito": "Castilla",
+    "direccion": "av. tacna 509 castilla - piura, referencia: frente a ugel de castilla",
+    "texto_chosen": "219 - PIURA - PIURA - CASTILLA - AV TACNA - TERRESTRE"
+  },
+  {
+    "agencia": "Canete San Vicente",
+    "departamento": "Lima ",
+    "provincia": "Canete",
+    "distrito": "San Vicente De Canet",
+    "direccion": "aa.hh. victor andres belaunde mz. b lt. 12, san vicente de canete - canete - lima",
+    "texto_chosen": "22 - LIMA - CAÑETE - SAN VICENTE DE CANET - CAÑETE SAN VICENTE - TERRESTRE"
+  },
+  {
+    "agencia": "Malvinas Jr Ricardo Treneman",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Cercado Lima",
+    "direccion": "jr. ricardo treneman n° 920, referencia: dentro del local farenet",
+    "texto_chosen": "220 - LIMA - LIMA - CERCADO LIMA - MALVINAS - JR. RICARDO TRENEMAN - TERRESTRE"
+  },
+  {
+    "agencia": "Parque Industrial Co Piura Futura",
+    "departamento": "Piura ",
+    "provincia": "Piura",
+    "distrito": "26 De Octubre",
+    "direccion": "urb. parque industrial piura futura mz. g, lt. 1a. 26 de octubre - piura, referencia: al frente del grifo petro peru",
+    "texto_chosen": "222 - PIURA - PIURA - 26 DE OCTUBRE - PARQUE INDUSTRIAL CO PIURA FUTURA - TERRESTRE"
+  },
+  {
+    "agencia": "Anta Izcuchaca",
+    "departamento": "Cusco ",
+    "provincia": "Anta",
+    "distrito": "Anta",
+    "direccion": "parque del carmen lt. 1 mz. b 2, anta - anta - cusco, ref. paradero carmen, pista principal izcuchaca",
+    "texto_chosen": "223 - CUSCO - ANTA - ANTA - ANTA IZCUCHACA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Peru 15",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. peru 1589, san martin de porres -  lima. referencia: a dos cuadras del cruce con la av. canada.",
+    "texto_chosen": "224 - LIMA - LIMA - SAN MARTIN DE PORRES - AV. PERU 15 - TERRESTRE"
+  },
+  {
+    "agencia": "Cajamarca Horacio Zevallos",
+    "departamento": "Cajamarca ",
+    "provincia": "Cajamarca",
+    "distrito": "Cajamarca",
+    "direccion": "jr. emilio barrantes mz x lote 3 urb. horacio zevallos - cajamarca. referencia a una cuadra de la universidad privada del norte (upn) y via de evitamiento norte cuadra 13.",
+    "texto_chosen": "225 - CAJAMARCA - CAJAMARCA - CAJAMARCA - CAJAMARCA HORACIO ZEVALLOS - TERRESTRE"
+  },
+  {
+    "agencia": "Av Angelica Gamarra",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "direccion": "av. angelica gamarra de leon valverde n° 621 urb el trebol, los olivos - lima, ref. a la altura del kfc / cruce con av. alfa",
+    "texto_chosen": "227 - LIMA - LIMA - LOS OLIVOS - AV. ANGELICA GAMARRA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Trapiche",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Comas",
+    "direccion": "av. trapiche 886 a 16 2p 2 - urb. pinar, referencia: frente al complejo deportivo walon",
+    "texto_chosen": "228 - LIMA - LIMA - COMAS - AV. TRAPICHE - TERRESTRE"
+  },
+  {
+    "agencia": "Ano Nuevo",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Comas",
+    "direccion": "av. tupac amaru n° 7837- 7839 mz. c lt. 010 urb. popular san juan bautista i etapa, comas - lima, ref. a una cdra. de la entrada de collique",
+    "texto_chosen": "229 - LIMA - LIMA - COMAS - AÑO NUEVO - TERRESTRE"
+  },
+  {
+    "agencia": "Prolong Luis Massaro",
+    "departamento": "Ica ",
+    "provincia": "Chincha",
+    "distrito": "Chincha Alta",
+    "direccion": "prolongacion luis massaro  n°247 -  chincha alta",
+    "texto_chosen": "23 - ICA - CHINCHA - CHINCHA ALTA - PROLONG LUIS MASSARO - TERRESTRE"
+  },
+  {
+    "agencia": "Tungasuca",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "direccion": "av. trapiche mz. p lt. 48, urb. tungasuca referencia: aux. av. chimpu ocllo con aux. chillon trapiche, a 1 cuadra del mercado qatuna",
+    "texto_chosen": "230 - LIMA - LIMA - CARABAYLLO - TUNGASUCA - TERRESTRE"
+  },
+  {
+    "agencia": "Juanjui Fernando Belaunde Terry Co",
+    "departamento": "San Martin ",
+    "provincia": "Mariscal Caceres",
+    "distrito": "Juanjui",
+    "direccion": "carretera fernando terry km. 1 s/n referencia: al costado de paradero de autos huallaga express",
+    "texto_chosen": "232 - SAN MARTIN - MARISCAL CACERES - JUANJUI - JUANJUÍ FERNANDO BELAUNDE TERRY CO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Canada",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "La Victoria",
+    "direccion": "av. canada 1603, referencia: entre av. canada con av. aviacion",
+    "texto_chosen": "233 - LIMA - LIMA - LA VICTORIA - AV. CANADA - TERRESTRE"
+  },
+  {
+    "agencia": "Yurimaguas",
+    "departamento": "Loreto ",
+    "provincia": "Alto Amazonas",
+    "distrito": "Yurimaguas",
+    "direccion": "calle jorge chavez n° 300, referencia: esquina con progreso, al costado de enapu",
+    "texto_chosen": "234 - LORETO - ALTO AMAZONAS - YURIMAGUAS - YURIMAGUAS - TERRESTRE"
+  },
+  {
+    "agencia": "Cusco Urubamba",
+    "departamento": "Cusco ",
+    "provincia": "Urubamba",
+    "distrito": "Urubamba",
+    "direccion": "lt. e-3 fraccion -1, sector patahuasi, urubamba – urubamba - cusco, ref. a una cdra. de la carretera a ollantaytambo / a media cdra. del parque teresita",
+    "texto_chosen": "235 - CUSCO - URUBAMBA - URUBAMBA - CUSCO URUBAMBA - TERRESTRE"
+  },
+  {
+    "agencia": "Chinchero",
+    "departamento": "Cusco ",
+    "provincia": "Urubamba",
+    "distrito": "Chinchero",
+    "direccion": "av. mateo pumacahua s/n, chinchero - urubamba - cusco, ref al costado de la caja cusco / en la misma carretera a urubamba",
+    "texto_chosen": "237 - CUSCO - URUBAMBA - CHINCHERO - CHINCHERO - TERRESTRE"
+  },
+  {
+    "agencia": "Quillabamba",
+    "departamento": "Cusco ",
+    "provincia": "La Convencion",
+    "distrito": "Santa Ana",
+    "direccion": "jr. puno lt. 10 y 11 mz. g urb. santa ana, cusco - la convencion - santa ana, ref. a media cdra.l del estadio municipal de quillabamba / cruce con prolongacion jr. martin pio concha",
+    "texto_chosen": "238 - CUSCO - LA CONVENCION - SANTA ANA - QUILLABAMBA - TERRESTRE"
+  },
+  {
+    "agencia": "Aviacion 2819",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Borja",
+    "direccion": "av. aviacion 2819, urb. san borja sur, referencia: al frente de bembos",
+    "texto_chosen": "239 - LIMA - LIMA - SAN BORJA - AVIACION 2819 - TERRESTRE"
+  },
+  {
+    "agencia": "Av Mariscal Castilla Co Parque Industrial",
+    "departamento": "Junin ",
+    "provincia": "Huancayo",
+    "distrito": "El Tambo",
+    "direccion": "av mariscal castilla 2769  referencia : frente al colegio andres bello",
+    "texto_chosen": "24 - JUNIN - HUANCAYO - EL TAMBO - AV MARISCAL CASTILLA CO PARQUE INDUSTRIAL - TERRESTRE"
+  },
+  {
+    "agencia": "Sjl av proceres",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "av. proceres de la independencia nro.  1295 - 1299 referencia: al costado del banco de la nacion de av. los tusilagos oeste",
+    "texto_chosen": "240 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - SJL-AV.PROCERES - TERRESTRE"
+  },
+  {
+    "agencia": "La Oroya",
+    "departamento": "Junin ",
+    "provincia": "Yauli",
+    "distrito": "La Oroya",
+    "direccion": "av. arevalo s/n (carretera central) - anexo el tambo - santa rosa de sacco",
+    "texto_chosen": "242 - JUNIN - YAULI - LA OROYA - LA OROYA - TERRESTRE"
+  },
+  {
+    "agencia": "Barrio San Jose",
+    "departamento": "Cajamarca ",
+    "provincia": "Cajamarca",
+    "distrito": "Cajamarca",
+    "direccion": "jr. chanchamayo n° 1162 - barrio san jose cajamarca,  referencia: paralela con jr. huancavelica y jr. sara macdougall.",
+    "texto_chosen": "243 - CAJAMARCA - CAJAMARCA - CAJAMARCA - BARRIO SAN JOSE - TERRESTRE"
+  },
+  {
+    "agencia": "Tacala",
+    "departamento": "Piura ",
+    "provincia": "Piura",
+    "distrito": "Castilla",
+    "direccion": "carr. panamericana a-2 ah. almirante miguel grau i etapa, castilla - piura - piura, ref. al costado de ceramicas san lorenzo",
+    "texto_chosen": "245 - PIURA - PIURA - CASTILLA - TACALA - TERRESTRE"
+  },
+  {
+    "agencia": "Maria Auxiliadora",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Miraflores",
+    "direccion": "av. los heroes 1140 - sjm, referencia: una cdra. antes del hospital maria auxiliadora",
+    "texto_chosen": "246 - LIMA - LIMA - SAN JUAN DE MIRAFLORES - MARIA AUXILIADORA - TERRESTRE"
+  },
+  {
+    "agencia": "Banos Del Inca",
+    "departamento": "Cajamarca ",
+    "provincia": "Cajamarca",
+    "distrito": "Los Banos Del Inca",
+    "direccion": "jr. cahuide n° 242 – lotiz. hurtado miller – banos del inca – cajamarca, ref. a espaldas de senati y a una cdra. de la base de serenazgo de banos del inca",
+    "texto_chosen": "247 - CAJAMARCA - CAJAMARCA - LOS BANOS DEL INCA - BAÑOS DEL INCA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Victor R Haya Co",
+    "departamento": "Lambayeque ",
+    "provincia": "Chiclayo",
+    "distrito": "La Victoria",
+    "direccion": "av. victor raul haya de la torre 2470 la victoria - chiclayo  referencia : entre la via evitamiento y panamericana",
+    "texto_chosen": "25 - LAMBAYEQUE - CHICLAYO - LA VICTORIA - AV VICTOR R. HAYA CO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Huandoy Con Maranon",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "direccion": "av. proceres, mz. 3, lt. 23 a.h. laura caller - los olivos, referencia: cruce entre av. huandoy y maranon",
+    "texto_chosen": "250 - LIMA - LIMA - LOS OLIVOS - AV HUANDOY CON MARAÑON - TERRESTRE"
+  },
+  {
+    "agencia": "Pacanguilla",
+    "departamento": "La Libertad ",
+    "provincia": "Chepen",
+    "distrito": "Pacanga",
+    "direccion": "carretera panamericana  # 835 - urb. pacanguilla - distrito pacanga, referencia: en la misma panamericana",
+    "texto_chosen": "251 - LA LIBERTAD - CHEPEN - PACANGA - PACANGUILLA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Pastor Sevilla",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Villa El Salvador",
+    "direccion": "mz. b lt. 3 barrio 3 sector 2 - 4ta etapa - ves, referencia: por el ovalo cerro lomas, frente al colegio virgen del rosario",
+    "texto_chosen": "254 - LIMA - LIMA - VILLA EL SALVADOR - AV. PASTOR SEVILLA - TERRESTRE"
+  },
+  {
+    "agencia": "Plaza Norte Entregas",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Independencia",
+    "direccion": "av. gerardo unger nro. 6917 int. lb 19",
+    "texto_chosen": "256 - LIMA - LIMA - INDEPENDENCIA - PLAZA NORTE ENTREGAS - TERRESTRE"
+  },
+  {
+    "agencia": "Huancavelica",
+    "departamento": "Huancavelica ",
+    "provincia": "Huancavelica",
+    "distrito": "Huancavelica",
+    "direccion": "av. universitaria 1003 - huancavelica, ref. a 1 cdra. de la escuela santa ana y a 3 cdras. del puente del ejercito (barrio santa ana)",
+    "texto_chosen": "257 - HUANCAVELICA - HUANCAVELICA - HUANCAVELICA - HUANCAVELICA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Pachacutec",
+    "departamento": "Cusco ",
+    "provincia": "Cusco",
+    "distrito": "Wanchaq",
+    "direccion": "av. pachacutec 429 - wanchaq, ref. a 100 mtrs. de la piscina wanchaq",
+    "texto_chosen": "258 - CUSCO - CUSCO - WANCHAQ - AV PACHACUTEC - TERRESTRE"
+  },
+  {
+    "agencia": "Concepcion",
+    "departamento": "Junin ",
+    "provincia": "Concepcion",
+    "distrito": "Concepcion",
+    "direccion": "carretera central lt. 7 - mz. e5, concepcion - concepcion - junin, ref. esquina con tupac amaru",
+    "texto_chosen": "26 - JUNIN - CONCEPCION - CONCEPCION - CONCEPCION - TERRESTRE"
+  },
+  {
+    "agencia": "Villa San Francisco",
+    "departamento": "Tacna ",
+    "provincia": "Tacna",
+    "distrito": "Coronel Gregorio Albarracin Lanchipa",
+    "direccion": "asoc. villa san francisco mz. 94 lt. 22, referencia: cerca a caja cusco",
+    "texto_chosen": "260 - TACNA - TACNA - CORONEL GREGORIO ALBARRACIN LANCHIPA - VILLA SAN FRANCISCO - TERRESTRE"
+  },
+  {
+    "agencia": "Jr Aguilar",
+    "departamento": "Huanuco ",
+    "provincia": "Huanuco",
+    "distrito": "Huanuco",
+    "direccion": "jr. aguilar n° 872 -  huanuco",
+    "texto_chosen": "27 - HUANUCO - HUANUCO - HUANUCO - JR AGUILAR - TERRESTRE"
+  },
+  {
+    "agencia": "Oxapampa",
+    "departamento": "Pasco ",
+    "provincia": "Oxapampa",
+    "distrito": "Oxapampa",
+    "direccion": "mz. 239 sub lote h – 1 oxapampa - oxapampa - pasco, ref. entre av. angelica frey y jr. lima",
+    "texto_chosen": "277 - PASCO - OXAPAMPA - OXAPAMPA - OXAPAMPA - TERRESTRE"
+  },
+  {
+    "agencia": "Jaen",
+    "departamento": "Cajamarca ",
+    "provincia": "Jaen",
+    "distrito": "Jaen",
+    "direccion": "av. pakammuros cuadra 6 s/n - referencia: esquina con calle libertad n° 490",
+    "texto_chosen": "28 - CAJAMARCA - JAEN - JAEN - JAEN"
+  },
+  {
+    "agencia": "Tambopata Av La Joya Co",
+    "departamento": "Madre De Dios ",
+    "provincia": "Tambopata",
+    "distrito": "Tambopata",
+    "direccion": "av. la joya n° 122 - pto. maldonado, referencia: frente al ovalo de los otorongos",
+    "texto_chosen": "280 - MADRE DE DIOS - TAMBOPATA - TAMBOPATA - TAMBOPATA AV LA JOYA CO - TERRESTRE"
+  },
+  {
+    "agencia": "Villa Rica",
+    "departamento": "Pasco ",
+    "provincia": "Oxapampa",
+    "distrito": "Villa Rica",
+    "direccion": "av. leopoldo krausse n° 442 villa rica - oxapampa - pasco, ref. entre el jr. pozuzo y jr. cooperativa, al costado de la notaria guerra y a 20 metros de la plaza principal",
+    "texto_chosen": "281 - PASCO - OXAPAMPA - VILLA RICA - VILLA RICA - TERRESTRE"
+  },
+  {
+    "agencia": "Mollendo Co",
+    "departamento": "Arequipa ",
+    "provincia": "Islay",
+    "distrito": "Mollendo",
+    "direccion": "mariscal castilla 472 –a, arequipa - islay - mollendo, ref. al costado de cei “mi carrusel”",
+    "texto_chosen": "282 - AREQUIPA - ISLAY - MOLLENDO - MOLLENDO CO - TERRESTRE"
+  },
+  {
+    "agencia": "Wichanzao",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "La Esperanza",
+    "direccion": "mz. 1 lt. 23 aa.hh wichanzao – la esperanza – trujillo – la libertad, ref. al costado del almacen sunat. / diagonal al hospital de alta complejidad virgen de la puerta",
+    "texto_chosen": "284 - LA LIBERTAD - TRUJILLO - LA ESPERANZA - WICHANZAO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Lima Cdra 38",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. lima 3899 - smp, ref. a 3 cdras. del tottus de quilca con av. lima",
+    "texto_chosen": "285 - LIMA - LIMA - SAN MARTIN DE PORRES - AV. LIMA CDRA 38 - TERRESTRE"
+  },
+  {
+    "agencia": "Tucume",
+    "departamento": "Lambayeque ",
+    "provincia": "Lambayeque",
+    "distrito": "Tucume",
+    "direccion": "av. federico villarreal n° 982 (ctra. fernando belaunde terry), referencia: a media cdra. del cementerio jardines de la paz",
+    "texto_chosen": "288 - LAMBAYEQUE - LAMBAYEQUE - TUCUME - TUCUME - TERRESTRE"
+  },
+  {
+    "agencia": "Jr Mama Ocllo",
+    "departamento": "Puno ",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "direccion": "jr. mama ocllo 915 - b ( cruce con jr azangaro )",
+    "texto_chosen": "29 - PUNO - SAN ROMAN - JULIACA - JR. MAMA OCLLO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Vigil",
+    "departamento": "Tacna ",
+    "provincia": "Tacna",
+    "distrito": "Tacna",
+    "direccion": "av. vigil 1636, referencia: a una cdra. de la plaza grau",
+    "texto_chosen": "290 - TACNA - TACNA - TACNA - AV VIGIL - TERRESTRE"
+  },
+  {
+    "agencia": "Camana",
+    "departamento": "Arequipa ",
+    "provincia": "Camana",
+    "distrito": "Camana",
+    "direccion": "calle agustin gamarra n° 451, cercado camana, referencia: al frente del delivey caseritos",
+    "texto_chosen": "293 - AREQUIPA - CAMANA - CAMANA - CAMANA - TERRESTRE"
+  },
+  {
+    "agencia": "Cercado Mollendo",
+    "departamento": "Arequipa ",
+    "provincia": "Islay",
+    "distrito": "Mollendo",
+    "direccion": "calle dean valdivia 388 cercado, referencia: esquina con blondel",
+    "texto_chosen": "294 - AREQUIPA - ISLAY - MOLLENDO - CERCADO MOLLENDO - TERRESTRE"
+  },
+  {
+    "agencia": "Calle Yarabamba",
+    "departamento": "Arequipa ",
+    "provincia": "Caylloma",
+    "distrito": "Majes",
+    "direccion": "calle yarabamba, mz. y lt 7. villa el pedregal, majes - caylloma - arequipa, ref. a media cdra. de la notaria teran bejar",
+    "texto_chosen": "295 - AREQUIPA - CAYLLOMA - MAJES - CALLE YARABAMBA - TERRESTRE"
+  },
+  {
+    "agencia": "San Agustin De Cajas",
+    "departamento": "Junin ",
+    "provincia": "Huancayo",
+    "distrito": "San Agustin",
+    "direccion": "carretera central km 7.5 s/n san agustin – huancayo – junin, ref. frente a la envasadora solgas",
+    "texto_chosen": "296 - JUNIN - HUANCAYO - SAN AGUSTIN - SAN AGUSTIN DE CAJAS - TERRESTRE"
+  },
+  {
+    "agencia": "Tres De Octubre",
+    "departamento": "Ancash ",
+    "provincia": "Santa",
+    "distrito": "Nuevo Chimbote",
+    "direccion": "av. jose pardo mz. k, lt. 17 - tres de octubre, referencia: frente al ovalo las americas",
+    "texto_chosen": "297 - ANCASH - SANTA - NUEVO CHIMBOTE - TRES DE OCTUBRE - TERRESTRE"
+  },
+  {
+    "agencia": "Av Jose Galvez",
+    "departamento": "Ancash ",
+    "provincia": "Santa",
+    "distrito": "Chimbote",
+    "direccion": "av. jose galvez 791, chimbote - santa - ancash, ref. a 1 cdra. antes de llegar al puente galvez",
+    "texto_chosen": "298 - ANCASH - SANTA - CHIMBOTE - AV JOSE GALVEZ - TERRESTRE"
+  },
+  {
+    "agencia": "Mazuko",
+    "departamento": "Madre De Dios ",
+    "provincia": "Tambopata",
+    "distrito": "Inambari",
+    "direccion": "av. los pioneros, lt. 2 y 3, inambari – tambopata - madre de dios, ref. al costado del terminal terrestre de mazuko / al pie de la carretera al rio inambari",
+    "texto_chosen": "299 - MADRE DE DIOS - TAMBOPATA - INAMBARI - MAZUKO - TERRESTRE"
+  },
+  {
+    "agencia": "Chachapoyas Co Dos De Mayo",
+    "departamento": "Amazonas ",
+    "provincia": "Chachapoyas",
+    "distrito": "Chachapoyas",
+    "direccion": "jr. dos de mayo cdra. 15 s/n chachapoyas, referencia: junto a terminal de combis etsa",
+    "texto_chosen": "3 - AMAZONAS - CHACHAPOYAS - CHACHAPOYAS - CHACHAPOYAS CO DOS DE MAYO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Tupac Amaru Km 19",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "direccion": "mz. 1a - lt. 8 av. tupac amaru n° 10472, carabayllo - lima, ref. al costado del colegio ciro alegria",
+    "texto_chosen": "300 - LIMA - LIMA - CARABAYLLO - AV TUPAC AMARU KM. 19 - TERRESTRE"
+  },
+  {
+    "agencia": "Alto Trujillo",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "El Porvenir",
+    "direccion": "av. prolongacion 12 de noviembre, mz. q, lt. 25, referencia: a media cdra. de la comisaria alto trujillo",
+    "texto_chosen": "301 - LA LIBERTAD - TRUJILLO - EL PORVENIR - ALTO TRUJILLO - TERRESTRE"
+  },
+  {
+    "agencia": "Caraz",
+    "departamento": "Ancash ",
+    "provincia": "Huaylas",
+    "distrito": "Caraz",
+    "direccion": "av. 9 de octubre n° 259 - huaylas, referencia: al costado de la empresa movil tours",
+    "texto_chosen": "302 - ANCASH - HUAYLAS - CARAZ - CARAZ - TERRESTRE"
+  },
+  {
+    "agencia": "Sullana Co Zona Industrial",
+    "departamento": "Piura ",
+    "provincia": "Sullana",
+    "distrito": "Sullana",
+    "direccion": "ctra. sullana nº s/n mz. k, lt. 06 - zona industrial municipal, referencia: al costado del hotel coco suite",
+    "texto_chosen": "303 - PIURA - SULLANA - SULLANA - SULLANA CO ZONA INDUSTRIAL - TERRESTRE"
+  },
+  {
+    "agencia": "Av Carlos Izaguirre Cuadra 23",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. carlos izaguirre sub lt. 8, mz. c - asoc. de viv. los nisperos, referencia: entre av. 12 de octubre y av. santa rosa",
+    "texto_chosen": "307 - LIMA - LIMA - SAN MARTIN DE PORRES - AV. CARLOS IZAGUIRRE CUADRA 23 - TERRESTRE"
+  },
+  {
+    "agencia": "Ilo Puerto",
+    "departamento": "Moquegua ",
+    "provincia": "Ilo",
+    "distrito": "Ilo",
+    "direccion": "jr. callao prolongacion mz. n, lt. 19 - a, referencia: a media cdra. de la cooperativa cuajone",
+    "texto_chosen": "308 - MOQUEGUA - ILO - ILO - ILO PUERTO - TERRESTRE"
+  },
+  {
+    "agencia": "Velasco Astete",
+    "departamento": "Cusco ",
+    "provincia": "Cusco",
+    "distrito": "Wanchaq",
+    "direccion": "velasco astete d3 - wanchaq, referencia: a 2 cdras. del aereopuerto",
+    "texto_chosen": "311 - CUSCO - CUSCO - WANCHAQ - VELASCO ASTETE - TERRESTRE"
+  },
+  {
+    "agencia": "Pucallpa Co Federico Basadre",
+    "departamento": "Ucayali ",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Yarinacocha",
+    "direccion": "carretera federico basadre km 6.800 yarinacocha - coronel portillo - ucayali, ref. entrada del asentamiento humano alan sisley/al costado de la empresa jvj service oriente sac",
+    "texto_chosen": "312 - UCAYALI - CORONEL PORTILLO - PUCALLPA YARINACOCHA - PUCALLPA CO FEDERICO BASADRE - TERRESTRE"
+  },
+  {
+    "agencia": "Yarinacocha Centro",
+    "departamento": "Ucayali ",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Yarinacocha",
+    "direccion": "jr. tupac amaru, mz. 50, lt. 07, referencia: a espalda de maestranza de yarinacocha",
+    "texto_chosen": "313 - UCAYALI - CORONEL PORTILLO - PUCALLPA YARINACOCHA - YARINACOCHA CENTRO - TERRESTRE"
+  },
+  {
+    "agencia": "Perene",
+    "departamento": "Junin ",
+    "provincia": "Chanchamayo",
+    "distrito": "Perene",
+    "direccion": "av. marginal s/n aa.vv san jacinto - perene - chanchamayo - junin, ref. antes del ultimo rompemuelle de san jacinto",
+    "texto_chosen": "314 - JUNIN - CHANCHAMAYO - PERENE - PERENE - TERRESTRE"
+  },
+  {
+    "agencia": "Celendin",
+    "departamento": "Cajamarca ",
+    "provincia": "Celendin",
+    "distrito": "Celendin",
+    "direccion": "jr. pedro ortiz montoya 148, referencia: esquina con av. amazonas",
+    "texto_chosen": "315 - CAJAMARCA - CELENDIN - CELENDIN - CELENDIN - TERRESTRE"
+  },
+  {
+    "agencia": "Tarapoto La Banda De Shilcayo",
+    "departamento": "San Martin ",
+    "provincia": "San Martin",
+    "distrito": "La Banda De Shilcayo",
+    "direccion": "jr. peru n°186, referencia: a 2 cdrs. de la plaza de la banda de shilcayo",
+    "texto_chosen": "317 - SAN MARTIN - SAN MARTIN - LA BANDA DE SHILCAYO - TARAPOTO LA BANDA DE SHILCAYO - TERRESTRE"
+  },
+  {
+    "agencia": "Lamas",
+    "departamento": "San Martin ",
+    "provincia": "Lamas",
+    "distrito": "Lamas",
+    "direccion": "jr. 16 de octubre n°1137, referencia: a la espalda del grifo vargas tello",
+    "texto_chosen": "318 - SAN MARTIN - LAMAS - LAMAS - LAMAS - TERRESTRE"
+  },
+  {
+    "agencia": "Tarapoto Jr Sargento Lorez",
+    "departamento": "San Martin ",
+    "provincia": "San Martin",
+    "distrito": "Morales",
+    "direccion": "jr. sargento lorez n° 264, morales - san martin, ref. a una cdra. y media de la plaza de morales, frente a vulcano gas",
+    "texto_chosen": "319 - SAN MARTIN - SAN MARTIN - MORALES - TARAPOTO JR. SARGENTO LOREZ - TERRESTRE"
+  },
+  {
+    "agencia": "Nueva Cajamarca",
+    "departamento": "San Martin ",
+    "provincia": "Rioja",
+    "distrito": "Nueva Cajamarca",
+    "direccion": "av. cajamarca norte mz. 51 lt. 15, referencia: al costado de essalud",
+    "texto_chosen": "32 - SAN MARTIN - RIOJA - NUEVA CAJAMARCA - NUEVA CAJAMARCA - TERRESTRE"
+  },
+  {
+    "agencia": "Jr Leoncio Prado",
+    "departamento": "San Martin ",
+    "provincia": "San Martin",
+    "distrito": "Tarapoto",
+    "direccion": "jr. leoncio prado n° 1175, referencia: a una cuadra del instituto maria parado de bellido",
+    "texto_chosen": "320 - SAN MARTIN - SAN MARTIN - TARAPOTO - JR LEONCIO PRADO - TERRESTRE"
+  },
+  {
+    "agencia": "Santa",
+    "departamento": "Ancash ",
+    "provincia": "Santa",
+    "distrito": "Santa",
+    "direccion": "panamericana norte km 442 - b, santa, ref. al lado de la ferreteria la llave",
+    "texto_chosen": "321 - ANCASH - SANTA - SANTA - SANTA - TERRESTRE"
+  },
+  {
+    "agencia": "Las Delicias De Villa",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Chorrillos",
+    "direccion": "av. 12 de octubre mz. a - 03, lt. 02, urb. aria - las delicias de villa, ref. a dos cuadras de la av. defensores del morro (ex av. huaylas)",
+    "texto_chosen": "327 - LIMA - LIMA - CHORRILLOS - LAS DELICIAS DE VILLA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Costanera",
+    "departamento": "Puno ",
+    "provincia": "Puno",
+    "distrito": "Puno",
+    "direccion": "av. costanera n° 211 con jr. los incas - puno",
+    "texto_chosen": "33 - PUNO - PUNO - PUNO - AV COSTANERA - TERRESTRE"
+  },
+  {
+    "agencia": "Sicuani Co Ovalo San Andres",
+    "departamento": "Cusco ",
+    "provincia": "Canchis",
+    "distrito": "Sicuani",
+    "direccion": "prolong. av. arequipa 1010  s/n, ref: al costado del grifo guadalupe en el ovalo san andres",
+    "texto_chosen": "34 - CUSCO - CANCHIS - SICUANI - SICUANI CO OVALO SAN ANDRES - TERRESTRE"
+  },
+  {
+    "agencia": "Sullana Santa Rosa",
+    "departamento": "Piura ",
+    "provincia": "Sullana",
+    "distrito": "Sullana",
+    "direccion": "carretera panamericana norte nº 790 sullana   referencia : frente al colegio chiquititos",
+    "texto_chosen": "35 - PIURA - SULLANA - SULLANA - SULLANA SANTA ROSA - TERRESTRE"
+  },
+  {
+    "agencia": "Carhuaz",
+    "departamento": "Ancash ",
+    "provincia": "Carhuaz",
+    "distrito": "Carhuaz",
+    "direccion": "carretera central 00s/n cent carhuaz - carhuaz - ancash, ref. media cuadra antes de llegar al estadio municipal capitan carlos mejia",
+    "texto_chosen": "350 - ANCASH - CARHUAZ - CARHUAZ - CARHUAZ - TERRESTRE"
+  },
+  {
+    "agencia": "Tingo Maria Leoncio Prado",
+    "departamento": "Huanuco ",
+    "provincia": "Leoncio Prado",
+    "distrito": "Rupa Rupa",
+    "direccion": "av. tito jaime 914, rupa rupa-  leoncio prado - huanuco, ref. a dos cdras. de la plaza de armas leoncio pardo",
+    "texto_chosen": "355 - HUANUCO - LEONCIO PRADO - RUPA RUPA - TINGO MARÍA - LEONCIO PRADO - TERRESTRE"
+  },
+  {
+    "agencia": "Chachapoyas Jr Grau",
+    "departamento": "Amazonas ",
+    "provincia": "Chachapoyas",
+    "distrito": "Chachapoyas",
+    "direccion": "jr. grau 270, ref. junto a la agencia de viajes monteverde",
+    "texto_chosen": "356 - AMAZONAS - CHACHAPOYAS - CHACHAPOYAS - CHACHAPOYAS JR GRAU - TERRESTRE"
+  },
+  {
+    "agencia": "Picota",
+    "departamento": "San Martin ",
+    "provincia": "Picota",
+    "distrito": "Picota",
+    "direccion": "av. fernando belaunde terry lote 2b picota - picota - san martin. ref, a una cdra. de la comisaria de picota salida a bellavista",
+    "texto_chosen": "357 - SAN MARTIN - PICOTA - PICOTA - PICOTA - TERRESTRE"
+  },
+  {
+    "agencia": "Desaguadero",
+    "departamento": "Puno ",
+    "provincia": "Chucuito",
+    "distrito": "Desaguadero",
+    "direccion": "av. 28 de julio n° 564 - 566, chucuito ref. a 50 mtrs. del banco de la nacion",
+    "texto_chosen": "358 - PUNO - CHUCUITO - DESAGUADERO - DESAGUADERO - TERRESTRE"
+  },
+  {
+    "agencia": "San Martin Bellavista",
+    "departamento": "San Martin ",
+    "provincia": "Bellavista",
+    "distrito": "Bellavista",
+    "direccion": "av. lima s/n c-4 mz 71 – lote a – tercer piso, bellavista- bellavista- san martin, ref. espaldas de ferreteria el iman",
+    "texto_chosen": "359 - SAN MARTIN - BELLAVISTA - BELLAVISTA - SAN MARTIN BELLAVISTA - TERRESTRE"
+  },
+  {
+    "agencia": "Tacna Co Av Jorge Basadre",
+    "departamento": "Tacna ",
+    "provincia": "Tacna",
+    "distrito": "Tacna",
+    "direccion": "av. jorge basadre grohmann oeste n° 366 - tacna",
+    "texto_chosen": "36 - TACNA - TACNA - TACNA - TACNA CO AV. JORGE BASADRE - TERRESTRE"
+  },
+  {
+    "agencia": "Bellavista Sullana",
+    "departamento": "Piura ",
+    "provincia": "Sullana",
+    "distrito": "Bellavista",
+    "direccion": "calle moquegua 381, bellavista, ref. rest. parrilladas chavelos",
+    "texto_chosen": "362 - PIURA - SULLANA - BELLAVISTA - BELLAVISTA SULLANA - TERRESTRE"
+  },
+  {
+    "agencia": "Yungay",
+    "departamento": "Ancash ",
+    "provincia": "Yungay",
+    "distrito": "Yungay",
+    "direccion": "jr. industrial, lte. 14 - yungay, ref. al costado del terminal terrestre y la tapiceria fredy",
+    "texto_chosen": "363 - ANCASH - YUNGAY - YUNGAY - YUNGAY - TERRESTRE"
+  },
+  {
+    "agencia": "Calle Lima",
+    "departamento": "Moquegua ",
+    "provincia": "Mariscal Nieto",
+    "distrito": "Moquegua",
+    "direccion": "calle lima 190 - mariscal nieto - moquegua, ref. a dos cuadras del parque los heroes/alameda",
+    "texto_chosen": "366 - MOQUEGUA - MARISCAL NIETO - MOQUEGUA - CALLE LIMA - TERRESTRE"
+  },
+  {
+    "agencia": "Ilave",
+    "departamento": "Puno ",
+    "provincia": "El Collao",
+    "distrito": "Ilave",
+    "direccion": "jr. bolognesi nro. 866 barrio cruzani, el collao - puno, ref. a una cuadra del coliseo y del cementerio de ilave",
+    "texto_chosen": "368 - PUNO - EL COLLAO - ILAVE - ILAVE - TERRESTRE"
+  },
+  {
+    "agencia": "Santa Rosa",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Santa Rosa",
+    "direccion": "mz. l 23 urb. coovitiomar, ancon - santa rosa - lima, ref. cruce de ingreso a santa rosa y/o al costado de imagen de santa rosa",
+    "texto_chosen": "369 - LIMA - LIMA - SANTA ROSA - SANTA ROSA - TERRESTRE"
+  },
+  {
+    "agencia": "Talara Co Asoc California",
+    "departamento": "Piura ",
+    "provincia": "Talara",
+    "distrito": "Parinas",
+    "direccion": "asociacion california c - 03 frente a carretera negritos, talara - parinas, referencia: al costado del restaurante mi torete",
+    "texto_chosen": "37 - PIURA - TALARA - PARINAS - TALARA CO ASOC CALIFORNIA - TERRESTRE"
+  },
+  {
+    "agencia": "Ayabaca",
+    "departamento": "Piura ",
+    "provincia": "Ayabaca",
+    "distrito": "Ayabaca",
+    "direccion": "calle bolognesi n° 136, ref. a 2 cuadras de la plaza de armas de ayabaca",
+    "texto_chosen": "370 - PIURA - AYABACA - AYABACA - AYABACA - TERRESTRE"
+  },
+  {
+    "agencia": "San Marcos",
+    "departamento": "Cajamarca ",
+    "provincia": "San Marcos",
+    "distrito": "Pedro Galvez",
+    "direccion": "jr. adolfo amorin bueno n° 140 san marcos – cajamarca, ref. al  frente de la plaza agropecuaria",
+    "texto_chosen": "371 - CAJAMARCA - SAN MARCOS - PEDRO GALVEZ - SAN MARCOS - TERRESTRE"
+  },
+  {
+    "agencia": "Cajabamba",
+    "departamento": "Cajamarca ",
+    "provincia": "Cajabamba",
+    "distrito": "Cajabamba",
+    "direccion": "jr. lara n° 100 ,cajabamba - cajabamba - cajamarca, ref. a una cdra. del complejo deportivo “santa ana”",
+    "texto_chosen": "372 - CAJAMARCA - CAJABAMBA - CAJABAMBA - CAJABAMBA - TERRESTRE"
+  },
+  {
+    "agencia": "Bellavista Callao",
+    "departamento": "Callao ",
+    "provincia": "Callao",
+    "distrito": "Bellavista",
+    "direccion": "av. elmer faucett 1641 - urb. jardines viru mz. b lt 46, bellavista - callao, ref. a 2 cuadras del cruce de av. faucett con av. venezuela",
+    "texto_chosen": "373 - CALLAO - CALLAO - BELLAVISTA - BELLAVISTA CALLAO - TERRESTRE"
+  },
+  {
+    "agencia": "Jesus Maria",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Jesus Maria",
+    "direccion": "av. mariscal luzuriaga 584-586 jesus maria - lima, ref. a cuadra y media del parque san jose, paralelo a la av. mello franco",
+    "texto_chosen": "374 - LIMA - LIMA - JESUS MARIA - JESUS MARIA - TERRESTRE"
+  },
+  {
+    "agencia": "Tumbes Puyango",
+    "departamento": "Tumbes ",
+    "provincia": "Tumbes",
+    "distrito": "Tumbes",
+    "direccion": "urb. andres araujo moran mz. 28-a lote 03 calle jacinto seminario, ref. al costado del mercado puyango",
+    "texto_chosen": "375 - TUMBES - TUMBES - TUMBES - TUMBES PUYANGO - TERRESTRE"
+  },
+  {
+    "agencia": "Paimas",
+    "departamento": "Piura ",
+    "provincia": "Ayabaca",
+    "distrito": "Paimas",
+    "direccion": "av. sullana s/n, ref. frente al complejo educativo juan velasco alvarado",
+    "texto_chosen": "376 - PIURA - AYABACA - PAIMAS - PAIMAS - TERRESTRE"
+  },
+  {
+    "agencia": "Santa Clara",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Atevitarte",
+    "direccion": "av. pedro ruiz gallo mz. h lt. 3. asoc. viv. villa san luis, santa clara - ate vitarte - limaref: entre el real plaza y la utp santa clara",
+    "texto_chosen": "377 - LIMA - LIMA - ATE-VITARTE - SANTA CLARA - TERRESTRE"
+  },
+  {
+    "agencia": "Ovalo Mariategui",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Villa El Salvador",
+    "direccion": "av. pastor sevilla sect. 6 - gp 7 - mz. a - lote 05  - v.e.s., ref. a 2 cuadras del ovalo mariategui con 3 de octubre",
+    "texto_chosen": "378 - LIMA - LIMA - VILLA EL SALVADOR - ÓVALO MARIÁTEGUI - TERRESTRE"
+  },
+  {
+    "agencia": "01 De Mayo",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Villa El Salvador",
+    "direccion": "av. 01de mayo 1 sect gp 23 - a mz n lote 13 - v.e.s., ref. av. pastor sevilla con av. 1 de mayo a 2 cuadras del hospital de la solidaridad por la ruta c",
+    "texto_chosen": "379 - LIMA - LIMA - VILLA EL SALVADOR - 01 DE MAYO - TERRESTRE"
+  },
+  {
+    "agencia": "Tarapoto Co Jr Alfonso Ugarte",
+    "departamento": "San Martin ",
+    "provincia": "San Martin",
+    "distrito": "Tarapoto",
+    "direccion": "jr. alfonso ugarte n°2283 - tarapoto - san martin - san martin, ref. frente a la cancha sintetico el golazo",
+    "texto_chosen": "38 - SAN MARTIN - SAN MARTIN - TARAPOTO - TARAPOTO CO JR ALFONSO UGARTE - TERRESTRE"
+  },
+  {
+    "agencia": "Av Canevaro",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Miraflores",
+    "direccion": "av. canevaro 336 - a, ref. a 2 cuadras de la av. vargas machuga  y a una cuadra de la fiscalia provincial penal de s.j.m.",
+    "texto_chosen": "380 - LIMA - LIMA - SAN JUAN DE MIRAFLORES - AV. CANEVARO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Villa Maria",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Villa Maria Del Triunfo",
+    "direccion": "av villa maria  mz. g12 lt. 9 - b ps 1 sect. villa maria del triunfo, ref. av. villa maria  a 2 cuadras de la municipalidad de vmt y al costado de essalud",
+    "texto_chosen": "381 - LIMA - LIMA - VILLA MARIA DEL TRIUNFO - AV. VILLA MARIA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Miguel Grau Pamplona Alta",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Miraflores",
+    "direccion": "av. almirante miguel grau mz. y3 lt. 29,pamplona alta - san juan de miraflores - lima, ref. a media cdra. del mercado ollantay pamplonaalta",
+    "texto_chosen": "382 - LIMA - LIMA - SAN JUAN DE MIRAFLORES - AV MIGUEL GRAU PAMPLONA ALTA - TERRESTRE"
+  },
+  {
+    "agencia": "Surco Mateo Pumacahua",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Santiago De Surco",
+    "direccion": "av. san juan mz a lote 01 mateo pumacahua - surco, ref. a 2 cuadras de la av. tupac amaru entre el limite de chorrillos y surco",
+    "texto_chosen": "383 - LIMA - LIMA - SANTIAGO DE SURCO - SURCO MATEO PUMACAHUA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Tupac Amaru Km 235",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "direccion": "av. tupac amaru km. 23.5 - carabayllo, ref. frente a la iglesia de mormones - a una cdra. del ultimo paradero del rapido",
+    "texto_chosen": "384 - LIMA - LIMA - CARABAYLLO - AV. TUPAC AMARU KM. 23.5 - TERRESTRE"
+  },
+  {
+    "agencia": "Av Dos De Octubre",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "direccion": "av. 2 de octubre mz. h lt. 2 - los olivos - pro, ref. av. 2 de octubre con av. canta callao, al costado del centro de salud pro",
+    "texto_chosen": "385 - LIMA - LIMA - LOS OLIVOS - AV. DOS DE OCTUBRE - TERRESTRE"
+  },
+  {
+    "agencia": "Av Gerardo Unger Cdra 64",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. gerardo unger 6475, urb. santa luisa, 1ra etapa, s.m.p., ref. esquina con av. 22 de agosto, limite con comas / a una cdra. y media de la comisaria santa luzmila",
+    "texto_chosen": "387 - LIMA - LIMA - SAN MARTIN DE PORRES - AV. GERARDO UNGER CDRA 64 - TERRESTRE"
+  },
+  {
+    "agencia": "German Aguirre",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. german aguirre ugarte 649 urb. san german - san martin de porres, ref. a la altura de la cuadra 6 de la av. german aguirre y a 3 cuadras de av. tomas valle",
+    "texto_chosen": "389 - LIMA - LIMA - SAN MARTIN DE PORRES - GERMÁN AGUIRRE - TERRESTRE"
+  },
+  {
+    "agencia": "Calle Liverpool",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "Trujillo",
+    "direccion": "calle liverpool n° 329 / urb. santa isabel - trujillo.  referencia : a una cuadra antes de la iglesia de mansiche",
+    "texto_chosen": "39 - LA LIBERTAD - TRUJILLO - TRUJILLO - CALLE LIVERPOOL - TERRESTRE"
+  },
+  {
+    "agencia": "Av Esperanza",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Atevitarte",
+    "direccion": "av. esperanza mz. k lt. 06 las americas - ate vitarte - lima, ref. pasando mercado raucana",
+    "texto_chosen": "390 - LIMA - LIMA - ATE-VITARTE - AV ESPERANZA - TERRESTRE"
+  },
+  {
+    "agencia": "Las Lomas",
+    "departamento": "Piura ",
+    "provincia": "Piura",
+    "distrito": "Las Lomas",
+    "direccion": "jr. miguel grau mz. h lt. 7, las lomas - piura, ref. al costado de caja huancayo y al costado de comisaria las lomas",
+    "texto_chosen": "391 - PIURA - PIURA - LAS LOMAS - LAS LOMAS - TERRESTRE"
+  },
+  {
+    "agencia": "Malvinas Jr Garcia Villon",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Cercado Lima",
+    "direccion": "jr. presbitero garcia villon nro. 560 cercado lima - lima, ref. a la altura de la cdra. 5 de av. oscar r. benavides (ex av. colonial), en medio de las av. guillermo dansey y av. oscar r. benavides (ex colonial)",
+    "texto_chosen": "392 - LIMA - LIMA - CERCADO LIMA - MALVINAS - JR. GARCIA VILLóN - TERRESTRE"
+  },
+  {
+    "agencia": "Uchumayo",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Uchumayo",
+    "direccion": "urb. el carmen m. e. lt. 1 congata del distrito uchumayo - arequipa, ref. a dos cdras. de la comisaria congata",
+    "texto_chosen": "393 - AREQUIPA - AREQUIPA - UCHUMAYO - UCHUMAYO - TERRESTRE"
+  },
+  {
+    "agencia": "Huaura",
+    "departamento": "Lima ",
+    "provincia": "Huaura",
+    "distrito": "Huaura",
+    "direccion": "av. las malvinas mz. c lote 16 urb. el rosario sur huaura, ref. a espaldas de la plaza de armas, a 1 cdra. de la calle los alamos",
+    "texto_chosen": "394 - LIMA - HUAURA - HUAURA - HUAURA - TERRESTRE"
+  },
+  {
+    "agencia": "Aguaytia",
+    "departamento": "Ucayali ",
+    "provincia": "Padre Abad",
+    "distrito": "Aguaytia",
+    "direccion": "u. vecinal barrio unido mz. 1 lt. 2, padre abad - ucayali, ref. al costado del terminal terrestre de aguaytia",
+    "texto_chosen": "395 - UCAYALI - PADRE ABAD - AGUAYTIA - AGUAYTÍA - TERRESTRE"
+  },
+  {
+    "agencia": "Trujillo La Perla",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "Trujillo",
+    "direccion": "av. la perla mz. e lote 05 urb. ingenieria – trujillo – la libertad, ref. a 1 cdra. del colegio bruning",
+    "texto_chosen": "396 - LA LIBERTAD - TRUJILLO - TRUJILLO - TRUJILLO LA PERLA - TERRESTRE"
+  },
+  {
+    "agencia": "Zarumilla",
+    "departamento": "Tumbes ",
+    "provincia": "Zarumilla",
+    "distrito": "Zarumilla",
+    "direccion": "jiron independencia 309 zarumilla, ref. atras de la plaza de armas y frente al dorado pasando 5 casas",
+    "texto_chosen": "397 - TUMBES - ZARUMILLA - ZARUMILLA - ZARUMILLA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Huancane Cdra 9",
+    "departamento": "Puno ",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "direccion": "jr. sillustani n° 202, san roman - juliaca, ref. a 3 cdras. del hospital carlos monge medrano",
+    "texto_chosen": "398 - PUNO - SAN ROMAN - JULIACA - AV. HUANCANE CDRA. 9 - TERRESTRE"
+  },
+  {
+    "agencia": "Las Mercedes",
+    "departamento": "Puno ",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "direccion": "jr. porvenir n° 228 urb. las mercedes, san roman - puno, ref. a una cdra. de la av. circunvalacion oeste - a una cdra. del terminal las mercedes",
+    "texto_chosen": "399 - PUNO - SAN ROMAN - JULIACA - LAS MERCEDES - TERRESTRE"
+  },
+  {
+    "agencia": "Av Mexico Co",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "La Victoria",
+    "direccion": "av. mexico 1125, la victoria - lima",
+    "texto_chosen": "4 - LIMA - LIMA - LA VICTORIA - AV MEXICO CO - TERRESTRE"
+  },
+  {
+    "agencia": "Tumbes Av Arica",
+    "departamento": "Tumbes ",
+    "provincia": "Tumbes",
+    "distrito": "Tumbes",
+    "direccion": "av. arica n° 227 - tumbes.",
+    "texto_chosen": "40 - TUMBES - TUMBES - TUMBES - TUMBES - AV ARICA - TERRESTRE"
+  },
+  {
+    "agencia": "Tumbes Co Panamericana Norte Km 2360",
+    "departamento": "Tumbes ",
+    "provincia": "Tumbes",
+    "distrito": "Tumbes",
+    "direccion": "av. panamericana norte s/n villa primavera - tumbes. ref. pasando senati frente a agripac",
+    "texto_chosen": "400 - TUMBES - TUMBES - TUMBES - TUMBES CO - PANAMERICANA NORTE KM 2360 - TERRESTRE"
+  },
+  {
+    "agencia": "Terminal Los Andes",
+    "departamento": "Junin ",
+    "provincia": "Huancayo",
+    "distrito": "Huancayo",
+    "direccion": "av. ferrocarril s/n - huancayo - counter n° 14, ref. terminal terrestre los andes, frente al open plaza",
+    "texto_chosen": "401 - JUNIN - HUANCAYO - HUANCAYO - TERMINAL LOS ANDES - TERRESTRE"
+  },
+  {
+    "agencia": "Ica Santiago",
+    "departamento": "Ica ",
+    "provincia": "Ica",
+    "distrito": "Santiago",
+    "direccion": "centro poblado santiago mz. e, lt. 01 sector ii santiago - ica - ica, ref. frente a la comisaria de santiago",
+    "texto_chosen": "402 - ICA - ICA - SANTIAGO - ICA SANTIAGO - TERRESTRE"
+  },
+  {
+    "agencia": "La Tinguina",
+    "departamento": "Ica ",
+    "provincia": "Ica",
+    "distrito": "La Tinguina",
+    "direccion": "calle francisco sales sotelo n° 298 sub lote 3, la tinguina - ica – ica, ref. cruce de la av.frncisco sales sotelo y av. jose carlos mariategui",
+    "texto_chosen": "403 - ICA - ICA - LA TINGUINA - LA TINGUIÑA - TERRESTRE"
+  },
+  {
+    "agencia": "Salas Ica",
+    "departamento": "Ica ",
+    "provincia": "Ica",
+    "distrito": "Salas",
+    "direccion": "sub lote 01 zona panamericana sur km. 293.350, salas guadalupe -  ica - ica, ref. frente al estadio de salas guadalupe",
+    "texto_chosen": "404 - ICA - ICA - SALAS - SALAS ICA - TERRESTRE"
+  },
+  {
+    "agencia": "Ica Av Jj Elias",
+    "departamento": "Ica ",
+    "provincia": "Ica",
+    "distrito": "Ica",
+    "direccion": "manzana b, sub-lote 02 del fundo la palma ica, ref. cruce de av. cutervo con av. j.j elias",
+    "texto_chosen": "405 - ICA - ICA - ICA - ICA AV. JJ ELIAS - TERRESTRE"
+  },
+  {
+    "agencia": "San Antonio",
+    "departamento": "Moquegua ",
+    "provincia": "Mariscal Nieto",
+    "distrito": "Moquegua",
+    "direccion": "av. santa fortunata mz. n5 lt. 10 asoc. villa moquegua san antonio. referencia : a una cuadra de la casa de la mujer",
+    "texto_chosen": "41 - MOQUEGUA - MARISCAL NIETO - MOQUEGUA - SAN ANTONIO - TERRESTRE"
+  },
+  {
+    "agencia": "Canto Grande",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "calle san martin con av. comercial norte 189 - san juan de lurigancho, ref. a 1/2 cuadra de la av 6 de canto grande - al costado del play park (parque bolognesi)",
+    "texto_chosen": "410 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - CANTO GRANDE - TERRESTRE"
+  },
+  {
+    "agencia": "Los Pinos",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "mz. b1 lt. 25 urbanizacion los pinos san juan de lurigancho, ref. av. fernando wiesse - cerca a la estacion san martin",
+    "texto_chosen": "411 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - LOS PINOS - TERRESTRE"
+  },
+  {
+    "agencia": "Aucayacu",
+    "departamento": "Huanuco ",
+    "provincia": "Leoncio Prado",
+    "distrito": "Jose Crespo Y Castil",
+    "direccion": "jr. chiclayo 247 0c-02 cent aucayu, leoncio prado, huanuco, ref. atras del estadio municipal",
+    "texto_chosen": "415 - HUANUCO - LEONCIO PRADO - JOSE CRESPO Y CASTIL - AUCAYACU - TERRESTRE"
+  },
+  {
+    "agencia": "Pardo Miguel Naranjos",
+    "departamento": "San Martin ",
+    "provincia": "Rioja",
+    "distrito": "Pardo Miguel",
+    "direccion": "jr. miguel grau 101 mz. 34 lt. 6, pardo miguel - rioja - san martin, ref. av. marginal cdra 5",
+    "texto_chosen": "416 - SAN MARTIN - RIOJA - PARDO MIGUEL - PARDO MIGUEL NARANJOS - TERRESTRE"
+  },
+  {
+    "agencia": "Ica Urb Manzanilla",
+    "departamento": "Ica ",
+    "provincia": "Ica",
+    "distrito": "Ica",
+    "direccion": "av. manuel santana chiri n°359 a1 – ica, ref. cruce con calle baltazar caravedo",
+    "texto_chosen": "417 - ICA - ICA - ICA - ICA URB. MANZANILLA - TERRESTRE"
+  },
+  {
+    "agencia": "Canete Imperial",
+    "departamento": "Lima ",
+    "provincia": "Canete",
+    "distrito": "Imperial",
+    "direccion": "jr. augusto b. leguia n.º 457, mz e, centro poblado imperial, imperial - canete - lima, ref. cevicheria brisas del mar",
+    "texto_chosen": "419 - LIMA - CAÑETE - IMPERIAL - CAÑETE IMPERIAL - TERRESTRE"
+  },
+  {
+    "agencia": "Atahualpa",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "Trujillo",
+    "direccion": "calle atahualpa 481 – trujillo – la libertad, ref. a 1/2 cdra de la av los incas",
+    "texto_chosen": "420 - LA LIBERTAD - TRUJILLO - TRUJILLO - ATAHUALPA - TERRESTRE"
+  },
+  {
+    "agencia": "Puente Viru",
+    "departamento": "La Libertad ",
+    "provincia": "Viru",
+    "distrito": "Viru",
+    "direccion": "panamericana norte n° 933 puente viru - viru - la libertad, ref. a media cdra. del grifo zona etna/media cdra. del semaforo zona etna",
+    "texto_chosen": "421 - LA LIBERTAD - VIRU - VIRU - PUENTE VIRU - TERRESTRE"
+  },
+  {
+    "agencia": "Huancabamba",
+    "departamento": "Piura ",
+    "provincia": "Huancabamba",
+    "distrito": "Huancabamba",
+    "direccion": "av. ramon castilla 0351 huancabamba - piura, ref. a 1 cuadra de la capilla ramon castilla",
+    "texto_chosen": "422 - PIURA - HUANCABAMBA - HUANCABAMBA - HUANCABAMBA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Carlos Izaguirre Cdra 14",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "direccion": "calle david alva manzana h lote 4 urb. cajabamba los olivos - lima, ref. entre la av. carlos izaguirre con la av. universitaria (frente al colegio pamer)",
+    "texto_chosen": "423 - LIMA - LIMA - LOS OLIVOS - AV. CARLOS IZAGUIRRE CDRA. 14 - TERRESTRE"
+  },
+  {
+    "agencia": "Ciudad De Dios",
+    "departamento": "La Libertad ",
+    "provincia": "Pacasmayo",
+    "distrito": "Guadalupe",
+    "direccion": "mz. a lt. 01 cpm ciudad de dios - sec. los angeles – guadalupe – la libertad, ref. al costado del molino saman y a dos cuadras del cruce a cajamarca",
+    "texto_chosen": "424 - LA LIBERTAD - PACASMAYO - GUADALUPE - CIUDAD DE DIOS - TERRESTRE"
+  },
+  {
+    "agencia": "Guadalupe La Libertad",
+    "departamento": "La Libertad ",
+    "provincia": "Pacasmayo",
+    "distrito": "Guadalupe",
+    "direccion": "av. nilla cerruty n° 299 - guadalupe – pacasmayo – la libertad, ref. al costado del grifo repsol - neotech",
+    "texto_chosen": "425 - LA LIBERTAD - PACASMAYO - GUADALUPE - GUADALUPE LA LIBERTAD - TERRESTRE"
+  },
+  {
+    "agencia": "Los Fresnos",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "La Molina",
+    "direccion": "av. los fresnos 1305 tienda 2 - urb. portada del sol i etapa - la molina - lima, ref. a 3 cdras. del ovalo de los condores",
+    "texto_chosen": "426 - LIMA - LIMA - LA MOLINA - LOS FRESNOS - TERRESTRE"
+  },
+  {
+    "agencia": "Av Fernando Belaunde",
+    "departamento": "San Martin ",
+    "provincia": "Tocache",
+    "distrito": "Tocache",
+    "direccion": "av. fernando belaunde c-09 mz h6 (21), lt. 04, cercado de tocache, ref. frente al mercadillo de tocache",
+    "texto_chosen": "427 - SAN MARTIN - TOCACHE - TOCACHE - AV FERNANDO BELAUNDE - TERRESTRE"
+  },
+  {
+    "agencia": "Jr Raymondi",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "La Victoria",
+    "direccion": "jr. antonio raymondi nro. 113",
+    "texto_chosen": "43 - LIMA - LIMA - LA VICTORIA - JR. RAYMONDI - TERRESTRE"
+  },
+  {
+    "agencia": "Av Jose Granda Cdra 38",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. jose granda 3826 de la urb. condevilla senor y valdivieso mz. m7 lt 20, 2 etapa, 2 sector - s.m.p. , ref.  entre av. condevilla y av. los proceres",
+    "texto_chosen": "431 - LIMA - LIMA - SAN MARTIN DE PORRES - AV JOSE GRANDA CDRA 38 - TERRESTRE"
+  },
+  {
+    "agencia": "Av Principal",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Surquillo",
+    "direccion": "lt. 12 mz. g, av. principal 995 (ex av. uno) urb. los sauces 2da etapa, surquillo, ref. cruce con a. manuel villaran",
+    "texto_chosen": "432 - LIMA - LIMA - SURQUILLO - AV. PRINCIPAL - TERRESTRE"
+  },
+  {
+    "agencia": "Jesus Nazareno",
+    "departamento": "Ayacucho ",
+    "provincia": "Huamanga",
+    "distrito": "Jesus Nazareno",
+    "direccion": "jr. jose maria eguren 451 - jesus nazareno - huamanga - ayacucho, ref. cruce con jr. mariano melgar",
+    "texto_chosen": "438 - AYACUCHO - HUAMANGA - JESUS NAZARENO - JESUS NAZARENO - TERRESTRE"
+  },
+  {
+    "agencia": "Bayovar",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "av. fernando wiesse mz. e8. lote 38b, mariscal caceres bayovar - san juan de lurigancho - lima, ref. auxiliar proceres de la independencia, al frente de la universidad san marcos – agroindustrial",
+    "texto_chosen": "439 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - BAYOVAR - TERRESTRE"
+  },
+  {
+    "agencia": "Av Santa Rosa Urb Los Alamos",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "av. santa rosa mz. d1 lote 1 urb. los alamos 2da etapa  - referencia altura de la cuadra 13 del paradero canto grande",
+    "texto_chosen": "44 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - AV SANTA ROSA URB LOS ALAMOS - TERRESTRE"
+  },
+  {
+    "agencia": "San Carlos Huancayo",
+    "departamento": "Junin ",
+    "provincia": "Huancayo",
+    "distrito": "Huancayo",
+    "direccion": "pj. san fernando 209 huancayo - huancayo - junin, ref. esquina del jr. san fernando y martires del periodismo",
+    "texto_chosen": "440 - JUNIN - HUANCAYO - HUANCAYO - SAN CARLOS HUANCAYO - TERRESTRE"
+  },
+  {
+    "agencia": "Huacho Av Indacochea",
+    "departamento": "Lima ",
+    "provincia": "Huaura",
+    "distrito": "Huacho",
+    "direccion": "av. mercedes indacochea 1276 huacho - huaura - lima, ref. interseccion con pedro ruiz gallo, a 2 cdras. de la universidad nacional jose faustino sanchez carrion",
+    "texto_chosen": "441 - LIMA - HUAURA - HUACHO - HUACHO AV INDACOCHEA - TERRESTRE"
+  },
+  {
+    "agencia": "Tacna Ciudad Nueva",
+    "departamento": "Tacna ",
+    "provincia": "Tacna",
+    "distrito": "Ciudad Nueva",
+    "direccion": "ciudad nueva mz 46 lt 12 comite 10 ciudad nueva - tacna, ref. a una cdra. de la plaza jose olaya de ciudad nueva",
+    "texto_chosen": "442 - TACNA - TACNA - CIUDAD NUEVA - TACNA CIUDAD NUEVA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Lima",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Alto Selva Alegre",
+    "direccion": "av. lima n° 406 – alto selva alegre - arequipa, ref. esquina con av. obrera cuadra 20",
+    "texto_chosen": "443 - AREQUIPA - AREQUIPA - ALTO SELVA ALEGRE - AV LIMA - TERRESTRE"
+  },
+  {
+    "agencia": "Moche",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "Moche",
+    "direccion": "av. la marina lote 25 - b – moche – trujillo - la libertad, ref. a media cdra de la comisaria de moche",
+    "texto_chosen": "444 - LA LIBERTAD - TRUJILLO - MOCHE - MOCHE - TERRESTRE"
+  },
+  {
+    "agencia": "Cusco Calca",
+    "departamento": "Cusco ",
+    "provincia": "Calca",
+    "distrito": "Calca",
+    "direccion": "av. vilcanota mz. a lt 4 calca - cusco, ref. frente al grifo petro peru o el ovalo puma - entrada de calca",
+    "texto_chosen": "447 - CUSCO - CALCA - CALCA - CUSCO CALCA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Quilca",
+    "departamento": "Callao ",
+    "provincia": "Callao",
+    "distrito": "Callao",
+    "direccion": "unidad inmobiliaria n° 1, av. quilca mz. g sub lt. 11c, urb. aeropuerto – segundo sector - callao, ref. cruce con calle 1, frente a la iglesia de testigos de jehova",
+    "texto_chosen": "448 - CALLAO - CALLAO - CALLAO - AV QUILCA - TERRESTRE"
+  },
+  {
+    "agencia": "Lima Av Tingo Maria",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Cercado Lima",
+    "direccion": "av. tingo maria n°1252-a - cercado de lima - lima, ref. a media cdra. del cruce con jr. gral. orbegoso",
+    "texto_chosen": "449 - LIMA - LIMA - CERCADO LIMA - LIMA AV TINGO MARÍA - TERRESTRE"
+  },
+  {
+    "agencia": "Las Conchitas",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Villa Maria Del Triunfo",
+    "direccion": "av. pachacutec 6779, mz. n, lt. 20, villa maria del triunfo - referencia: a una cdra. del grifo repsol las conchitas",
+    "texto_chosen": "45 - LIMA - LIMA - VILLA MARIA DEL TRIUNFO - LAS CONCHITAS - TERRESTRE"
+  },
+  {
+    "agencia": "Megaplaza Chorrillos",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Chorrillos",
+    "direccion": "av. alameda sur 5, chorrillos 15067, ref. cruce de av. alameda sur conav. alameda san marcos",
+    "texto_chosen": "450 - LIMA - LIMA - CHORRILLOS - MEGAPLAZA CHORRILLOS - TERRESTRE"
+  },
+  {
+    "agencia": "Rimac Guardia Republicana Cdra 9",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Rimac",
+    "direccion": "seccion inmobiliaria n°2 – primer piso lt. 11 de la mz. 2, urb. villacampa rimac, ref. a una cdra. del cruce con av. felipe arancibia",
+    "texto_chosen": "451 - LIMA - LIMA - RIMAC - RIMAC GUARDIA REPUBLICANA CDRA. 9 - TERRESTRE"
+  },
+  {
+    "agencia": "Chincha Pueblo Nuevo",
+    "departamento": "Ica ",
+    "provincia": "Chincha",
+    "distrito": "Pueblo Nuevo",
+    "direccion": "aa. hh. los alamos, calle los laureles mz. 17 lt. 11- a, ref. a 2 cdras. de la posta los alamos",
+    "texto_chosen": "452 - ICA - CHINCHA - PUEBLO NUEVO - CHINCHA PUEBLO NUEVO - TERRESTRE"
+  },
+  {
+    "agencia": "Campoy",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "av. malecon checa mz. b lt. 7, urb. campoy, san juan de lurigancho, ref. a 1 cdra. del cruce de av. malecon checa con av. san martin",
+    "texto_chosen": "453 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - CAMPOY - TERRESTRE"
+  },
+  {
+    "agencia": "Av Huarochiri",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Santa Anita",
+    "direccion": "av. huarochiri mz. e1 lt. 03 - urb. los cedros santa anita, ref. cruce de av. huarochiri con av. santa ana",
+    "texto_chosen": "454 - LIMA - LIMA - SANTA ANITA - AV. HUAROCHIRÍ - TERRESTRE"
+  },
+  {
+    "agencia": "Mazamari",
+    "departamento": "Junin ",
+    "provincia": "Satipo",
+    "distrito": "Mazamari",
+    "direccion": "jr. jorge chavez nro 144 lt. 8a junin - satipo– mazamari, ref. cerca a la via principal, al costado del hospedaje lujan 1er piso",
+    "texto_chosen": "455 - JUNIN - SATIPO - MAZAMARI - MAZAMARI - TERRESTRE"
+  },
+  {
+    "agencia": "Ayaviri",
+    "departamento": "Puno ",
+    "provincia": "Melgar",
+    "distrito": "Ayaviri",
+    "direccion": "jr. santa rosa prolongacion s/n magisterial - puno - melgar - ayaviri, ref. a 50 metros del ovalo, salida a juliaca",
+    "texto_chosen": "456 - PUNO - MELGAR - AYAVIRI - AYAVIRI - TERRESTRE"
+  },
+  {
+    "agencia": "Av Dominicos Cdra 14",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. los dominicos 1460 - urb. los cipreses mz. z lt. 4 - san martin de porres, ref. a una cdra. del cruce con av. santa rosa al lado del mercado los cipreses",
+    "texto_chosen": "457 - LIMA - LIMA - SAN MARTIN DE PORRES - AV. DOMINICOS CDRA 14 - TERRESTRE"
+  },
+  {
+    "agencia": "Av Angamos",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Borja",
+    "direccion": "av. angamos este 2521 (ex av. primavera) - conjunto habitacional limatambo -  san borja. ref. cerca al cruce de av. angamos este con av. principal",
+    "texto_chosen": "459 - LIMA - LIMA - SAN BORJA - AV. ANGAMOS - TERRESTRE"
+  },
+  {
+    "agencia": "Iquitos Co Jr Pablo Rossell",
+    "departamento": "Loreto ",
+    "provincia": "Maynas",
+    "distrito": "Iquitos",
+    "direccion": "jr. pablo rossell 590 con nanay, ref. cruce con av. nanay frente al instituto cepro america computer",
+    "texto_chosen": "460 - LORETO - MAYNAS - IQUITOS - IQUITOS CO JR. PABLO ROSSELL - TERRESTRE"
+  },
+  {
+    "agencia": "Pangoa",
+    "departamento": "Junin ",
+    "provincia": "Satipo",
+    "distrito": "Pangoa",
+    "direccion": "av. marginal s/n numero villa chavini pangoa - satipo - junin, ref. al costado de la tienda honda inversiones arauco san martin de pangoa",
+    "texto_chosen": "461 - JUNIN - SATIPO - PANGOA - PANGOA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Jose Granda Cdra 25",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. jose granda 2546 - san martin de porres  -lima - lima, ref. a una cdra. del ovalo jose granda y av. universitaria",
+    "texto_chosen": "462 - LIMA - LIMA - SAN MARTIN DE PORRES - AV JOSE GRANDA CDRA. 25 - TERRESTRE"
+  },
+  {
+    "agencia": "Corrales",
+    "departamento": "Tumbes ",
+    "provincia": "Tumbes",
+    "distrito": "Corrales",
+    "direccion": "av. huascar nº 311 int. 01 centro, corrales - tumbes, ref. a espaldas de la plaza de armas",
+    "texto_chosen": "463 - TUMBES - TUMBES - CORRALES - CORRALES - TERRESTRE"
+  },
+  {
+    "agencia": "Pachacutec Pdro Chinitas",
+    "departamento": "Callao ",
+    "provincia": "Callao",
+    "distrito": "Ventanilla",
+    "direccion": "av. 225 mz. h sub lt. t. 11 - asoc  proy. esp. ciudad pachacutec, ref. a 1 cdra. del cruce con av. los proyectistas, ventanilla - lima - lima",
+    "texto_chosen": "464 - CALLAO - CALLAO - VENTANILLA - PACHACUTEC PDRO CHINITAS - TERRESTRE"
+  },
+  {
+    "agencia": "Av Jose Saco Rojas",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "direccion": "av. jose saco rojas mz. a lt. 15 programa de vivienda el pino, san antonio - carabayllo, ref. frente al chifa hong fu y a 3 cuadras del gran mercado el pino",
+    "texto_chosen": "465 - LIMA - LIMA - CARABAYLLO - AV JOSE SACO ROJAS - TERRESTRE"
+  },
+  {
+    "agencia": "Av Los Platinos",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "direccion": "av. los platinos n°. 259, mz. a - lt. 17, urb. lotizacion industrial infantas los olivos - lima, ref. a dos cdras. y media de la av. alfredo mendiola y/o panamericana norte (altura del paradero caseta)",
+    "texto_chosen": "466 - LIMA - LIMA - LOS OLIVOS - AV. LOS PLATINOS - TERRESTRE"
+  },
+  {
+    "agencia": "Luya",
+    "departamento": "Amazonas ",
+    "provincia": "Luya",
+    "distrito": "Luya",
+    "direccion": "jr. ramon castilla s/n, luya - amazonas, ref. entre el colegio secundario ramon castilla y el jr. jose galvez, a media cdra. del agente de venta de pasajes de civa, movil y transporte chiclayo",
+    "texto_chosen": "468 - AMAZONAS - LUYA - LUYA - LUYA - TERRESTRE"
+  },
+  {
+    "agencia": "Santa Maria De Huachipa",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Lurigancho",
+    "direccion": "av. circunvalacion mz. a lt. 1 - d c - p santa maria de huachipa - lurigancho - chosica, ref. entre la av. circunvalacion y la av. huachipa",
+    "texto_chosen": "469 - LIMA - LIMA - LURIGANCHO - SANTA MARÍA DE HUACHIPA - TERRESTRE"
+  },
+  {
+    "agencia": "Ignacio Escudero",
+    "departamento": "Piura ",
+    "provincia": "Sullana",
+    "distrito": "Ignacio Escudero",
+    "direccion": "av. panamericana calle 26 lote 3, ignacio escudero - sullana - piura, ref. frente a la institucion educativa ignacio escudero",
+    "texto_chosen": "470 - PIURA - SULLANA - IGNACIO ESCUDERO - IGNACIO ESCUDERO - TERRESTRE"
+  },
+  {
+    "agencia": "Amarilis Co",
+    "departamento": "Huanuco ",
+    "provincia": "Huanuco",
+    "distrito": "Amarilis",
+    "direccion": "jr. los pinos lote 3 -d2 urb los pinos - amarilis - huanuco, ref. a la espalda de toyota huanuco",
+    "texto_chosen": "471 - HUANUCO - HUANUCO - AMARILIS - AMARILIS CO - TERRESTRE"
+  },
+  {
+    "agencia": "La Villa Cruce Pisco",
+    "departamento": "Ica ",
+    "provincia": "Pisco",
+    "distrito": "Pisco",
+    "direccion": "c. p. oblacion villa los angeles mz.a lt 13 b la villa pisco-pisco-ica, ref. a 100 metros con direccion al sur dedl cruce panamericana antigua c/n av. fermin tanguis",
+    "texto_chosen": "472 - ICA - PISCO - PISCO - LA VILLA CRUCE PISCO - TERRESTRE"
+  },
+  {
+    "agencia": "Jicamarca",
+    "departamento": "Lima ",
+    "provincia": "Huarochiri",
+    "distrito": "San Antonio",
+    "direccion": "av. sinchi roca mz. p lt. 16a p lote 16a, aahh las praderas de jicamarca – sector el cercado – anexo 22 jicamarca – huarochiri, ref. cerca al arco porton de jicamarca",
+    "texto_chosen": "473 - LIMA - HUAROCHIRI - SAN ANTONIO - JICAMARCA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Los Pescadores Co",
+    "departamento": "Ancash ",
+    "provincia": "Santa",
+    "distrito": "Chimbote",
+    "direccion": "par. parcela n° 16757 - e sector la perla tres cabezas - ancash, ref. frente al estadio centenario",
+    "texto_chosen": "474 - ANCASH - SANTA - CHIMBOTE - AV. LOS PESCADORES CO - TERRESTRE"
+  },
+  {
+    "agencia": "Av El Sol",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Atevitarte",
+    "direccion": "av. el sol mz. s lt. 2 zona 03 - asoc. parque industrial el asesor, sector 010 zona 03 - ate, ref. a una cuadra y media de la carretera central",
+    "texto_chosen": "475 - LIMA - LIMA - ATE-VITARTE - AV EL SOL - TERRESTRE"
+  },
+  {
+    "agencia": "Jr Huaraz Brena",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Brena",
+    "direccion": "jr. huaraz 1633, brena -lima, ref. en medio del cruce de jr. gral orbegoso y jr. centenario con jr. huaraz",
+    "texto_chosen": "476 - LIMA - LIMA - BRENA - JR. HUARAZ - BREÑA - TERRESTRE"
+  },
+  {
+    "agencia": "Pimentel",
+    "departamento": "Lambayeque ",
+    "provincia": "Chiclayo",
+    "distrito": "Pimentel",
+    "direccion": "calle miguel grau mz b lote 3 - pimentel - chiclayo - lambayeque, ref. al costado de la comisaria de pimentel",
+    "texto_chosen": "477 - LAMBAYEQUE - CHICLAYO - PIMENTEL - PIMENTEL - TERRESTRE"
+  },
+  {
+    "agencia": "El Cruce La Joya",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "La Joya",
+    "direccion": "lateral 12 c lt. 32, el cruce la joya - arequipa, ref. al costado del grifo primax de la joya",
+    "texto_chosen": "479 - AREQUIPA - AREQUIPA - LA JOYA - EL CRUCE LA JOYA - TERRESTRE"
+  },
+  {
+    "agencia": "Bagua Grande",
+    "departamento": "Amazonas ",
+    "provincia": "Utcubamba",
+    "distrito": "Bagua Grande",
+    "direccion": "av. chachapoyas 1094 sector gonchillo, ref. a 2 cuadras de la clinica senor de los milagros",
+    "texto_chosen": "48 - AMAZONAS - UTCUBAMBA - BAGUA GRANDE - BAGUA GRANDE - TERRESTRE"
+  },
+  {
+    "agencia": "Pedro Ruiz",
+    "departamento": "Amazonas ",
+    "provincia": "Bongara",
+    "distrito": "Jazan",
+    "direccion": "av. sacsahuaman n° 513 - pedro ruiz, ref. a media cuadra de la ugel",
+    "texto_chosen": "49 - AMAZONAS - BONGARA - JAZAN - PEDRO RUIZ - TERRESTRE"
+  },
+  {
+    "agencia": "Morrope",
+    "departamento": "Lambayeque ",
+    "provincia": "Lambayeque",
+    "distrito": "Morrope",
+    "direccion": "calle tahuantinsuyo n° 821, morrope - lambayeque, ref. frente al parque infantil de morrope",
+    "texto_chosen": "494 - LAMBAYEQUE - LAMBAYEQUE - MORROPE - MORROPE - TERRESTRE"
+  },
+  {
+    "agencia": "Av Santa Rosa Sta Anita",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Santa Anita",
+    "direccion": "av. santa rosa #147 – urb. santa anita mz. b1 lt. 08 unidad inmobiliaria n° 1 - santa anita - lima, ref. a una cdra. de la carretera central",
+    "texto_chosen": "495 - LIMA - LIMA - SANTA ANITA - AV SANTA ROSA - STA ANITA - TERRESTRE"
+  },
+  {
+    "agencia": "San Clemente",
+    "departamento": "Ica ",
+    "provincia": "Pisco",
+    "distrito": "San Clemente",
+    "direccion": "av. los libertadores grupo numero 1 mz,91 lote 7ª san clemente - pisco - ica, ref. libertadores sexta cuadra,frente del grifo santa rosa",
+    "texto_chosen": "496 - ICA - PISCO - SAN CLEMENTE - SAN CLEMENTE - TERRESTRE"
+  },
+  {
+    "agencia": "Av Participacion Parcela",
+    "departamento": "Loreto ",
+    "provincia": "Maynas",
+    "distrito": "Iquitos San Juan Bautista",
+    "direccion": "av. participacion parcela 9-a san juan bautista - maynas - loreto, ref. frente al lavadero osito y a media cdra. del parque 1 de enero",
+    "texto_chosen": "497 - LORETO - MAYNAS - IQUITOS SAN JUAN BAUTISTA - AV PARTICIPACION PARCELA - TERRESTRE"
+  },
+  {
+    "agencia": "Ovalo La Perla",
+    "departamento": "Callao ",
+    "provincia": "Callao",
+    "distrito": "La Perla",
+    "direccion": "av. la marina 530, urb. benjamin doigg lossio, la perla, callao, ref. a 3 cuadras del ovalo de la perla",
+    "texto_chosen": "498 - CALLAO - CALLAO - LA PERLA - OVALO LA PERLA - TERRESTRE"
+  },
+  {
+    "agencia": "Av San Lorenzo",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Puente Piedra",
+    "direccion": "av. san lorenzo mz c lt 20 - adp virgen de copacabana, puente piedra - lima. ref, a media cuadra del parque virgen de copacabana",
+    "texto_chosen": "499 - LIMA - LIMA - PUENTE PIEDRA - AV. SAN LORENZO - TERRESTRE"
+  },
+  {
+    "agencia": "Chota",
+    "departamento": "Cajamarca ",
+    "provincia": "Chota",
+    "distrito": "Chota",
+    "direccion": "av. fray jose arana n 805 - referencia : frente al terminal angel divino",
+    "texto_chosen": "50 - CAJAMARCA - CHOTA - CHOTA - CHOTA - TERRESTRE"
+  },
+  {
+    "id": "undefined",
+    "agencia": "HUACHIPA CO REPARTO LIMA",
+    "departamento": "LIMA ",
+    "provincia": "LIMA",
+    "distrito": "LURIGANCHO",
+    "direccion": "HUACHIPA ESTE - MANZANA A18 LOTE 1, 2, 3 CALLE B, CALLE 08, CALLE A, REF. AL COSTADO DE INDUSTRIAS ELECTRICAS KBA",
+    "texto_chosen": "50 - REPARTOS LIMA"
+  },
+  {
+    "agencia": "Real Plaza Salaverry",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Jesus Maria",
+    "direccion": "centro comercial real plaza salaverry, av. gral. salaverry 2370, jesus maria 15076, ref. frente a la escuela de postgrado utp",
+    "texto_chosen": "500 - LIMA - LIMA - JESUS MARIA - REAL PLAZA SALAVERRY - TERRESTRE"
+  },
+  {
+    "agencia": "Jr Tahuantinsuyo",
+    "departamento": "San Martin ",
+    "provincia": "San Martin",
+    "distrito": "Tarapoto",
+    "direccion": "jr. tahuantinsuyo n° 158 - tarapoto - san martin, ref. al costado del grifo san martin",
+    "texto_chosen": "501 - SAN MARTIN - SAN MARTIN - TARAPOTO - JR. TAHUANTINSUYO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Balta Cdra 36",
+    "departamento": "Lambayeque ",
+    "provincia": "Chiclayo",
+    "distrito": "Jose Leonardo Ortiz",
+    "direccion": "av. jose balta n° 3653 c.p.m. primero de mayo jose leonardo ortiz -chiclayo -lambayeque, ref. entre la av. balta y nestor barsallo / a 2 cuadras de la av. chiclayo",
+    "texto_chosen": "502 - LAMBAYEQUE - CHICLAYO - JOSE LEONARDO ORTIZ - AV BALTA CDRA. 36 - TERRESTRE"
+  },
+  {
+    "agencia": "Zamacola",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "direccion": "calle yavari 507 b - zamacola - cerro colorado – arequipa, ref. a una cuadra de la posta de zamacola (marcisa campos)",
+    "texto_chosen": "503 - AREQUIPA - AREQUIPA - CERRO COLORADO - ZAMACOLA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Charcani",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Cayma",
+    "direccion": "av. charcani 401 asoc. jose olaya, ref. frente al colegio mendel",
+    "texto_chosen": "504 - AREQUIPA - AREQUIPA - CAYMA - AV CHARCANI - TERRESTRE"
+  },
+  {
+    "agencia": "Av Los Incas",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "direccion": "av. los incas n° 604 semirural pachacutec – cerro colorado - arequipa, ref. esquina con calle san martin semirural pachacutec",
+    "texto_chosen": "505 - AREQUIPA - AREQUIPA - CERRO COLORADO - AV LOS INCAS - TERRESTRE"
+  },
+  {
+    "agencia": "Azangaro",
+    "departamento": "Puno ",
+    "provincia": "Azangaro",
+    "distrito": "Azangaro",
+    "direccion": "av. proceres s/n, azangaro - puno, ref. a dos cdras. del parque de la madre / a orillas de la misma av. proceres",
+    "texto_chosen": "506 - PUNO - AZANGARO - AZANGARO - AZANGARO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Canta Callao Con Izaguirre",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. canta callao mz. a lt. 3 asoc. brisas santa rosa 1ra etapa, ref. a media cdra. del colegio amistad y/o a cuatro cdras. de la av. carlos izaguirre",
+    "texto_chosen": "507 - LIMA - LIMA - SAN MARTIN DE PORRES - AV. CANTA CALLAO CON IZAGUIRRE - TERRESTRE"
+  },
+  {
+    "agencia": "Av Augusto Salazar Bondy",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Alto Selva Alegre",
+    "direccion": "augusto salazar bondy mz j lt 4 alto selva alegre - arequipa, ref.  a media cdra. de la iglesia guadalupe",
+    "texto_chosen": "508 - AREQUIPA - AREQUIPA - ALTO SELVA ALEGRE - AV AUGUSTO SALAZAR BONDY - TERRESTRE"
+  },
+  {
+    "agencia": "Jr Ramon Castilla",
+    "departamento": "San Martin ",
+    "provincia": "San Martin",
+    "distrito": "Tarapoto",
+    "direccion": "jr. ramon castilla n°1362 tarapoto - san martin, ref. a media cdra. de mannucci motor s.a.",
+    "texto_chosen": "509 - SAN MARTIN - SAN MARTIN - TARAPOTO - JR. RAMÓN CASTILLA - TERRESTRE"
+  },
+  {
+    "agencia": "Cachimayo San Sebastian",
+    "departamento": "Cusco ",
+    "provincia": "Cusco",
+    "distrito": "San Sebastian",
+    "direccion": "urb. cachimayo a-37 av. la cultura – san sebastian – cusco, ref. entre paradero enaco y parque cachimayo, a 2 cuadra de la universidad andina.",
+    "texto_chosen": "510 - CUSCO - CUSCO - SAN SEBASTIAN - CACHIMAYO - SAN SEBASTIAN - TERRESTRE"
+  },
+  {
+    "agencia": "Combapata",
+    "departamento": "Cusco ",
+    "provincia": "Canchis",
+    "distrito": "Combapata",
+    "direccion": "av. senor de huanca s/n - combapata - canchis - cusco, ref. al costado del grifo senor de qoylluriti - a orillas de la misma carretera a sicuani",
+    "texto_chosen": "511 - CUSCO - CANCHIS - COMBAPATA - COMBAPATA - TERRESTRE"
+  },
+  {
+    "agencia": "Viru Centro",
+    "departamento": "La Libertad ",
+    "provincia": "Viru",
+    "distrito": "Viru",
+    "direccion": "calle puno n° 125 - mz. 32 lt. 7a - viru - la libertad, ref. a media cdra. del cruce de la av. viru con la calle jorge chavez / a media cdra. de la plazuela maria parado de bellido",
+    "texto_chosen": "512 - LA LIBERTAD - VIRU - VIRU - VIRU CENTRO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Lampa",
+    "departamento": "Puno ",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "direccion": "av. lampa mz. b2 lt. 3 urb. santa adriana, juliaca - san roman - puno, ref. a media cdra. de la posta de salud de la urb. santa adriana",
+    "texto_chosen": "513 - PUNO - SAN ROMAN - JULIACA - AV. LAMPA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Gullman",
+    "departamento": "Piura ",
+    "provincia": "Piura",
+    "distrito": "26 De Octubre",
+    "direccion": "a.a.h.h. consuelo de velasco 1 etapa sector b mz lt.18  26 de octubre – piura, ref. cruce av. circunvalacion con av. gullman al costado de la ferreteria los reyes",
+    "texto_chosen": "514 - PIURA - PIURA - 26 DE OCTUBRE - AV. GULLMAN - TERRESTRE"
+  },
+  {
+    "agencia": "Ilo Pacocha",
+    "departamento": "Moquegua ",
+    "provincia": "Ilo",
+    "distrito": "Pacocha",
+    "direccion": "agrupacion de familias pueblo nuevo m.z e2 lt. com2a sect. ii – ilo - moquegua, ref. al costado del banco bcp",
+    "texto_chosen": "515 - MOQUEGUA - ILO - PACOCHA - ILO PACOCHA - TERRESTRE"
+  },
+  {
+    "agencia": "Av 15 De Agosto",
+    "departamento": "Madre De Dios ",
+    "provincia": "Tambopata",
+    "distrito": "Tambopata",
+    "direccion": "av. 15 de agosto n° 529, tambopata - tambopata - madre de dios, ref. a espaldas del colegio carlos fermin fitzcarrald / cruce con jr. ica",
+    "texto_chosen": "516 - MADRE DE DIOS - TAMBOPATA - TAMBOPATA - AV 15 DE AGOSTO - TERRESTRE"
+  },
+  {
+    "agencia": "Via Expresa Sur",
+    "departamento": "Cusco ",
+    "provincia": "Cusco",
+    "distrito": "San Sebastian",
+    "direccion": "urb. tupac amaru b-1-2 san sebastian – cusco, ref. terminando la via expresa zona sur",
+    "texto_chosen": "517 - CUSCO - CUSCO - SAN SEBASTIAN - VIA EXPRESA SUR - TERRESTRE"
+  },
+  {
+    "agencia": "Sayan",
+    "departamento": "Lima ",
+    "provincia": "Huaura",
+    "distrito": "Sayan",
+    "direccion": "calle naranjo n° 211.sayan - huaura - lima, ref. a media cdra. de la plaza de armas y de la municipalidad",
+    "texto_chosen": "519 - LIMA - HUAURA - SAYAN - SAYAN - TERRESTRE"
+  },
+  {
+    "agencia": "Iquitos Jr Francisco Bolognesi",
+    "departamento": "Loreto ",
+    "provincia": "Maynas",
+    "distrito": "Iquitos",
+    "direccion": "jr. francisco bolognesi nro 203 - 215  iquitos.  referencia : esquina con putumayo",
+    "texto_chosen": "52 - LORETO - MAYNAS - IQUITOS - IQUITOS JR FRANCISCO BOLOGNESI - TERRESTRE"
+  },
+  {
+    "agencia": "Urcos",
+    "departamento": "Cusco ",
+    "provincia": "Quispicanchi",
+    "distrito": "Urcos",
+    "direccion": "mayupata s/n paucarbamba, urcos - quispicanchi - cusco referencia: al frende del estadio municipal de urcos / al frente del terminal terrestre de urcos",
+    "texto_chosen": "520 - CUSCO - QUISPICANCHI - URCOS - URCOS - TERRESTRE"
+  },
+  {
+    "agencia": "Pisac",
+    "departamento": "Cusco ",
+    "provincia": "Calca",
+    "distrito": "Pisac",
+    "direccion": "av vilcanota s/n, pisac - calca - cusco, ref. a media cdra. del puente de pisac / carretera a taray",
+    "texto_chosen": "521 - CUSCO - CALCA - PISAC - PISAC - TERRESTRE"
+  },
+  {
+    "agencia": "Cieneguilla Km 145",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Cieneguilla",
+    "direccion": "av. arterial huarochiri d mz. b lt. 19, asoc. de viviendas las cumbres de cieneguilla, lima, ref. al costado de la tienda mass",
+    "texto_chosen": "522 - LIMA - LIMA - CIENEGUILLA - CIENEGUILLA KM. 14.5 - TERRESTRE"
+  },
+  {
+    "agencia": "Calle Santa Cruz America Sur",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "Trujillo",
+    "direccion": "calle santa cruz n° 389 chicago - trujillo - la libertad, ref. a media cdra. de la av. america sur/a media cuadra del estadio chan chan.",
+    "texto_chosen": "524 - LA LIBERTAD - TRUJILLO - TRUJILLO - CALLE SANTA CRUZ - AMERICA SUR - TERRESTRE"
+  },
+  {
+    "agencia": "Pacasmayo Centro",
+    "departamento": "La Libertad ",
+    "provincia": "Pacasmayo",
+    "distrito": "Pacasmayo",
+    "direccion": "av. gonzalo ugaz salcedo s/n - pacasmayo - la libertad, ref. al costado del estadio municipal de pacasmayo / a media cdra. del supermercado tottus",
+    "texto_chosen": "529 - LA LIBERTAD - PACASMAYO - PACASMAYO - PACASMAYO CENTRO - TERRESTRE"
+  },
+  {
+    "agencia": "Calleria Jr Jose Galvez",
+    "departamento": "Ucayali ",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Calleria",
+    "direccion": "jr. jose galvez 147 calleria - coronel portillo - ucayali.  referencia :  a media cuadra de la av. centenario",
+    "texto_chosen": "53 - UCAYALI - CORONEL PORTILLO - PUCALLPA CALLERIA - CALLERIA JR JOSE GALVEZ - TERRESTRE"
+  },
+  {
+    "agencia": "Puente Lurin",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Lurin",
+    "direccion": "antigua panamericana sur, lote 2, mz. b, primer piso lurin - lima, ref. a cdra. y media del cruce con av. santa cruz",
+    "texto_chosen": "530 - LIMA - LIMA - LURIN - PUENTE LURIN - TERRESTRE"
+  },
+  {
+    "agencia": "Av La Molina Cdra 35",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "La Molina",
+    "direccion": "av. la molina (exav. la universidad) #3551 tda -7 mz. h sublote 1c, urb. el sol de la molina i etapa la molina - lima, ref. a media cdra. del cruce con av. el sol",
+    "texto_chosen": "531 - LIMA - LIMA - LA MOLINA - AV. LA MOLINA CDRA. 35 - TERRESTRE"
+  },
+  {
+    "agencia": "Megaplaza Independencia",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Independencia",
+    "direccion": "centro comercial mega plaza av. alfredo mendiola 3698 lima - independencia. ref. primer piso de mega plaza / al costado del estacionamiento de bicicleta",
+    "texto_chosen": "532 - LIMA - LIMA - INDEPENDENCIA - MEGAPLAZA INDEPENDENCIA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Arias Araguez",
+    "departamento": "Tacna ",
+    "provincia": "Tacna",
+    "distrito": "Tacna",
+    "direccion": "calle arias araguez n° 836  tacna, ref. a una cdra. antes de llegar al coliseo peru",
+    "texto_chosen": "533 - TACNA - TACNA - TACNA - AV ARIAS ARAGUEZ - TERRESTRE"
+  },
+  {
+    "agencia": "Urb Bancopata Av Industrial",
+    "departamento": "Cusco ",
+    "provincia": "Cusco",
+    "distrito": "Santiago",
+    "direccion": "av. industrial urb. bancopata j-20, santiago - cusco, ref. a 2 cdras. del ovalo pachacutec, frente a la empresa coca cola",
+    "texto_chosen": "534 - CUSCO - CUSCO - SANTIAGO - URB. BANCOPATA AV. INDUSTRIAL - TERRESTRE"
+  },
+  {
+    "agencia": "Av Modesto Borda",
+    "departamento": "Puno ",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "direccion": "av. modesto borda mz. a lt. 04 urb. arrabal don julio, juliaca - san roman - puno, ref. dos cdras. antes del grifo blanco / a dos cdras. del salon de eventos paraiso azul",
+    "texto_chosen": "535 - PUNO - SAN ROMAN - JULIACA - AV. MODESTO BORDA - TERRESTRE"
+  },
+  {
+    "agencia": "Santo Domingo",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "direccion": "av. a mz. l2 lt. 20 urb. santo domingo – vi etapa carabayllo - lima, ref. en el cruce de las av. chillon trapiche y av. camino real",
+    "texto_chosen": "536 - LIMA - LIMA - CARABAYLLO - SANTO DOMINGO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Del Mercado",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "programa ciudad mrcal. caceres, sector iii mz. q8 lt. 11 san juan de lurigancho - lima, ref. a media cdra. del cruce de av. del mercado con av. ampliacion oeste",
+    "texto_chosen": "537 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - AV. DEL MERCADO - TERRESTRE"
+  },
+  {
+    "agencia": "El Progreso Km 22",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "direccion": "av. tupac amaru 3493 – p.j. el progreso (parte baja) mz. k lt. 11b zona ii, carabayllo - lima, ref. a una cdra. del cruce con la av. manuel prado",
+    "texto_chosen": "538 - LIMA - LIMA - CARABAYLLO - EL PROGRESO KM 22 - TERRESTRE"
+  },
+  {
+    "agencia": "Av Universitaria Cdra 16",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. universitaria 1619 - urb. maria gracia de antares mz. b lt. 25 – san martin de porres - lima, ref. frente al plaza vea de universitaria con tomas valle",
+    "texto_chosen": "539 - LIMA - LIMA - SAN MARTIN DE PORRES - AV. UNIVERSITARIA CDRA. 16 - TERRESTRE"
+  },
+  {
+    "agencia": "Tica Tica",
+    "departamento": "Cusco ",
+    "provincia": "Cusco",
+    "distrito": "Cusco",
+    "direccion": "arco ticatica pustipata, lt. n° a - 11 - 2, cusco, ref. en la av. principal a 3 cdras. del mercado tica tica",
+    "texto_chosen": "541 - CUSCO - CUSCO - CUSCO - TICA TICA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Municipal",
+    "departamento": "Tacna ",
+    "provincia": "Tacna",
+    "distrito": "Coronel Gregorio Albarracin Lanchipa",
+    "direccion": "asociacion las vilcas  mz. e lt. 16, gregorio albarracin lanchipa - tacna ref. frente al mercado heroes del cenepa",
+    "texto_chosen": "542 - TACNA - TACNA - CORONEL GREGORIO ALBARRACIN LANCHIPA - AV. MUNICIPAL - TERRESTRE"
+  },
+  {
+    "agencia": "Aahh Santa Rosa Piura",
+    "departamento": "Piura ",
+    "provincia": "Piura",
+    "distrito": "26 De Octubre",
+    "direccion": "urb. santa rosa mz. d lt. 7, sect. 7, 26 de octubre - piura. ref. av. raul mata la cruz con circunvalacion al frente de repuestos frank|",
+    "texto_chosen": "543 - PIURA - PIURA - 26 DE OCTUBRE - AAHH SANTA ROSA PIURA - TERRESTRE"
+  },
+  {
+    "agencia": "San Pedro De Lloc",
+    "departamento": "La Libertad ",
+    "provincia": "Pacasmayo",
+    "distrito": "San Pedro De Lloc",
+    "direccion": "av. via de evitamiento n° 407, san pedro de lloc - pacasmayo - la libertad, ref. a media cdra. de la calle libertad/ a media cdra. del paradero de la via de evitamiento",
+    "texto_chosen": "544 - LA LIBERTAD - PACASMAYO - SAN PEDRO DE LLOC - SAN PEDRO DE LLOC - TERRESTRE"
+  },
+  {
+    "agencia": "Av Flora Tristan",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "La Molina",
+    "direccion": "av. flora tristan n° 885, urb. santa patricia iii etapa, la molina - lima, ref.  a media cdra. de molisalud",
+    "texto_chosen": "545 - LIMA - LIMA - LA MOLINA - AV FLORA TRISTAN - TERRESTRE"
+  },
+  {
+    "agencia": "Salcedo",
+    "departamento": "Puno ",
+    "provincia": "Puno",
+    "distrito": "Puno",
+    "direccion": "urb. aziruni tepro i etapa mz. 18 lt. 52 jr los rosales – salcedo puno, ref. a una cdra. de la av. estudiante / a dos cdras. de senati puno",
+    "texto_chosen": "547 - PUNO - PUNO - PUNO - SALCEDO - TERRESTRE"
+  },
+  {
+    "agencia": "Pampa Grande Tumbes",
+    "departamento": "Tumbes ",
+    "provincia": "Tumbes",
+    "distrito": "Tumbes",
+    "direccion": "mz. 0u lt. 00a aa.hh. pampa grande, tumbes, ref. frente a la av. universitaria, y al frente a la iglesia mormones y al lado de un lavadero de autos.",
+    "texto_chosen": "548 - TUMBES - TUMBES - TUMBES - PAMPA GRANDE TUMBES - TERRESTRE"
+  },
+  {
+    "agencia": "Jayanca",
+    "departamento": "Lambayeque ",
+    "provincia": "Lambayeque",
+    "distrito": "Jayanca",
+    "direccion": "calle diego ferre n°1321 - jayanca - lambayeque, ref. al frente del centro de salud de jayanca / a media cdra. del grifo asia",
+    "texto_chosen": "549 - LAMBAYEQUE - LAMBAYEQUE - JAYANCA - JAYANCA - TERRESTRE"
+  },
+  {
+    "agencia": "Tingo Maria Co Buenos Aires",
+    "departamento": "Huanuco ",
+    "provincia": "Leoncio Prado",
+    "distrito": "Rupa Rupa",
+    "direccion": "calle rosario central, referencia: segunda entrada de buenos aires, en la misma esquina",
+    "texto_chosen": "55 - HUANUCO - LEONCIO PRADO - RUPA RUPA - TINGO MARIA CO BUENOS AIRES - TERRESTRE"
+  },
+  {
+    "agencia": "Pio Pata",
+    "departamento": "Junin ",
+    "provincia": "Huancayo",
+    "distrito": "El Tambo",
+    "direccion": "av. huancavelica 1201, el tambo - huancayo - junin, ref. esquina con el jr. la victoria",
+    "texto_chosen": "550 - JUNIN - HUANCAYO - EL TAMBO - PIO PATA - TERRESTRE"
+  },
+  {
+    "agencia": "Quebrada Las Lechuzas Co",
+    "departamento": "Moquegua ",
+    "provincia": "Mariscal Nieto",
+    "distrito": "Moquegua",
+    "direccion": "sector quebrada las lechuzas moquegua calle n°1 mz h lt. 04, moquegua - mariscal nieto - moquegua, ref. quebrada de lechuzas",
+    "texto_chosen": "551 - MOQUEGUA - MARISCAL NIETO - MOQUEGUA - QUEBRADA LAS LECHUZAS CO - TERRESTRE"
+  },
+  {
+    "agencia": "La Cruz Tumbes",
+    "departamento": "Tumbes ",
+    "provincia": "Tumbes",
+    "distrito": "La Cruz",
+    "direccion": "jr. piura 105 caleta la cruz, la cruz - tumbes, ref. frente a ctr. panamericana norte y al frente de motorepuestos y multiservicios lujan",
+    "texto_chosen": "552 - TUMBES - TUMBES - LA CRUZ - LA CRUZ TUMBES - TERRESTRE"
+  },
+  {
+    "agencia": "Jr Chinchaysuyo Cdra 4",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "jr. chinchaysuyo 468 zarate, san juan de lurigancho - lima, ref. a 1 cdra. de tiendas 3 a",
+    "texto_chosen": "553 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - JR CHINCHAYSUYO CDRA 4 - TERRESTRE"
+  },
+  {
+    "agencia": "Huaraclla",
+    "departamento": "Cajamarca ",
+    "provincia": "Cajamarca",
+    "distrito": "Jesus",
+    "direccion": "mz. a lote s/n cp huaraclla - jesus - cajamarca, ref. a una cdra. de la i.e. jose olaya balandra.",
+    "texto_chosen": "554 - CAJAMARCA - CAJAMARCA - JESUS - HUARACLLA - TERRESTRE"
+  },
+  {
+    "agencia": "Huambocancha Baja",
+    "departamento": "Cajamarca ",
+    "provincia": "Cajamarca",
+    "distrito": "Cajamarca",
+    "direccion": "mz. a lote s/n – barrio huambocancha baja – cajamarca, ref. a una cdra. del paradero de la p13/al costado del campo deportivo el patriarca",
+    "texto_chosen": "555 - CAJAMARCA - CAJAMARCA - CAJAMARCA - HUAMBOCANCHA BAJA - TERRESTRE"
+  },
+  {
+    "agencia": "Jacobo Hunter",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Jacobo Hunter",
+    "direccion": "calle argentina # 405 - a, jacobo hunter - arequipa, ref. frente al cajero de caja arequipa y esquina con el banco caja arequipa",
+    "texto_chosen": "556 - AREQUIPA - AREQUIPA - JACOBO HUNTER - JACOBO HUNTER - TERRESTRE"
+  },
+  {
+    "agencia": "Iberia",
+    "departamento": "Madre De Dios ",
+    "provincia": "Tahuamanu",
+    "distrito": "Iberia",
+    "direccion": "av. jorge chavez mz. h1 sub lote 11-b, iberia - tahuamanu - madre de dios, ref. a una cdra. de la empresa real dorado / a una cdra. y media de la av jose aldamiz",
+    "texto_chosen": "558 - MADRE DE DIOS - TAHUAMANU - IBERIA - IBERIA - TERRESTRE"
+  },
+  {
+    "agencia": "Santo Tomas",
+    "departamento": "Cusco ",
+    "provincia": "Chumbivilcas",
+    "distrito": "Santo Tomas",
+    "direccion": "calle bolognesi mz. 02 lt. 25, santo tomas - chumbivilcas - cusco, ref. a espaldas de la polleria pico dorado y a media cdra. de la av santa barbara",
+    "texto_chosen": "559 - CUSCO - CHUMBIVILCAS - SANTO TOMAS - SANTO TOMAS - TERRESTRE"
+  },
+  {
+    "agencia": "Av Abraham Valdelomar Co",
+    "departamento": "Ica ",
+    "provincia": "Pisco",
+    "distrito": "Pisco",
+    "direccion": "av. abraham valdelomar nro. puerta 965 pisco - pisco - ica, ref. a una cdra. por la posta san martin",
+    "texto_chosen": "56 - ICA - PISCO - PISCO - AV ABRAHAM VALDELOMAR CO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Las Magnolias",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "El Porvenir",
+    "direccion": "av. las magnolias mz. 25 lt. 2a nuevo porvenir, el porvenir - trujillo - la libertad, ref. a una cdra. del poder judicial cisaj sede el porvenir",
+    "texto_chosen": "560 - LA LIBERTAD - TRUJILLO - EL PORVENIR - AV. LAS MAGNOLIAS - TERRESTRE"
+  },
+  {
+    "agencia": "Ovalo Huanchaco Co",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "Huanchaco",
+    "direccion": "carretera via de evitamiento 576.2 huanchaquito alto - trujillo - la libertad, ref. a 1 cdra. de ovalo huanchaco / al costado de condominio las brisas",
+    "texto_chosen": "561 - LA LIBERTAD - TRUJILLO - HUANCHACO - OVALO HUANCHACO CO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Central Sjl",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "av. central mz r9 lote 3 programa ciudad mrcal. caceres, sector ii, barrio 3, grupo residencial r - san juan de lurigancho, ref. en medio del cruce con las av. el muro y ampliacion este",
+    "texto_chosen": "562 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - AV CENTRAL SJL - TERRESTRE"
+  },
+  {
+    "agencia": "Av Santa Rosa Cruce Av El Sol",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "av. santa rosa de lima mz. d lt. 4 - aahh 2 de setiembre - san juan de lurigancho, ref. a tres cdras. del cruce con av. el sol",
+    "texto_chosen": "563 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - AV. SANTA ROSA CRUCE AV. EL SOL - TERRESTRE"
+  },
+  {
+    "agencia": "Garatea",
+    "departamento": "Ancash ",
+    "provincia": "Santa",
+    "distrito": "Nuevo Chimbote",
+    "direccion": "urb. nicolas garatea mz. 100 lt. 24 - nuevo chimbote - santa - ancash, ref. frente al paradero autos n.- garatea",
+    "texto_chosen": "564 - ANCASH - SANTA - NUEVO CHIMBOTE - GARATEA - TERRESTRE"
+  },
+  {
+    "agencia": "Parcona",
+    "departamento": "Ica ",
+    "provincia": "Ica",
+    "distrito": "Parcona",
+    "direccion": "cp. de parcona -cercado (primera etapa) mz. b lote 16 parcona - ica, ref. av. 18 de febrero y cruce de av. natividad paco",
+    "texto_chosen": "565 - ICA - ICA - PARCONA - PARCONA - TERRESTRE"
+  },
+  {
+    "agencia": "Jr Fredy Aliaga Co",
+    "departamento": "San Martin ",
+    "provincia": "Tocache",
+    "distrito": "Tocache",
+    "direccion": "jr. fredy aliaga n°3046 -tocache - tocache - san martin, ref. al costado del recreo campestre estragos",
+    "texto_chosen": "566 - SAN MARTIN - TOCACHE - TOCACHE - JR FREDY ALIAGA CO - TERRESTRE"
+  },
+  {
+    "agencia": "Autopista La Joya",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "direccion": "asoc. urbanizadora peruarbo sector peru zona i mz. b4 lt. 4 - autopista la joya - arequipa, ref. autopista arequipa - la joya, a dos cdras. del sauna candamo",
+    "texto_chosen": "567 - AREQUIPA - AREQUIPA - CERRO COLORADO - AUTOPISTA LA JOYA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Pacifico Belen",
+    "departamento": "Ancash ",
+    "provincia": "Santa",
+    "distrito": "Nuevo Chimbote",
+    "direccion": "aa.hh. belen mz o lt 28 - nuevo chimbote - santa - ancash, ref. frente al grifo doxa",
+    "texto_chosen": "568 - ANCASH - SANTA - NUEVO CHIMBOTE - AV. PACÍFICO BELEN - TERRESTRE"
+  },
+  {
+    "agencia": "Av Jesus",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Paucarpata",
+    "direccion": "av. jesus n° 1100 paucarpata – arequipa, ref. con esquina arturo villegas n° 101.",
+    "texto_chosen": "569 - AREQUIPA - AREQUIPA - PAUCARPATA - AV JESUS - TERRESTRE"
+  },
+  {
+    "agencia": "Yura",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Yura",
+    "direccion": "mz. o lt. 4 zna 2 ciudad de dios - yura - arequipa, ref. carretera yura",
+    "texto_chosen": "570 - AREQUIPA - AREQUIPA - YURA - YURA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Horacio Zevallos",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Socabaya",
+    "direccion": "asentamiento urbano municipal horacio zeballos gamez sector e mz. 1 lt. 18 socabaya - arequipa, ref. al costado del colegio joule y/o 2 cdras. del penal de socabaya",
+    "texto_chosen": "572 - AREQUIPA - AREQUIPA - SOCABAYA - AV. HORACIO ZEVALLOS - TERRESTRE"
+  },
+  {
+    "agencia": "Uchiza",
+    "departamento": "San Martin ",
+    "provincia": "Tocache",
+    "distrito": "Uchiza",
+    "direccion": "av. leoncio prado n°524 - uchiza - tocache - san martin, ref. a media cdra. de la plaza central / frente a coopact",
+    "texto_chosen": "573 - SAN MARTIN - TOCACHE - UCHIZA - UCHIZA - TERRESTRE"
+  },
+  {
+    "agencia": "Jr Cahuide",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "El Porvenir",
+    "direccion": "jr. cahuide n° 342 aa.hh la merced - el porvenir - trujillo - la libertad, ref. a una cdra. del arco del porvenir / a una cdra. de la parroquia el buen pastor",
+    "texto_chosen": "574 - LA LIBERTAD - TRUJILLO - EL PORVENIR - JR. CAHUIDE - TERRESTRE"
+  },
+  {
+    "agencia": "Asoc Nuevo Horizonte Av 54",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "direccion": "nuevo horizonte mz.h lote 12 - cerro colorado - arequipa, ref. con av.54 a cuatro cdras. de inkafarma",
+    "texto_chosen": "575 - AREQUIPA - AREQUIPA - CERRO COLORADO - ASOC. NUEVO HORIZONTE - AV. 54 - TERRESTRE"
+  },
+  {
+    "agencia": "Ovalo Puente Piedra",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Puente Piedra",
+    "direccion": "av. miguel graua mz. a lt. 07 y 08 urb. san martin de porres, cercado puente piedra - lima, ref. espaldas de tottus de puente piedra",
+    "texto_chosen": "576 - LIMA - LIMA - PUENTE PIEDRA - OVALO PUENTE PIEDRA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Huandoy Con Av Central",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "direccion": "av. huandoy mza. 72 lte. 54 p.j. p.m.v. “confraternidad” - aahh. enrique milla ochoa los olivos - lima, ref. a una cdra. del cruce con av. central",
+    "texto_chosen": "577 - LIMA - LIMA - LOS OLIVOS - AV HUANDOY CON AV CENTRAL - TERRESTRE"
+  },
+  {
+    "agencia": "Av Tomas Marsano La Bolichera",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Santiago De Surco",
+    "direccion": "av. santiago de surco nº 4348, urbanizacion la virreyna, santiago de surco - lima, ref. al lado de inteci sede surco",
+    "texto_chosen": "578 - LIMA - LIMA - SANTIAGO DE SURCO - AV TOMAS MARSANO - LA BOLICHERA - TERRESTRE"
+  },
+  {
+    "agencia": "Jr Casanova Con Petit Thouars",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Lince",
+    "direccion": "jr. domingo casanova n°318 lince - lima, ref. cruce con petit thouars",
+    "texto_chosen": "579 - LIMA - LIMA - LINCE - JR CASANOVA CON PETIT THOUARS - TERRESTRE"
+  },
+  {
+    "agencia": "Chupaca",
+    "departamento": "Junin ",
+    "provincia": "Chupaca",
+    "distrito": "Chupaca",
+    "direccion": "jr. ramon castilla 201, chupaca - chupaca - junin, ref. a una cdra. de la plaza principal de chupaca",
+    "texto_chosen": "58 - JUNIN - CHUPACA - CHUPACA - CHUPACA - TERRESTRE"
+  },
+  {
+    "agencia": "Manchay Tres Marias",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Pachacamac",
+    "direccion": "av. victor malasquez mz. b11 sub-lote 06-a - aahh centro poblado rural los huertos de manchay sector b pachacamac - lima, ref.  a media cdra. del paradero",
+    "texto_chosen": "580 - LIMA - LIMA - PACHACAMAC - MANCHAY TRES MARIAS - TERRESTRE"
+  },
+  {
+    "agencia": "Tembladera Cajamarca",
+    "departamento": "Cajamarca ",
+    "provincia": "Contumaza",
+    "distrito": "Yonan",
+    "direccion": "jr. bolognesi s/n – tembladera - yonan - contumaza - cajamarca, ref. al frente del parque victor raul haya de la torre",
+    "texto_chosen": "581 - CAJAMARCA - CONTUMAZA - YONAN - TEMBLADERA CAJAMARCA - TERRESTRE"
+  },
+  {
+    "agencia": "Chala",
+    "departamento": "Arequipa ",
+    "provincia": "Caraveli",
+    "distrito": "Chala",
+    "direccion": "av. emancipacion nro. s/n mz. 78 lt. 10. ref. a media cdra. del parque del nino chalino",
+    "texto_chosen": "582 - AREQUIPA - CARAVELI - CHALA - CHALA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Bertello Callao",
+    "departamento": "Callao ",
+    "provincia": "Callao",
+    "distrito": "Callao",
+    "direccion": "av. alejandro bertello bollati mz. b lt. 20 y 21 – urb. progresiva bahia blanca – callao - callao - callao, ref. frente al mercado costa azul",
+    "texto_chosen": "583 - CALLAO - CALLAO - CALLAO - AV BERTELLO CALLAO - TERRESTRE"
+  },
+  {
+    "agencia": "Nuevo Imperial Co",
+    "departamento": "Lima ",
+    "provincia": "Canete",
+    "distrito": "Nuevo Imperial",
+    "direccion": "fundo santa adela, mz. a, lotes 8 y 9 – carretera canete a yauyos nuevo imperial - canete - lima, ref. al costado del restaurant la ruta brava",
+    "texto_chosen": "584 - LIMA - CAÑETE - NUEVO IMPERIAL - NUEVO IMPERIAL CO - TERRESTRE"
+  },
+  {
+    "agencia": "Pilcomayo",
+    "departamento": "Junin ",
+    "provincia": "Huancayo",
+    "distrito": "Pilcomayo",
+    "direccion": "plaza independencia 131, pilcomayo - huancayo - junin, ref. plaza principal de pilcomayo",
+    "texto_chosen": "585 - JUNIN - HUANCAYO - PILCOMAYO - PILCOMAYO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Manuel Valle",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Pachacamac",
+    "direccion": "av. manuel valle sub - lote 2 - 1, numero de parcela j, proyecto huertos de pachacamac, valle lurin - pachacamac - lima, ref. frente al estudio de canal 4 (america television)",
+    "texto_chosen": "586 - LIMA - LIMA - PACHACAMAC - AV MANUEL VALLE - TERRESTRE"
+  },
+  {
+    "agencia": "Av Bolivar",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Pueblo Libre",
+    "direccion": "av. bolivar 1097, pueblo libre - lima, ref. a media cdra. del cruce av. gral. jose maria egusquiza",
+    "texto_chosen": "587 - LIMA - LIMA - PUEBLO LIBRE - AV BOLIVAR - TERRESTRE"
+  },
+  {
+    "agencia": "Calle A Con Av Industrial",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Independencia",
+    "direccion": "calle a, mz. d lt. 26 urbanizacion panamericana (primer piso) independencia - lima - lima, ref. a 1 cdra. del cruce con av. industrial (lateral de megaplaza)",
+    "texto_chosen": "588 - LIMA - LIMA - INDEPENDENCIA - CALLE A CON AV INDUSTRIAL - TERRESTRE"
+  },
+  {
+    "agencia": "Av San Juan Pamplona Alta",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Miraflores",
+    "direccion": "av. san juan mz. 24 lt. 1, sect. nuevo horizonte, pp. jj pamplona alta - san juan de miraflores, ref. a 3 cdras. del cruce con av. salvador allende",
+    "texto_chosen": "589 - LIMA - LIMA - SAN JUAN DE MIRAFLORES - AV SAN JUAN PAMPLONA ALTA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Circunvalacion Cruce Con Mariategui",
+    "departamento": "Junin ",
+    "provincia": "Huancayo",
+    "distrito": "El Tambo",
+    "direccion": "av. circunvalacion 480 t-1, el tambo - huancayo - junin, ref. esquina con prolongacion mariategui",
+    "texto_chosen": "590 - JUNIN - HUANCAYO - EL TAMBO - AV CIRCUNVALACIÓN CRUCE CON MARIATEGUI - TERRESTRE"
+  },
+  {
+    "agencia": "Av Jose Leal Cdra 6",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Lince",
+    "direccion": "av. coronel jose leal 648, urb. fundo lobaton, lince - lince, ref. paralela a la cdra. 6 de la av. canevaro",
+    "texto_chosen": "591 - LIMA - LIMA - LINCE - AV JOSE LEAL CDRA 6 - TERRESTRE"
+  },
+  {
+    "agencia": "San Miguel Cajamarca",
+    "departamento": "Cajamarca ",
+    "provincia": "San Miguel",
+    "distrito": "San Miguel",
+    "direccion": "jr. bolognesi n° 717 – san miguel – cajamarca - cajamarca, ref. al costado del coliseo y el paradero de llapa y cochan.",
+    "texto_chosen": "592 - CAJAMARCA - SAN MIGUEL - SAN MIGUEL - SAN MIGUEL CAJAMARCA - TERRESTRE"
+  },
+  {
+    "agencia": "San Pablo Cajamarca",
+    "departamento": "Cajamarca ",
+    "provincia": "San Pablo",
+    "distrito": "San Pablo",
+    "direccion": "jr. tnt. lorenzo iglesia n° 910 - san pablo – cajamarca - cajamarca, ref. a media cdra. del hospital san pablo",
+    "texto_chosen": "593 - CAJAMARCA - SAN PABLO - SAN PABLO - SAN PABLO CAJAMARCA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Jose A Quinones",
+    "departamento": "Loreto ",
+    "provincia": "Maynas",
+    "distrito": "Iquitos San Juan Bautista",
+    "direccion": "av. jose abelardo quinones # 2475 san juan bautista - maynas - loreto, ref. frente a la universidad cientifica del peru (ucp)",
+    "texto_chosen": "594 - LORETO - MAYNAS - IQUITOS SAN JUAN BAUTISTA - AV JOSE A. QUIÑONES - TERRESTRE"
+  },
+  {
+    "agencia": "Carmen Alto",
+    "departamento": "Ayacucho ",
+    "provincia": "Huamanga",
+    "distrito": "Carmen Alto",
+    "direccion": "asentamiento humano carmen alto mz b1 lote 9 zona ii acuchimay carmen alto – huamanga- ayacucho, ref. a 1 cuadra de la municipalidad de carmen alto",
+    "texto_chosen": "595 - AYACUCHO - HUAMANGA - CARMEN ALTO - CARMEN ALTO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Hnos Uceda America Norte",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "Trujillo",
+    "direccion": "av. hermanos uceda meza n° 269 urb miraflores ii etapa - trujillo - trujillo - la libertad, ref. a una cdra. de av. america norte. / entre av. miraflores y av. salvador lara",
+    "texto_chosen": "596 - LA LIBERTAD - TRUJILLO - TRUJILLO - AV HNOS UCEDA - AMERICA NORTE - TERRESTRE"
+  },
+  {
+    "agencia": "Oropesa",
+    "departamento": "Cusco ",
+    "provincia": "Quispicanchi",
+    "distrito": "Oropesa",
+    "direccion": "sec. chimpapampa apv. jose ccarlos mareategui s/n, oropesa - quispicanchi - cusco, ref. a una cdra. de la carreta a urcos / a una cdra. de la panificadora cachito amarillo",
+    "texto_chosen": "597 - CUSCO - QUISPICANCHI - OROPESA - OROPESA - TERRESTRE"
+  },
+  {
+    "agencia": "Alto Puno",
+    "departamento": "Puno ",
+    "provincia": "Puno",
+    "distrito": "Puno",
+    "direccion": "urb. san pedro-alto puno, av la cultura n° 160, puno - puno - puno, ref. a tres cdras. de la av. que va a juliaca / a dos cdras. del grifo bronco",
+    "texto_chosen": "598 - PUNO - PUNO - PUNO - ALTO PUNO - TERRESTRE"
+  },
+  {
+    "agencia": "Talara Alta 9 De Octubre",
+    "departamento": "Piura ",
+    "provincia": "Talara",
+    "distrito": "Parinas",
+    "direccion": "mz. n-10 aa.hh 9 de octubre talara alta, parinas - talara - piura, ref. a 1 cdra. antes de amecfa",
+    "texto_chosen": "599 - PIURA - TALARA - PARINAS - TALARA ALTA 9 DE OCTUBRE - TERRESTRE"
+  },
+  {
+    "agencia": "Av Las Palmeras",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "direccion": "av. las palmeras n° 5236 urb. villa norte - los olivos",
+    "texto_chosen": "6 - LIMA - LIMA - LOS OLIVOS - AV. LAS PALMERAS - TERRESTRE"
+  },
+  {
+    "agencia": "Huaycan Entrada",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Atevitarte",
+    "direccion": "carretera central km 17 mz. e lt. 1,  ref. entrada de huaycan al costado del grifo primax. ex grifo el negro.",
+    "texto_chosen": "60 - LIMA - LIMA - ATE-VITARTE - HUAYCAN ENTRADA - TERRESTRE"
+  },
+  {
+    "agencia": "Monsefu",
+    "departamento": "Lambayeque ",
+    "provincia": "Chiclayo",
+    "distrito": "Monsefu",
+    "direccion": "av. venezuela n° 221, monsefu - chiclayo - lambayeque, ref. ref 01: a media cdra. de la calle diego ferre y a cdra. y media del parque artesanal de monsefu",
+    "texto_chosen": "600 - LAMBAYEQUE - CHICLAYO - MONSEFU - MONSEFU - TERRESTRE"
+  },
+  {
+    "agencia": "Av Saenz Pena",
+    "departamento": "Callao ",
+    "provincia": "Callao",
+    "distrito": "Callao",
+    "direccion": "av. saenz pena n° 414 - 416 - callao - callao, ref. cruce con av. marco polo",
+    "texto_chosen": "601 - CALLAO - CALLAO - CALLAO - AV SAENZ PEÑA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Las Americas",
+    "departamento": "Lambayeque ",
+    "provincia": "Chiclayo",
+    "distrito": "Chiclayo",
+    "direccion": "av. las americas lt. 42 mz. d, urb. monterrico - i etapa, chiclayo - chiclayo - lambayeque, ref. a media cdra. entre la av. colectora y av. las americas y a media cdra. del grifo sr. de sipan",
+    "texto_chosen": "602 - LAMBAYEQUE - CHICLAYO - CHICLAYO - AV LAS AMERICAS - TERRESTRE"
+  },
+  {
+    "agencia": "Calle Los Angeles",
+    "departamento": "Ica ",
+    "provincia": "Chincha",
+    "distrito": "Chincha Alta",
+    "direccion": "calle los angeles n° casa 217 01 - a sin barriio cercado, chincha alta - chincha - ica, ref. a 2 cdras. de la plaza de armas de chncha pasando electrodunas",
+    "texto_chosen": "603 - ICA - CHINCHA - CHINCHA ALTA - CALLE LOS ANGELES - TERRESTRE"
+  },
+  {
+    "agencia": "Av Independencia",
+    "departamento": "Puno ",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "direccion": "av. independencia nro. 1538 mz. a1 lt. 04 urb. horacio zeballos gamez, juliaca - san roman - puno, al frente del grifo san carlos / cruce con jr 21 de eneroref.",
+    "texto_chosen": "604 - PUNO - SAN ROMAN - JULIACA - AV INDEPENDENCIA - TERRESTRE"
+  },
+  {
+    "agencia": "Punchana",
+    "departamento": "Loreto ",
+    "provincia": "Maynas",
+    "distrito": "Punchana",
+    "direccion": "calle borja n°648 punchana - maynas - loreto, ref. al costado de la farmacia san carlos centro medico",
+    "texto_chosen": "605 - LORETO - MAYNAS - PUNCHANA - PUNCHANA - TERRESTRE"
+  },
+  {
+    "agencia": "Talara Baja Parque 22",
+    "departamento": "Piura ",
+    "provincia": "Talara",
+    "distrito": "Parinas",
+    "direccion": "parque 22 – 03 lateral. talara baja, parinas - talara - piura. ref. frente a minsa",
+    "texto_chosen": "606 - PIURA - TALARA - PARINAS - TALARA BAJA PARQUE 22 - TERRESTRE"
+  },
+  {
+    "agencia": "Sicuani Av Manuel Callo",
+    "departamento": "Cusco ",
+    "provincia": "Canchis",
+    "distrito": "Sicuani",
+    "direccion": "jr. inambari nro. 208, sicuani - canchis - cusco, ref. al frente del bcp y de caja piura",
+    "texto_chosen": "607 - CUSCO - CANCHIS - SICUANI - SICUANI AV MANUEL CALLO - TERRESTRE"
+  },
+  {
+    "agencia": "Ica Subtanjalla Co",
+    "departamento": "Ica ",
+    "provincia": "Ica",
+    "distrito": "Subtanjalla",
+    "direccion": "c.p - sector macacona /predio parcela 214 lote 2, subtanjalla - ica - ica, ref. panamericana sur frente a la entrada del arrabal",
+    "texto_chosen": "608 - ICA - ICA - SUBTANJALLA - ICA SUBTANJALLA CO - TERRESTRE"
+  },
+  {
+    "agencia": "Manantay Av Aguaytia",
+    "departamento": "Ucayali ",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Manantay",
+    "direccion": "av. aguaytia mz., 26 lt. 20 manantay - coronel portillo - ucayali, ref. a media cdra. del nuevo mercado de san fernando",
+    "texto_chosen": "609 - UCAYALI - CORONEL PORTILLO - PUCALLPA MANANTAY - MANANTAY AV AGUAYTIA - TERRESTRE"
+  },
+  {
+    "agencia": "Yarinacocha Av Universitaria",
+    "departamento": "Ucayali ",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Yarinacocha",
+    "direccion": "av. universitaria mza a lote 6, yarinacocha - coronel portillo - ucayali, ref. a media cdra. del local rokalpa",
+    "texto_chosen": "610 - UCAYALI - CORONEL PORTILLO - PUCALLPA YARINACOCHA - YARINACOCHA AV UNIVERSITARIA - TERRESTRE"
+  },
+  {
+    "agencia": "Manantay Av Tupac Amaru",
+    "departamento": "Ucayali ",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Manantay",
+    "direccion": "av. tupac amaru 2315 manantay - coronel portillo - ucayali, ref. a media cdra. de la polleria emanuel",
+    "texto_chosen": "611 - UCAYALI - CORONEL PORTILLO - PUCALLPA MANANTAY - MANANTAY AV TUPAC AMARU - TERRESTRE"
+  },
+  {
+    "agencia": "Calleria Av Saenz Pena",
+    "departamento": "Ucayali ",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Calleria",
+    "direccion": "av. saenz pena 229, calleria - coronel portillo - ucayali, ref. a dos cuadras del ovalo de federico basadre y saenz pena",
+    "texto_chosen": "612 - UCAYALI - CORONEL PORTILLO - PUCALLPA CALLERIA - CALLERIA AV SAENZ PEÑA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Raul Mata La Cruz Dos Grifos",
+    "departamento": "Piura ",
+    "provincia": "Piura",
+    "distrito": "Piura",
+    "direccion": "av. raul mata la cruz lt. 11 mz. c urb. los jardines - corpiura, - piura - piura - piura, ref. a una cdra. de los 2 grifos en toda la av. raul mata la cruz",
+    "texto_chosen": "613 - PIURA - PIURA - PIURA - AV RAUL MATA LA CRUZ- DOS GRIFOS - TERRESTRE"
+  },
+  {
+    "agencia": "El Milagro",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "Huanchaco",
+    "direccion": "av. industrial mz 23 lt. 13 sector ii – el milagro, huanchaco - trujillo - la libertad, ref. a 2 cdras. de la plaza de armas de el milagro",
+    "texto_chosen": "614 - LA LIBERTAD - TRUJILLO - HUANCHACO - EL MILAGRO - TERRESTRE"
+  },
+  {
+    "agencia": "Soritor",
+    "departamento": "San Martin ",
+    "provincia": "Moyobamba",
+    "distrito": "Soritor",
+    "direccion": "jr. miguel grau cdra 7 n°741 mz.05 lte.16b, soritor - moyobamba - san martin, ref. a media cdra. de la iglesia asambleas de dios",
+    "texto_chosen": "615 - SAN MARTIN - MOYOBAMBA - SORITOR - SORITOR - TERRESTRE"
+  },
+  {
+    "agencia": "San Jose De Sisa",
+    "departamento": "San Martin ",
+    "provincia": "El Dorado",
+    "distrito": "San Jose De Sisa",
+    "direccion": "jr. bolognesi cdra 6, san jose de sisa - el dorado - san martin, ref. altura de jr lamas y jr eladio tapullima",
+    "texto_chosen": "616 - SAN MARTIN - EL DORADO - SAN JOSE DE SISA - SAN JOSE DE SISA - TERRESTRE"
+  },
+  {
+    "agencia": "Tambopata Av Circunvalacion",
+    "departamento": "Madre De Dios ",
+    "provincia": "Tambopata",
+    "distrito": "Tambopata",
+    "direccion": "av. circunvalacion mz. c lt. 01, tambopata - tambopata - madre de dios, ref. a dos cdras. de la carretera interoceanica sur / cruce con jr. las mercedes cabello",
+    "texto_chosen": "617 - MADRE DE DIOS - TAMBOPATA - TAMBOPATA - TAMBOPATA AV CIRCUNVALACION - TERRESTRE"
+  },
+  {
+    "agencia": "Lambayeque Centro",
+    "departamento": "Lambayeque ",
+    "provincia": "Lambayeque",
+    "distrito": "Lambayeque",
+    "direccion": "av. federico villarreal n° 491, lambayeque - lambayeque - lambayeque, ref. a media cdra. de la interseccion de la av. federico villarreal con calle emiliano nino",
+    "texto_chosen": "618 - LAMBAYEQUE - LAMBAYEQUE - LAMBAYEQUE - LAMBAYEQUE CENTRO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Malecon Checa Cdra 1",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "av. malecon miguel checa eguiguren n° 167 y 169 de la urb. zarate, sjl - lima, ref. esquina con av. gran chimu",
+    "texto_chosen": "619 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - AV MALECON CHECA CDRA. 1 - TERRESTRE"
+  },
+  {
+    "agencia": "Huaycan El Descanso",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Atevitarte",
+    "direccion": "av. jose carlos mariategui mza. b lte 06, residencial pariachi sec. 031 zon. 05, ate - lima - lima, ref. cruce con la av. los incas",
+    "texto_chosen": "620 - LIMA - LIMA - ATE-VITARTE - HUAYCAN EL DESCANSO - TERRESTRE"
+  },
+  {
+    "agencia": "Bagua Capital",
+    "departamento": "Amazonas ",
+    "provincia": "Bagua",
+    "distrito": "Bagua",
+    "direccion": "jr. amazonas c-9 mz. 126 lt. 25, bagua - bagua - amazonas, ref. frente al parque jerusalen y/o costado de avicola yaceg",
+    "texto_chosen": "622 - AMAZONAS - BAGUA - BAGUA - BAGUA CAPITAL - TERRESTRE"
+  },
+  {
+    "agencia": "Jr Agustin Gamarra",
+    "departamento": "Puno ",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "direccion": "jr. agustin gamarra mz. r1 lt. 09 urb. huancane, juliaca - san roman - puno, ref. a una cdra. de la av. huancane / cruce con jr. alberto cuentas zabala",
+    "texto_chosen": "623 - PUNO - SAN ROMAN - JULIACA - JR AGUSTIN GAMARRA - TERRESTRE"
+  },
+  {
+    "agencia": "Iquitos Av Tupac Amaru",
+    "departamento": "Loreto ",
+    "provincia": "Maynas",
+    "distrito": "Iquitos",
+    "direccion": "av.  tupac amaru con - calle lourdes de leon #479 iquitos maynas - loreto, ref. frente a la botica thiagofama",
+    "texto_chosen": "624 - LORETO - MAYNAS - IQUITOS - IQUITOS AV TUPAC AMARU - TERRESTRE"
+  },
+  {
+    "agencia": "Av Circunvalacion Sjl",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "av. circunvalacion mz. b-5 lt. 20 aa. hh. sargento fernando lores tenazoa comuna 20, san juan de lurigancho - lima, ref. a dos cdras. del colegio ramiro priale",
+    "texto_chosen": "626 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - AV CIRCUNVALACION SJL - TERRESTRE"
+  },
+  {
+    "agencia": "Nueva Esperanza Vmt",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Villa Maria Del Triunfo",
+    "direccion": "av. 26 de noviembre, 1728b - 1728c mz. 90 sub lote. 19b pueblo joven nueva esperanza, villa maria del triunfo - lima, ref. a 3 cdras. del mercado virgen de lourdes",
+    "texto_chosen": "627 - LIMA - LIMA - VILLA MARIA DEL TRIUNFO - NUEVA ESPERANZA VMT - TERRESTRE"
+  },
+  {
+    "agencia": "Punta Hermosa",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Punta Hermosa",
+    "direccion": "av. garcia rada mz.b lt.04, aahh asociacion de vivienda y desarrollo integral nueva generacion, punta hermosa - lima, ref. a una cdra. del paradero peatonal de punta hermosa",
+    "texto_chosen": "628 - LIMA - LIMA - PUNTA HERMOSA - PUNTA HERMOSA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Tupac Amaru Cdra 57",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Comas",
+    "direccion": "av. tupac amaru 5725-5727 - urb. huaquillay i etapa, comas - lima - lima, ref. a media cdra. del banco de la nacion",
+    "texto_chosen": "629 - LIMA - LIMA - COMAS - AV TUPAC AMARU CDRA. 57 - TERRESTRE"
+  },
+  {
+    "agencia": "Urb Santa Elvira",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Atevitarte",
+    "direccion": "av. ferrocarril mz. c lt. 19 parcela 3, urb. santa elvira sec. 018 zona 3, ref. a media cdra. del cruce con av. de la cultura",
+    "texto_chosen": "630 - LIMA - LIMA - ATE-VITARTE - URB SANTA ELVIRA - TERRESTRE"
+  },
+  {
+    "agencia": "Supe",
+    "departamento": "Lima ",
+    "provincia": "Barranca",
+    "distrito": "Supe",
+    "direccion": "av. francisco vidal 1120, supe - barranca - lima, ref. al costado de lubricentro ciriaco y media cdra. de la cruz misionera",
+    "texto_chosen": "631 - LIMA - BARRANCA - SUPE - SUPE - TERRESTRE"
+  },
+  {
+    "agencia": "Casa Grande",
+    "departamento": "La Libertad ",
+    "provincia": "Ascope",
+    "distrito": "Casa Grande",
+    "direccion": "calle luis sanchez n° 152 sector parte alta. casa grande - ascope - la libertad, ref. cruce con av. estadio",
+    "texto_chosen": "632 - LA LIBERTAD - ASCOPE - CASA GRANDE - CASA GRANDE - TERRESTRE"
+  },
+  {
+    "agencia": "Ovalo Papal",
+    "departamento": "La Libertad ",
+    "provincia": "Trujillo",
+    "distrito": "Trujillo",
+    "direccion": "urb. vista hermosa mz. f lt. 11 piso °1 trujillo - trujillo - la libertad, ref. a espaldas del metro del ovalo papal",
+    "texto_chosen": "633 - LA LIBERTAD - TRUJILLO - TRUJILLO - OVALO PAPAL - TERRESTRE"
+  },
+  {
+    "agencia": "Ciudad Universitaria",
+    "departamento": "Junin ",
+    "provincia": "Huancayo",
+    "distrito": "El Tambo",
+    "direccion": "jr tarma nro. 37 - 24, el tambo - huancayo - junin ref. al costado de la facultad de ingenieria  metalurgica uncp",
+    "texto_chosen": "634 - JUNIN - HUANCAYO - EL TAMBO - CIUDAD UNIVERSITARIA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Buenos Aires",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Puente Piedra",
+    "direccion": "av. buenos aires mz. d, sub-lote 188e1 asociacion de pobladoresmicaela bastidas, puente piedra - lima - lima, ref. a 2 cdras. de la demuna de puente piedra",
+    "texto_chosen": "635 - LIMA - LIMA - PUENTE PIEDRA - AV BUENOS AIRES - TERRESTRE"
+  },
+  {
+    "agencia": "Huaycan Av Horacio Zevallos",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Atevitarte",
+    "direccion": "av. horacio zeballos mz. v lt. 12 prog. viv. residencial pariachi (sec. 031) zona 5, ate - lima - lima, ref. frente al circuito de manejo garcilaso de la vega",
+    "texto_chosen": "636 - LIMA - LIMA - ATE-VITARTE - HUAYCAN AV HORACIO ZEVALLOS - TERRESTRE"
+  },
+  {
+    "agencia": "Sunampe Co",
+    "departamento": "Ica ",
+    "provincia": "Chincha",
+    "distrito": "Sunampe",
+    "direccion": "carr. panamericana sur nro. 198 -b , sin barrio cercado sunampe, sunampe - chincha - ica, ref. antigua panamericana sur frente a la entrada de grocio prado.",
+    "texto_chosen": "637 - ICA - CHINCHA - SUNAMPE - SUNAMPE CO - TERRESTRE"
+  },
+  {
+    "agencia": "Mi Peru",
+    "departamento": "Callao ",
+    "provincia": "Callao",
+    "distrito": "Mi Peru",
+    "direccion": "v. victor raul haya de la torre mz. a lt. 02 asentamiento humano confraternidad - iii sector - mi peru – callao - callao, ref. cruce con av. arequipa",
+    "texto_chosen": "638 - CALLAO - CALLAO - MI PERU - MI PERU - TERRESTRE"
+  },
+  {
+    "agencia": "El Triunfo",
+    "departamento": "Madre De Dios ",
+    "provincia": "Tambopata",
+    "distrito": "Las Piedras",
+    "direccion": "av. interoceanica km. 1 , las piedras - tambopata - madre de dios, ref. al costado del grifo virgen natividad",
+    "texto_chosen": "639 - MADRE DE DIOS - TAMBOPATA - LAS PIEDRAS - EL TRIUNFO - TERRESTRE"
+  },
+  {
+    "agencia": "Moyobamba Centro",
+    "departamento": "San Martin ",
+    "provincia": "Moyobamba",
+    "distrito": "Moyobamba",
+    "direccion": "jr. serafin filomeno n°279, moyobamba - moyobamba - san martin, ref. a una cuadra imedia del cumo (centro cultural de moyobamba)",
+    "texto_chosen": "640 - SAN MARTIN - MOYOBAMBA - MOYOBAMBA - MOYOBAMBA CENTRO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Ejercito",
+    "departamento": "Tacna ",
+    "provincia": "Tacna",
+    "distrito": "Tacna",
+    "direccion": "av. litoral nro. 306 – para chico (anterior av. ejercito prolongacion 306 tacna), tacna - tacna - tacna, ref. dentro del establecimiento del grifo primax",
+    "texto_chosen": "641 - TACNA - TACNA - TACNA - AV EJERCITO - TERRESTRE"
+  },
+  {
+    "agencia": "Chen Chen",
+    "departamento": "Moquegua ",
+    "provincia": "Mariscal Nieto",
+    "distrito": "Moquegua",
+    "direccion": "mz. c lt. 24 – asociacion cesar vizcarra – centro poblado chen chen , moquegua –mariscal nieto – moquegua, ref. al costado del ovalo chen chen",
+    "texto_chosen": "642 - MOQUEGUA - MARISCAL NIETO - MOQUEGUA - CHEN CHEN - TERRESTRE"
+  },
+  {
+    "agencia": "Pocollay",
+    "departamento": "Tacna ",
+    "provincia": "Tacna",
+    "distrito": "Tacna",
+    "direccion": "pueblo tradicional pocollay mz. t lote 01 , pocollay - tacna - tacna, ref. a una cdra. del centro de salud pocollay",
+    "texto_chosen": "643 - TACNA - TACNA - TACNA - POCOLLAY - TERRESTRE"
+  },
+  {
+    "agencia": "Juanjui Centro",
+    "departamento": "San Martin ",
+    "provincia": "Mariscal Caceres",
+    "distrito": "Juanjui",
+    "direccion": "jr. sargento lorez n° 568, juanjui - mariscal caceres - san martin, ref. a una cdra. de del jr. huallaga cdra. 11 y a una cdra. de importaciones patricia",
+    "texto_chosen": "644 - SAN MARTIN - MARISCAL CACERES - JUANJUI - JUANJUI CENTRO - TERRESTRE"
+  },
+  {
+    "agencia": "Reque",
+    "departamento": "Lambayeque ",
+    "provincia": "Chiclayo",
+    "distrito": "Reque",
+    "direccion": "av. mariscal ramon castilla mz. 4 lote 14, reque - chiclayo - lambayeque, ref. a media cdra. de la interseccion con calle san martin / a unos mtrs de alborada eventos y recepciones",
+    "texto_chosen": "645 - LAMBAYEQUE - CHICLAYO - REQUE - REQUE - TERRESTRE"
+  },
+  {
+    "agencia": "Chongoyape",
+    "departamento": "Lambayeque ",
+    "provincia": "Chiclayo",
+    "distrito": "Chongoyape",
+    "direccion": "av. atahualpa n° 1200 - chongoyape - chiclayo - lambayeque, ref. interseccion con calle iquitos / a 2 cdras. de la interseccion con la av. chiclayo",
+    "texto_chosen": "647 - LAMBAYEQUE - CHICLAYO - CHONGOYAPE - CHONGOYAPE - TERRESTRE"
+  },
+  {
+    "agencia": "Matarani",
+    "departamento": "Arequipa ",
+    "provincia": "Islay",
+    "distrito": "Islay",
+    "direccion": "asentamiento humano. puerto nuevo mz. i lt. 18 av. bello horizonte, islay - islay - arequipa, ref. frente al parque ecologico",
+    "texto_chosen": "648 - AREQUIPA - ISLAY - ISLAY - MATARANI - TERRESTRE"
+  },
+  {
+    "agencia": "Pomalca",
+    "departamento": "Lambayeque ",
+    "provincia": "Chiclayo",
+    "distrito": "Pomalca",
+    "direccion": "calle 25 mz. i lt. 6 sect. 6 san juan, pomalca - chiclayo - lambayeque, ref. a una cdra. y media de la interseccion con av. san martin/ al frente de la iglesia mormon",
+    "texto_chosen": "649 - LAMBAYEQUE - CHICLAYO - POMALCA - POMALCA - TERRESTRE"
+  },
+  {
+    "agencia": "Huancaro",
+    "departamento": "Cusco ",
+    "provincia": "Cusco",
+    "distrito": "Santiago",
+    "direccion": "urb. villa union f-1-b huancaro, santiago - cusco - cusco, ref. frente a la iglesia de los mormones/ a una cdra. del mercado huancaro",
+    "texto_chosen": "650 - CUSCO - CUSCO - SANTIAGO - HUANCARO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Nicolas Duenas Cdra 5",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Cercado Lima",
+    "direccion": "av. nicolas duenas 584 mz. c lt. 4 – aahh primero de setiembre, cercado de lima – lima - lima, ref. a media cdra. del cruce con jr. pedro garezon",
+    "texto_chosen": "651 - LIMA - LIMA - CERCADO LIMA - AV NICOLAS DUEÑAS CDRA. 5"
+  },
+  {
+    "agencia": "Av Univ Parque Sinchi Roca",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Comas",
+    "direccion": "av. universitaria norte mzn. q1 lte. 030 urb. primavera,comas-lima - lima, ref. a media cdra. del ingreso al parque zona sinchi roca",
+    "texto_chosen": "652 - LIMA - LIMA - COMAS - AV. UNIV. PARQUE SINCHI ROCA - TERRESTRE"
+  },
+  {
+    "agencia": "Jr Cesar Vallejo",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Santa Anita",
+    "direccion": "jr. cesar vallejo 302 mz. b1 lt. 02 urb universal, santa anita- lima-lima, ref. a 1 cdra. del cruce con av. tupac amaru",
+    "texto_chosen": "653 - LIMA - LIMA - SANTA ANITA - JR CESAR VALLEJO - TERRESTRE"
+  },
+  {
+    "agencia": "Ancon",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Ancon",
+    "direccion": "carretera serpentin de pasamayo mz. g lt. 3 sublt. b - asoc. de prop. casa huerta ind. pecuarias san pedro zona 4, ancon - lima-lima, ref. a 1 cdra. del ovalo de ancon",
+    "texto_chosen": "654 - LIMA - LIMA - ANCON - ANCON - TERRESTRE"
+  },
+  {
+    "agencia": "Jiron Ancash",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "El Agustino",
+    "direccion": "jr. ancash mz. b lt. 11 aahh ancieta alta, el agustino - lima - lima, ref. frente al ingreso de agustino plaza",
+    "texto_chosen": "655 - LIMA - LIMA - EL AGUSTINO - JIRON ANCASH - TERRESTRE"
+  },
+  {
+    "agencia": "Cocachacra",
+    "departamento": "Arequipa ",
+    "provincia": "Islay",
+    "distrito": "Cocachacra",
+    "direccion": "centro poblado cocachacra mz. n5 sub-lote 5b calle dean valdivia, cocachacra - islay - arequipa, ref. del parque san francisco una cdra. hacia abajo",
+    "texto_chosen": "656 - AREQUIPA - ISLAY - COCACHACRA - COCACHACRA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Heroes Del Pacifico Co",
+    "departamento": "Puno ",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "direccion": "av. heroes de la guerra del pacifico km 3.5, juliaca - san roman - puno, ref. al frente del grifo leon service",
+    "texto_chosen": "657 - PUNO - SAN ROMAN - JULIACA - AV HEROES DEL PACIFICO CO - TERRESTRE"
+  },
+  {
+    "agencia": "Segunda Jerusalen",
+    "departamento": "San Martin ",
+    "provincia": "Rioja",
+    "distrito": "Elias Soplin Vargas",
+    "direccion": "jr. lima mz. 43 lt. 08 , elias soplin vargas - rioja - san martin, ref. al costado de tienda chingay",
+    "texto_chosen": "658 - SAN MARTIN - RIOJA - ELIAS SOPLIN VARGAS - SEGUNDA JERUSALEN - TERRESTRE"
+  },
+  {
+    "agencia": "Pachacutec Pdro Vc",
+    "departamento": "Callao ",
+    "provincia": "Callao",
+    "distrito": "Ventanilla",
+    "direccion": "av. 225 mz f lote 2 sector a grupo residencial a2 - proyecto piloto nuevo pachacutec, ventanilla - callao - callao, ref. frente al centro de salud 3 de febrero",
+    "texto_chosen": "659 - CALLAO - CALLAO - VENTANILLA - PACHACUTEC PDRO VC - TERRESTRE"
+  },
+  {
+    "agencia": "Av 13 De Enero",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "direccion": "av. 13 de enero nº2057, urb. san hilarion, referencia: cerca a la estacion los postes",
+    "texto_chosen": "66 - LIMA - LIMA - SAN JUAN DE LURIGANCHO - AV. 13 DE ENERO - TERRESTRE"
+  },
+  {
+    "agencia": "Patapo",
+    "departamento": "Lambayeque ",
+    "provincia": "Chiclayo",
+    "distrito": "Patapo",
+    "direccion": "av. chongoyape n° s/n sector cerro mirador, patapo - chiclayo - lambayeque, ref. a una cdra. y media de la interseccion con av trapiche / al frente del polideportivo del cerro mirador",
+    "texto_chosen": "660 - LAMBAYEQUE - CHICLAYO - PATAPO - PATAPO - TERRESTRE"
+  },
+  {
+    "agencia": "Larcomar",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Miraflores",
+    "direccion": "malecon de la reserva 610, miraflores 15074, miraflores - lima - lima, ref. sotano nivel a",
+    "texto_chosen": "661 - LIMA - LIMA - MIRAFLORES - LARCOMAR - TERRESTRE"
+  },
+  {
+    "agencia": "Parque La Molina",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "La Molina",
+    "direccion": "av. la molina 2448, la molina 15026, la molina - lima - lima, ref. estacionamiento nivel -3",
+    "texto_chosen": "662 - LIMA - LIMA - LA MOLINA - PARQUE LA MOLINA - TERRESTRE"
+  },
+  {
+    "agencia": "Aplao",
+    "departamento": "Arequipa ",
+    "provincia": "Castilla",
+    "distrito": "Aplao",
+    "direccion": "ubica en la manzana x1, lote 07, de la calle 8 de setiembre, aplao - castilla - arequipa, ref. a una cdra. de ministerial publico fiscalia",
+    "texto_chosen": "663 - AREQUIPA - CASTILLA - APLAO - APLAO - TERRESTRE"
+  },
+  {
+    "agencia": "Cusco Co Via Evitamiento",
+    "departamento": "Cusco ",
+    "provincia": "Cusco",
+    "distrito": "San Sebastian",
+    "direccion": "av. evitamiento s/n ups chacahuayco, san sebastian - cusco - cusco, ref. via evitamiento en el paradero horacio",
+    "texto_chosen": "664 - CUSCO - CUSCO - SAN SEBASTIAN - CUSCO CO VIA EVITAMIENTO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Alameda Del Corregidor",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "La Molina",
+    "direccion": "av. alameda del corregidor mz. u lt. 19 ui 1 - urb la capilla, la molina - lima - lima, ref. a 2 cdras. del cruce con alameda de los condores",
+    "texto_chosen": "665 - LIMA - LIMA - LA MOLINA - AV ALAMEDA DEL CORREGIDOR - TERRESTRE"
+  },
+  {
+    "agencia": "Pachacutec Av 150",
+    "departamento": "Callao ",
+    "provincia": "Callao",
+    "distrito": "Ventanilla",
+    "direccion": "av. 150 izquierda mz. w2 lt. 01 proyecto piloto nuevo pachacutec, ventanilla - callao - callao, ref. a 1 cdra. del cruce av. camino del inca",
+    "texto_chosen": "666 - CALLAO - CALLAO - VENTANILLA - PACHACUTEC AV 150 - TERRESTRE"
+  },
+  {
+    "agencia": "Saposoa",
+    "departamento": "San Martin ",
+    "provincia": "Huallaga",
+    "distrito": "Saposoa",
+    "direccion": "av. loreto s/n - saposoa - el huallaga - san martin, ref. en el hostal el gato, a una cdra. y media de la plaza de armas",
+    "texto_chosen": "668 - SAN MARTIN - HUALLAGA - SAPOSOA - SAPOSOA"
+  },
+  {
+    "agencia": "Vista Alegre Co",
+    "departamento": "Ica ",
+    "provincia": "Nazca",
+    "distrito": "Vista Alegre",
+    "direccion": "carretera panamericana sur n\\u00b0 906, vista alegre - nazca -\\u00a0ica, ref. frente al aeropuerto de vista alegre",
+    "texto_chosen": "669 - ICA - NAZCA - VISTA ALEGRE - VISTA ALEGRE CO - TERRESTRE"
+  },
+  {
+    "agencia": "Av Univ Retablo",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Comas",
+    "direccion": "av. universitaria n° 7241, referencia: ex boulevard de retablo / a 2 cdras del metro de belaunde",
+    "texto_chosen": "67 - LIMA - LIMA - COMAS - AV UNIV. RETABLO - TERRESTRE"
+  },
+  {
+    "agencia": "Ant Panam Sur Cdra 11",
+    "departamento": "Lima ",
+    "provincia": "Canete",
+    "distrito": "Chilca",
+    "direccion": "antigua panamericana sur cdra. 11 mz. 46, lt. 08. chilca - canete - lima, ref. a media cdra. del hotel el pacifico",
+    "texto_chosen": "670 - LIMA - CAÑETE - CHILCA - ANT PANAM SUR CDRA 11 - TERRESTRE"
+  },
+  {
+    "agencia": "Av Colonizadores Co",
+    "departamento": "Arequipa ",
+    "provincia": "Caylloma",
+    "distrito": "Majes",
+    "direccion": "av. lote colonizadores. 4 parcela 180, majes - caylloma - arequipa, ref. a media cdra. del grifo el eje",
+    "texto_chosen": "672 - AREQUIPA - CAYLLOMA - MAJES - AV COLONIZADORES CO - TERRESTRE"
+  },
+  {
+    "agencia": "Vinanis",
+    "departamento": "Tacna ",
+    "provincia": "Tacna",
+    "distrito": "Coronel Gregorio Albarracin Lanchipa",
+    "direccion": "promuvi vinani, amp. i etapa, mz. 574, lt. 09 – coronel gregorio albarracin lanchipa – tacna - tacna, ref. a media cdra. del ovalo los molles",
+    "texto_chosen": "674 - TACNA - TACNA - CORONEL GREGORIO ALBARRACIN LANCHIPA - VIÑANIS"
+  },
+  {
+    "agencia": "Challhuahuacho",
+    "departamento": "Apurimac ",
+    "provincia": "Cotabambas",
+    "distrito": "Challhuahuacho",
+    "direccion": "barrio wichaypampa lt. 13 - 15 - 16, challhuahuacho - cotabambas - apurimac, ref. a dos cdras del terminal terrestre de challhuahuacho / a espaldas del taller e&l",
+    "texto_chosen": "675 - APURIMAC - COTABAMBAS - CHALLHUAHUACHO - CHALLHUAHUACHO - TERRESTRE"
+  },
+  {
+    "agencia": "Barrio San Martin",
+    "departamento": "Cajamarca ",
+    "provincia": "Cajamarca",
+    "distrito": "Cajamarca",
+    "direccion": "jiron los gladiolos n° 336 barrio san martin, cajamarca – cajamarca – cajamarca, ref. a la altura de la cdra. 13 de la via de evitamiento sur /a una cdra. de la universidad nacional de cajamarca",
+    "texto_chosen": "676 - CAJAMARCA - CAJAMARCA - CAJAMARCA - BARRIO SAN MARTÍN - TERRESTRE"
+  },
+  {
+    "agencia": "Mall Lambramani",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Arequipa",
+    "direccion": "av. lambramani 325, arequipa - arequipa- arequipa, ref. dentro del mall lambramani (sotano piso -4)",
+    "texto_chosen": "677 - AREQUIPA - AREQUIPA - AREQUIPA - MALL LAMBRAMANI - TERRESTRE"
+  },
+  {
+    "agencia": "Ctra Iquitos Nauta",
+    "departamento": "Loreto ",
+    "provincia": "Maynas",
+    "distrito": "Iquitos San Juan Bautista",
+    "direccion": "carretera iquitos nauta, s/n mz. k - lt. 20, san juan bautista - maynas - loreto, ref. al costado de la distribuidora amazon gas.",
+    "texto_chosen": "678 - LORETO - MAYNAS - IQUITOS SAN JUAN BAUTISTA - CTRA IQUITOS NAUTA - TERRESTRE"
+  },
+  {
+    "agencia": "Av  4 De Noviembre Co",
+    "departamento": "Puno ",
+    "provincia": "Puno",
+    "distrito": "Puno",
+    "direccion": "av. 4 de noviembre n° 474-b y 486-b barrio santa rosa, puno - puno – puno, ref. a una cdra. de sunafil",
+    "texto_chosen": "679 - PUNO - PUNO - PUNO - AV 4 DE NOVIEMBRE CO - TERRESTRE"
+  },
+  {
+    "agencia": "Fiori",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. miguel angel n° 235 - urb. fiori 4ta etapa mz. n-1 lt. 04 u.i n°6, san martin de porres - lima, ref. a 1 cdra. del cruce con av. marco polo",
+    "texto_chosen": "68 - LIMA - LIMA - SAN MARTIN DE PORRES - FIORI - TERRESTRE"
+  },
+  {
+    "agencia": "Ocongate",
+    "departamento": "Cusco ",
+    "provincia": "Quispicanchi",
+    "distrito": "Ocongate",
+    "direccion": "sect. mayo ucjo s/n, ocongate - quispicanchi - cusco, ref. a la espalda del terminal de buses de ocongate / a orillas de la carreta a mazuko",
+    "texto_chosen": "680 - CUSCO - QUISPICANCHI - OCONGATE - OCONGATE - TERRESTRE"
+  },
+  {
+    "agencia": "San Juan Bautista",
+    "departamento": "Ayacucho ",
+    "provincia": "Huamanga",
+    "distrito": "San Juan Bautista",
+    "direccion": "av. venezuela n° 431 – urb. aprovisa, san juan bautista - huamanga - ayacucho, ref. altura del hostal la oriental, cerca al seguro de essalud",
+    "texto_chosen": "686 - AYACUCHO - HUAMANGA - SAN JUAN BAUTISTA - SAN JUAN BAUTISTA - TERRESTRE"
+  },
+  {
+    "agencia": "Urb Reparticion",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Comas",
+    "direccion": "av. tupac amaru 3184 urb. reparticion, comas - lima - lima, ref. a media cdra. de av. victor andres belaunde y/o frente a dollarcity",
+    "texto_chosen": "687 - LIMA - LIMA - COMAS - URB. REPARTICIÓN - TERRESTRE"
+  },
+  {
+    "agencia": "Chilca Leoncio Prado",
+    "departamento": "Junin ",
+    "provincia": "Huancayo",
+    "distrito": "Chilca",
+    "direccion": "jr. leonico prado 656, chilca – huancayo - junin referencia: esquina con jiron jose olaya",
+    "texto_chosen": "689 - JUNIN - HUANCAYO - CHILCA - CHILCA LEONCIO PRADO - TERRESTRE"
+  },
+  {
+    "agencia": "Terminal Jauja",
+    "departamento": "Junin ",
+    "provincia": "Jauja",
+    "distrito": "Jauja",
+    "direccion": "jr.luis bardales s/n, jauja – jauja – junin, ref. terminal terrestre hatun xauxa",
+    "texto_chosen": "692 - JUNIN - JAUJA - JAUJA - TERMINAL JAUJA - TERRESTRE"
+  },
+  {
+    "agencia": "Av Central Smp",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "direccion": "av. central mz. a lt. 07, urb. programa de vivienda lucerito de naranjal, san martin de porres - lima - lima, ref. a 5 cdras. del cruce con av. tantamayo",
+    "texto_chosen": "697 - LIMA - LIMA - SAN MARTIN DE PORRES - AV CENTRAL SMP - TERRESTRE"
+  },
+  {
+    "agencia": "Chilete Agente",
+    "departamento": "Cajamarca ",
+    "provincia": "Contumaza",
+    "distrito": "Chilete",
+    "direccion": "jr. santa rosa n° 121, chilete – contumaza – cajamarca, ref. a una cdra. del terrapuerto y a 100 mts. del puente de ingreso a chilete",
+    "texto_chosen": "699 - CAJAMARCA - CONTUMAZA - CHILETE - CHILETE - AGENTE - TERRESTRE"
+  },
+  {
+    "agencia": "Av Parra 379 Co",
+    "departamento": "Arequipa ",
+    "provincia": "Arequipa",
+    "distrito": "Arequipa",
+    "direccion": "av. parra 379 - arequipa",
+    "texto_chosen": "7 - AREQUIPA - AREQUIPA - AREQUIPA - AV PARRA 379 CO - TERRESTRE"
+  },
+  {
+    "agencia": "Chorrillos Co",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Chorrillos",
+    "direccion": "av. santa anita n.° 580, chorrillos - lima, ref. al costado del mercado santa anita, cruce con san genaro",
+    "texto_chosen": "70 - LIMA - LIMA - CHORRILLOS - CHORRILLOS CO - TERRESTRE"
+  },
+  {
+    "agencia": "Callao Faucett",
+    "departamento": "Callao ",
+    "provincia": "Callao",
+    "distrito": "Callao",
+    "direccion": "av. elmer faucett n° 492",
+    "texto_chosen": "72 - CALLAO - CALLAO - CALLAO - CALLAO FAUCETT - TERRESTRE"
+  },
+  {
+    "agencia": "Puente Arica",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Puente Piedra",
+    "direccion": "panamericana norte  km 32.5 , a 1/2  cuadra del puente arica  - al costado del grifo repsol",
+    "texto_chosen": "73 - LIMA - LIMA - PUENTE PIEDRA - PUENTE ARICA - TERRESTRE"
+  },
+  {
+    "agencia": "Espinar",
+    "departamento": "Cusco ",
+    "provincia": "Espinar",
+    "distrito": "Yauri ( Espinar )",
+    "direccion": "calle san jose n° 703 barrio progreso, yauri (espinar) - espinar - cusco, ref.  a media cdra. del grifo san jose / a media cdra. de la av. tintaya",
+    "texto_chosen": "75 - CUSCO - ESPINAR - YAURI ( ESPINAR ) - ESPINAR - TERRESTRE"
+  },
+  {
+    "agencia": "Ica San Joaquin",
+    "departamento": "Ica ",
+    "provincia": "Ica",
+    "distrito": "Ica",
+    "direccion": "pasaje grau n° 101 san joaquin - ica  referencia : a 1 cdra de petro peru",
+    "texto_chosen": "8 - ICA - ICA - ICA - ICA SAN JOAQUIN - TERRESTRE"
+  },
+  {
+    "agencia": "Rioja",
+    "departamento": "San Martin ",
+    "provincia": "Rioja",
+    "distrito": "Rioja",
+    "direccion": "ctra. fernando belaunde terry n° 415, referencia: al costado de la clinica chilcon hope",
+    "texto_chosen": "85 - SAN MARTIN - RIOJA - RIOJA - RIOJA - TERRESTRE"
+  },
+  {
+    "agencia": "Andahuaylas",
+    "departamento": "Apurimac ",
+    "provincia": "Andahuaylas",
+    "distrito": "Andahuaylas",
+    "direccion": "av. malinas 1355 pochccota, andahuaylas - andahuaylas -  apurimac, ref. al costado de la ex cancha el centenario o altura de la universidad unsaac",
+    "texto_chosen": "9 - APURIMAC - ANDAHUAYLAS - ANDAHUAYLAS - ANDAHUAYLAS - TERRESTRE"
+  },
+  {
+    "agencia": "La Curva De Manchay",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Pachacamac",
+    "direccion": "av. prolongacion de la av. la molina mz. e lote 21. ah paul poblet lind, pachacamac - lima, ref. a media cdra. de mi banco",
+    "texto_chosen": "90 - LIMA - LIMA - PACHACAMAC - LA CURVA DE MANCHAY - TERRESTRE"
+  },
+  {
+    "agencia": "Av La Fontana",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "La Molina",
+    "direccion": "av la fontana 440 - la molina (cc la rotonda ii local 1018)",
+    "texto_chosen": "92 - LIMA - LIMA - LA MOLINA - AV LA FONTANA - TERRESTRE"
+  },
+  {
+    "agencia": "Chepen",
+    "departamento": "La Libertad ",
+    "provincia": "Chepen",
+    "distrito": "Chepen",
+    "direccion": "prolongacion ezequiel gonzales caceda 193 - sec. chepen, frente al coliseo",
+    "texto_chosen": "93 - LA LIBERTAD - CHEPEN - CHEPEN - CHEPEN - TERRESTRE"
+  },
+  {
+    "agencia": "Pacasmayo Las Palmeras",
+    "departamento": "La Libertad ",
+    "provincia": "Pacasmayo",
+    "distrito": "Pacasmayo",
+    "direccion": "ctra. panamericana norte n° mz. p lt. 4a - a.h. las palmeras, referencia: entre av. sucre y av. leoncio prado",
+    "texto_chosen": "94 - LA LIBERTAD - PACASMAYO - PACASMAYO - PACASMAYO LAS PALMERAS - TERRESTRE"
+  },
+  {
+    "agencia": "Av Cesar Vallejo",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "Villa El Salvador",
+    "direccion": "av. cesar vallejo, mz. f lt. 1 - sect. 2, referencia: frente a essalud, al costado del mercado villa sur",
+    "texto_chosen": "95 - LIMA - LIMA - VILLA EL SALVADOR - AV. CESAR VALLEJO - TERRESTRE"
+  },
+  {
+    "agencia": "Atocongo",
+    "departamento": "Lima ",
+    "provincia": "Lima",
+    "distrito": "San Juan De Miraflores",
+    "direccion": "av. de los heroes n° 228 - san juan de miraflores - (estacion atocongo)",
+    "texto_chosen": "97 - LIMA - LIMA - SAN JUAN DE MIRAFLORES - ATOCONGO - TERRESTRE"
+  },
+  {
+    "agencia": "Chulucanas",
+    "departamento": "Piura ",
+    "provincia": "Morropon",
+    "distrito": "Chulucanas",
+    "direccion": "jr. huancavelica n° 548   referencia : al lado del terminal de ronco",
+    "texto_chosen": "98 - PIURA - MORROPON - CHULUCANAS - CHULUCANAS - TERRESTRE"
+  },
+  {
+    "agencia": "Sechura",
+    "departamento": "Piura ",
+    "provincia": "Sechura",
+    "distrito": "Sechura",
+    "direccion": "av. bayovar n° 311  referencia : al costado de antena 10 radio",
+    "texto_chosen": "99 - PIURA - SECHURA - SECHURA - SECHURA - TERRESTRE"
+  }
+]
