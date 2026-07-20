@@ -38,8 +38,6 @@ Si vas a subirla a la Chrome Web Store o compartirla como paquete, incluye estos
 - `background.js`
 - `agencyStore.js`
 - `content.js`
-- `grid.html`
-- `grid.js`
 - `options.html`
 - `options.js`
 - `popup.html`
@@ -60,7 +58,6 @@ Si vas a subirla a la Chrome Web Store o compartirla como paquete, incluye estos
 - `background.js`: tareas en segundo plano y sincronización.
 - `agencyStore.js`: carga, normalización y almacenamiento de agencias.
 - `content.js`: inyección de la interfaz en las páginas compatibles.
-- `grid.html` y `grid.js`: vista de listado y selección.
 - `options.html` y `options.js`: panel de configuración.
 - `popup.html`, `popup.css` y `popup.js`: ventana emergente principal.
 - `tests/`: pruebas automáticas del manifiesto y la lógica de datos.

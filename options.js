@@ -79,11 +79,8 @@ window.onload = async () => {
     });
 };
 
-const isCO = (val) => val === true || String(val).toUpperCase() === 'TRUE' || String(val).toUpperCase() === 'SI' || String(val).toUpperCase() === 'S' || val === '1' || val === 1;
-
 document.getElementById('theme-toggle-opt').onclick = () => {
-    const esOscuro = document.body.classList.toggle('dark-theme');
-    chrome.storage.local.set({ pref_tema: esOscuro ? 'dark' : 'light' });
+    ShalomExtensionShared.toggleStoredTheme(document.body);
 };
 
 document.getElementById('toggleApiToken').onclick = () => {
@@ -166,7 +163,7 @@ function renderTable(filter = '') {
         const hasTerr = Boolean(ShalomAgencyStore.getChosenTextForChannel(a, 'TERRESTRE'));
         const hasAereo = Boolean(ShalomAgencyStore.getChosenTextForChannel(a, 'AEREO'));
         const canalBadge = hasTerr && hasAereo ? 'Ambos' : hasTerr ? 'Terrestre' : hasAereo ? 'Aéreo' : 'Sin identificador';
-        const badgeCO = isCO(a.co) ? '<span style="background:#e8f5e9;color:#2e7d32;padding:2px 6px;border-radius:4px;font-size:10px;margin-left:5px;border:1px solid #c8e6c9;font-weight:bold;">🛡️ AGENCIA CO</span>' : '';
+        const badgeCO = ShalomAgencyStore.isAgencyCO(a.co) ? '<span style="background:#e8f5e9;color:#2e7d32;padding:2px 6px;border-radius:4px;font-size:10px;margin-left:5px;border:1px solid #c8e6c9;font-weight:bold;">🛡️ AGENCIA CO</span>' : '';
         const tamanoText = a.size || a.tamano ? `<br><small>Tamaño: ${escape(a.size || a.tamano)}</small>` : '';
 
         tr.innerHTML = `
@@ -229,8 +226,6 @@ const cerrarModal = () => {
 
 document.getElementById('cancelBtn').onclick = () => cerrarModal();
 document.getElementById('addBtn').onclick = () => abrirModal();
-document.getElementById('viewGridBtn').onclick = () => window.open('grid.html', '_blank');
-
 document.getElementById('confirmBtn').onclick = () => {
     const index = parseInt(document.getElementById('editIndex').value);
     const textoChosenManual = document.getElementById('fieldTextoChosen').value.trim();

@@ -26,8 +26,6 @@ async function cargarDatos(tipo = 'TERRESTRE') {
     }
 }
 
-const isCO = (val) => val === true || String(val).toUpperCase() === 'TRUE' || String(val).toUpperCase() === 'SI' || String(val).toUpperCase() === 'S' || val === '1' || val === 1;
-
 const canalDisponibleParaAgencia = (agencia, canal) => ShalomAgencyStore.agencyHasChannel(agencia, canal);
 
 const obtenerTextoChosen = (agencia, canal) => {
@@ -238,7 +236,7 @@ async function inicializarInyeccion() {
                         </div>
                         <div style="margin-bottom: 6px; display: flex; gap: 6px; flex-wrap: wrap;">
                             <span style="background:#eceff1;color:#37474f;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:bold;border:1px solid #cfd8dc;">${escape(badgeCanal)}</span>
-                            ${isCO(a.co) ? '<span style="background:#e8f5e9;color:#2e7d32;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:bold;border:1px solid #c8e6c9;">🛡️ AGENCIA CO</span>' : ''}
+                            ${ShalomAgencyStore.isAgencyCO(a.co) ? '<span style="background:#e8f5e9;color:#2e7d32;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:bold;border:1px solid #c8e6c9;">🛡️ AGENCIA CO</span>' : ''}
                             <span style="background:#e3f2fd;color:#1565c0;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:bold;border:1px solid #bbdefb;">📏 ${escape(a.tamano || 'Mediana')}</span>
                             ${hasTerr ? '<span style="background:#fff3e0;color:#ef6c00;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:bold;border:1px solid #ffcc80;">🚛 Terrestre</span>' : ''}
                             ${hasAereo ? '<span style="background:#ede7f6;color:#5e35b1;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:bold;border:1px solid #d1c4e9;">✈️ Aéreo</span>' : ''}

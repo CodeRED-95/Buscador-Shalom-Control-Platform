@@ -519,6 +519,12 @@ const AGENCY_CACHE_KEYS = {
         refreshCodeRedAgencyCache,
         applyAgencyChanges,
         saveAgencyCache,
+        isAgencyCO: (value) => value === true
+            || String(value).toUpperCase() === 'TRUE'
+            || String(value).toUpperCase() === 'SI'
+            || String(value).toUpperCase() === 'S'
+            || value === '1'
+            || value === 1,
         normalizeAgency,
         getChosenTextForChannel,
         agencyHasChannel,
