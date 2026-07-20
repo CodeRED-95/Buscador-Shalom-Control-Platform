@@ -1,4 +1,4 @@
-importScripts('agencyStore.js', 'coderedApi.js');
+importScripts('extensionShared.js', 'agencyStore.js', 'coderedApi.js');
 
 const AGENCY_REFRESH_ALARM = 'shalom-agencies-refresh';
 const REFRESH_PERIOD_MINUTES = 24 * 60;
@@ -69,7 +69,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         return true;
     }
     if (type === 'API_TEST_CONNECTION') {
-        CodeRedApi.fetchCurrentTokenInfo(payload.apiBaseUrl, payload.apiToken)
+        CodeRedApi.fetchCurrentTokenInfo(ShalomExtensionShared.CODERED_API_BASE_URL, payload.apiToken)
             .then((info) => respond({ info }))
             .catch(reject);
         return true;

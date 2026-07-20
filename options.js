@@ -1,8 +1,3 @@
-let agenciasTerrestre = [];
-let agenciasAereo = [];
-let currentType = 'TERRESTRE';
-const CHANNEL_STORAGE_KEY = 'pref_canal_agencia';
-
 const sendMessage = (type, payload = {}) => new Promise((resolve, reject) => {
     chrome.runtime.sendMessage({ type, payload }, (response) => {
         const lastError = chrome.runtime.lastError;
@@ -11,73 +6,172 @@ const sendMessage = (type, payload = {}) => new Promise((resolve, reject) => {
             return;
         }
         if (!response || !response.ok) {
-            const error = response?.error || { message: 'Error inesperado' };
-            reject(error);
+            reject(response?.error || { message: 'Error inesperado' });
             return;
         }
         resolve(response);
     });
 });
 
-const setStatusText = (text) => {
-    const el = document.getElementById('cacheStatus');
+const tokenInput = document.getElementById('apiToken');
+const tokenStatus = document.getElementById('tokenStatus');
+const lastSyncValue = document.getElementById('lastSyncValue');
+const agencyCountValue = document.getElementById('agencyCountValue');
+const sourceValue = document.getElementById('sourceValue');
+const schemaValue = document.getElementById('schemaValue');
+const syncSummary = document.getElementById('syncSummary');
+
+const setText = (id, text) => {
+    const el = document.getElementById(id);
     if (el) el.textContent = text;
 };
 
-const setSyncSummary = (text) => {
-    const el = document.getElementById('syncSummary');
-    if (el) el.textContent = text;
+const formatDateTime = (value) => {
+    if (!value) return 'Nunca';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return String(value);
+    return new Intl.DateTimeFormat('es-PE', {
+        dateStyle: 'medium',
+        timeStyle: 'short'
+    }).format(date);
 };
 
-const formatSyncSummary = (status, cache) => {
-    if (!status) return 'Última sincronización: nunca';
-    const sourceLabel = status.source === 'codered' ? 'CodeRED Platform' : 'Caché local';
-    const total = cache?.agencies?.length ?? cache?.total ?? 0;
-    const syncedAt = status.syncedAt || cache?.syncedAt || cache?.lastSyncAt || null;
-    return `Fuente activa: ${sourceLabel} · ${total} agencias · última sincronización: ${syncedAt || 'nunca'}`;
-};
+const normalizeToken = (value) => ShalomExtensionShared.normalizeToken(value);
 
-const updateStatusUI = async () => {
+const setConnectionStatus = (text) => setText('tokenStatus', `Estado de conexión: ${text}`);
+
+const refreshReadOnlyStatus = async () => {
     try {
-        const { status, cache } = await sendMessage('CATALOG_STATUS');
-        const modeLabel = status.source === 'codered' ? 'CodeRED Platform' : 'Caché local';
-        const freshnessLabel = status.stale ? 'vencida' : 'vigente';
-        const offlineLabel = status.offline ? ' - modo offline' : '';
-        setStatusText(`Estado de caché: ${modeLabel} / ${freshnessLabel}${offlineLabel}`);
-        setSyncSummary(formatSyncSummary(status, cache));
-    } catch (err) {
-        setStatusText('Estado de caché: no disponible');
-        setSyncSummary('Última sincronización: no disponible');
+        const [{ status, cache }, { config }] = await Promise.all([
+            sendMessage('CATALOG_STATUS'),
+            sendMessage('CONFIG_GET')
+        ]);
+        const agencies = Array.isArray(cache?.agencies) ? cache.agencies.length : 0;
+        const sourceLabel = status?.source === 'codered' ? 'CodeRED Platform' : 'Caché local';
+        const syncedAt = status?.syncedAt || cache?.syncedAt || cache?.lastSyncAt || null;
+
+        setText('lastSyncValue', formatDateTime(syncedAt));
+        setText('agencyCountValue', String(agencies));
+        setText('sourceValue', sourceLabel);
+        setText('schemaValue', String(cache?.schemaVersion || 3));
+        setText('syncSummary', `Fuente: ${sourceLabel} · ${agencies} agencias · última sincronización: ${formatDateTime(syncedAt)}`);
+
+        if (!config?.apiToken) {
+            setConnectionStatus('sin configurar');
+        }
+    } catch {
+        setText('lastSyncValue', 'No disponible');
+        setText('agencyCountValue', '0');
+        setText('sourceValue', 'CodeRED Platform');
+        setText('schemaValue', '1');
+        setText('syncSummary', 'Última sincronización: no disponible');
     }
 };
 
-const refreshLocalLists = async () => {
-    const response = await sendMessage('CATALOG_GET');
-    agenciasTerrestre = response.cache?.terrestre || [];
-    agenciasAereo = response.cache?.aereo || [];
-    return response;
+const loadTokenState = async () => {
+    const { config, cache } = await sendMessage('CONFIG_GET');
+    const savedToken = normalizeToken(config?.apiToken || '');
+    tokenInput.value = savedToken || '';
+    tokenInput.placeholder = 'Token de API';
+    tokenInput.type = 'password';
+    document.getElementById('toggleApiToken').textContent = 'Mostrar';
+
+    if (savedToken) {
+        tokenInput.value = savedToken;
+        setConnectionStatus('conectado');
+    } else if (cache?.agencies?.length) {
+        setConnectionStatus('usando caché local');
+    } else {
+        setConnectionStatus('sin configurar');
+    }
 };
 
-window.onload = async () => {
-    chrome.storage.local.get(['pref_tema', 'agencyDataConfig', CHANNEL_STORAGE_KEY], async (items) => {
-        if (items.pref_tema === 'dark') document.body.classList.add('dark-theme');
-        const savedChannel = ['AUTO', 'TERRESTRE', 'AEREO'].includes(items[CHANNEL_STORAGE_KEY]) ? items[CHANNEL_STORAGE_KEY] : 'TERRESTRE';
-        chrome.storage.local.set({ [CHANNEL_STORAGE_KEY]: savedChannel });
-
-        try {
-            const config = items.agencyDataConfig || (await sendMessage('CONFIG_GET')).config;
-            document.getElementById('dataSource').value = 'codered';
-            document.getElementById('apiBaseUrl').value = config.apiBaseUrl || '';
-            document.getElementById('apiToken').value = config.apiToken || '';
-            await refreshLocalLists();
-            await updateStatusUI();
-        } catch (err) {
-            console.error('Error al cargar configuración inicial:', err);
-        } finally {
-            renderTable();
+const saveToken = async ({ runSync = true } = {}) => {
+    const token = normalizeToken(tokenInput.value);
+    await sendMessage('CONFIG_SAVE', {
+        config: {
+            apiToken: token
         }
     });
+        if (token) {
+            setConnectionStatus('conectando...');
+            const test = await testConnection({ silent: true });
+            if (test.ok && runSync) {
+                const syncResult = await sendMessage('CATALOG_SYNC');
+                await refreshReadOnlyStatus();
+                setConnectionStatus('conectado');
+                return syncResult;
+            }
+            if (!test.ok) {
+                await refreshReadOnlyStatus();
+                return null;
+            }
+        } else {
+            setConnectionStatus('sin configurar');
+        }
+        await refreshReadOnlyStatus();
+        return null;
 };
+
+const testConnection = async ({ silent = false } = {}) => {
+    const token = normalizeToken(tokenInput.value);
+    if (!token) {
+        if (!silent) alert('Primero ingresa un token.');
+        setConnectionStatus('sin configurar');
+        return { ok: false };
+    }
+
+    try {
+        setConnectionStatus('conectando...');
+        const me = await CodeRedApi.fetchCurrentTokenInfo(ShalomExtensionShared.CODERED_API_BASE_URL, token);
+        const metadata = await CodeRedApi.fetchCatalogMetadata(ShalomExtensionShared.CODERED_API_BASE_URL, token);
+        const abilities = Array.isArray(me?.abilities) ? me.abilities : [];
+        const canRead = abilities.includes('agencies:read') || abilities.includes('*');
+        const total = metadata?.json?.total_agencies ?? metadata?.json?.total ?? metadata?.json?.data?.total ?? 0;
+        const schemaVersion = metadata?.json?.schema_version ?? metadata?.json?.api_schema_version ?? 1;
+
+        setText('agencyCountValue', String(total || 0));
+        setText('schemaValue', String(schemaVersion || 1));
+        setText('syncSummary', `Fuente: CodeRED Platform · ${total || 0} agencias · versión de esquema: ${schemaVersion || 1}`);
+
+        if (!canRead) {
+            setConnectionStatus('token válido, pero sin permiso agencies:read');
+            if (!silent) alert('El token es válido, pero no tiene el permiso agencies:read.');
+            return { ok: false, abilities };
+        }
+
+        setConnectionStatus('conectado');
+        if (!silent) {
+            alert(`Conexión correcta. Token válido con acceso al catálogo.\nAbilities: ${abilities.join(', ') || 'ninguna'}\nTotal de agencias: ${total || 0}\nVersión de esquema: ${schemaVersion || 1}`);
+        }
+        return { ok: true, abilities, total, schemaVersion };
+    } catch (err) {
+        const code = err?.status || err?.type;
+        if (code === 401 || code === 'UNAUTHORIZED') {
+            setConnectionStatus('token inválido');
+            if (!silent) alert('Token inválido, expirado o revocado.');
+        } else if (code === 403 || code === 'FORBIDDEN') {
+            setConnectionStatus('token sin permiso');
+            if (!silent) alert('El token es válido, pero no tiene el permiso agencies:read.');
+        } else if (code === 429 || code === 'RATE_LIMIT') {
+            setConnectionStatus('rate limit temporal');
+            if (!silent) alert('Se alcanzó temporalmente el límite de solicitudes.');
+        } else if (code === 'NETWORK_ERROR' || code === 'TIMEOUT') {
+            setConnectionStatus('sin conexión');
+            if (!silent) alert('No fue posible conectar con CodeRED Platform.');
+        } else {
+            setConnectionStatus('sin conexión');
+            if (!silent) alert('No fue posible conectar con CodeRED Platform.');
+        }
+        return { ok: false, error: err };
+    }
+};
+
+document.addEventListener('DOMContentLoaded', async () => {
+    ShalomExtensionShared.applyStoredTheme(document.body);
+    await loadTokenState();
+    await refreshReadOnlyStatus();
+});
 
 document.getElementById('theme-toggle-opt').onclick = () => {
     ShalomExtensionShared.toggleStoredTheme(document.body);
@@ -90,182 +184,31 @@ document.getElementById('toggleApiToken').onclick = () => {
     document.getElementById('toggleApiToken').textContent = isPassword ? 'Ocultar' : 'Mostrar';
 };
 
-document.getElementById('saveDataSourceBtn').onclick = async () => {
+document.getElementById('saveTokenBtn').onclick = async () => {
     try {
-        const config = {
-            source: 'codered',
-            apiBaseUrl: CodeRedApi.normalizeBaseUrl(document.getElementById('apiBaseUrl').value),
-            apiToken: document.getElementById('apiToken').value,
-            cacheDurationMs: ShalomAgencyStore.AGENCY_CACHE_TTL_MS
-        };
-        await sendMessage('CONFIG_SAVE', { config });
-        chrome.storage.local.set({ agencyDataConfig: config });
-        await updateStatusUI();
-        alert('Configuración guardada correctamente.');
+        const result = await saveToken({ runSync: true });
+        if (result) alert('Token guardado y sincronización iniciada.');
+        else alert('Token guardado.');
     } catch (err) {
-        console.error('Error al guardar configuración:', err);
-        alert('No fue posible guardar la configuración.');
+        console.error('Error al guardar token:', err);
+        alert('No fue posible guardar el token.');
     }
 };
 
 document.getElementById('testConnectionBtn').onclick = async () => {
+    await testConnection();
+};
+
+document.getElementById('clearTokenBtn').onclick = async () => {
+    if (!confirm('¿Quieres limpiar solo el token? La caché local se mantendrá.')) return;
     try {
-        const config = (await sendMessage('CONFIG_GET')).config;
-        if (!config.apiBaseUrl || !config.apiToken) {
-            alert('Primero ingresa la URL base y el token.');
-            return;
-        }
-        const result = await sendMessage('API_TEST_CONNECTION', { apiBaseUrl: config.apiBaseUrl, apiToken: config.apiToken });
-        const total = result.info?.total_agencies ?? result.info?.total ?? result.info?.data?.total ?? 0;
-        alert(`Conexión correcta. Total de agencias: ${total}.`);
+        await sendMessage('CONFIG_SAVE', { config: { apiToken: '' } });
+        tokenInput.value = '';
+        setConnectionStatus('sin configurar');
+        await refreshReadOnlyStatus();
+        alert('Token eliminado. La caché local se mantiene.');
     } catch (err) {
-        const code = err?.status || err?.type || 'GENERAL';
-        if (code === 401 || code === 'UNAUTHORIZED') alert('Token inválido o expirado.');
-        else if (code === 403 || code === 'FORBIDDEN') alert('El token no tiene permiso para consultar agencias.');
-        else if (code === 429 || code === 'RATE_LIMIT') alert('Se alcanzó temporalmente el límite de solicitudes.');
-        else alert('No fue posible conectar con CodeRED Platform.');
-    }
-};
-
-document.getElementById('syncNowBtn').onclick = async () => {
-    try {
-        const result = await sendMessage('CATALOG_SYNC');
-        await refreshLocalLists();
-        await updateStatusUI();
-        alert(`Sincronización completada. Total de agencias: ${result.total || 0}.`);
-        renderTable();
-    } catch (err) {
-        console.error('Error al sincronizar:', err);
-        alert('No se pudo sincronizar el catálogo.');
-    }
-};
-
-document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.onclick = () => {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentType = btn.dataset.type;
-        document.getElementById('searchAgencia').value = '';
-        renderTable();
-    };
-});
-
-function renderTable(filter = '') {
-    const tbody = document.getElementById('agenciasTableBody');
-    tbody.innerHTML = '';
-    const lista = currentType === 'AEREO' ? agenciasAereo : agenciasTerrestre;
-    const normalizedFilter = ShalomAgencyStore.normalizeText(filter);
-
-    lista.forEach((a, index) => {
-        if (normalizedFilter && !ShalomAgencyStore.normalizeText(a.agency || a.agencia).includes(normalizedFilter)) return;
-        const tr = document.createElement('tr');
-        const escape = ShalomAgencyStore.escapeHtml;
-        const hasTerr = Boolean(ShalomAgencyStore.getChosenTextForChannel(a, 'TERRESTRE'));
-        const hasAereo = Boolean(ShalomAgencyStore.getChosenTextForChannel(a, 'AEREO'));
-        const canalBadge = hasTerr && hasAereo ? 'Ambos' : hasTerr ? 'Terrestre' : hasAereo ? 'Aéreo' : 'Sin identificador';
-        const badgeCO = ShalomAgencyStore.isAgencyCO(a.co) ? '<span style="background:#e8f5e9;color:#2e7d32;padding:2px 6px;border-radius:4px;font-size:10px;margin-left:5px;border:1px solid #c8e6c9;font-weight:bold;">🛡️ AGENCIA CO</span>' : '';
-        const tamanoText = a.size || a.tamano ? `<br><small>Tamaño: ${escape(a.size || a.tamano)}</small>` : '';
-
-        tr.innerHTML = `
-            <td><strong>${escape(a.agency || a.agencia)}</strong> <span style="display:inline-block;background:#eceff1;color:#37474f;padding:2px 6px;border-radius:4px;font-size:10px;border:1px solid #cfd8dc;font-weight:bold;">${escape(canalBadge)}</span> ${badgeCO}<br><small>${escape(a.externalId || a.id)}</small>${tamanoText}</td>
-            <td>${escape(a.department || a.departamento)} / ${escape(a.province || a.provincia)}</td>
-            <td class="acciones-td"></td>
-        `;
-
-        const tdAcciones = tr.querySelector('.acciones-td');
-        const btnEdit = document.createElement('button');
-        btnEdit.className = 'btn btn-edit';
-        btnEdit.textContent = 'Editar';
-        btnEdit.onclick = () => abrirModal(index);
-
-        const btnDel = document.createElement('button');
-        btnDel.className = 'btn btn-danger';
-        btnDel.textContent = 'Eliminar';
-        btnDel.onclick = () => eliminarAgencia(index);
-
-        tdAcciones.appendChild(btnEdit);
-        tdAcciones.appendChild(btnDel);
-        tbody.appendChild(tr);
-    });
-}
-
-document.getElementById('searchAgencia').oninput = (e) => renderTable(e.target.value);
-
-const eliminarAgencia = (index) => {
-    if (confirm('¿Estás seguro de eliminar esta agencia?')) {
-        if (currentType === 'AEREO') agenciasAereo.splice(index, 1);
-        else agenciasTerrestre.splice(index, 1);
-        renderTable();
-    }
-};
-
-const abrirModal = (index = -1) => {
-    const modal = document.getElementById('modalEditor');
-    const isEdit = index > -1;
-    document.getElementById('modalTitle').innerText = isEdit ? 'Editar Agencia' : 'Nueva Agencia';
-    document.getElementById('editIndex').value = index;
-    const lista = currentType === 'AEREO' ? agenciasAereo : agenciasTerrestre;
-    const a = isEdit ? lista[index] : { id: '', agencia: '', departamento: '', provincia: '', distrito: '', direccion: '', texto_chosen: '', texto_chosen_terrestre: '', texto_chosen_aereo: '' };
-
-    document.getElementById('fieldId').value = a.externalId || a.id || '';
-    document.getElementById('fieldAgencia').value = a.agency || a.agencia || '';
-    document.getElementById('fieldDep').value = a.department || a.departamento || '';
-    document.getElementById('fieldProv').value = a.province || a.provincia || '';
-    document.getElementById('fieldDist').value = a.district || a.distrito || '';
-    document.getElementById('fieldDir').value = a.address || a.direccion || '';
-    document.getElementById('fieldTextoChosen').value = a.texto_chosen || '';
-    document.getElementById('fieldMaps').value = a.link_mapa || a.mapUrl || '';
-    document.getElementById('fieldTamano').value = a.size || a.tamano || 'Mediana';
-    document.getElementById('fieldEsCO').checked = isCO(a.co);
-    modal.style.display = 'flex';
-};
-
-const cerrarModal = () => {
-    document.getElementById('modalEditor').style.display = 'none';
-};
-
-document.getElementById('cancelBtn').onclick = () => cerrarModal();
-document.getElementById('addBtn').onclick = () => abrirModal();
-document.getElementById('confirmBtn').onclick = () => {
-    const index = parseInt(document.getElementById('editIndex').value);
-    const textoChosenManual = document.getElementById('fieldTextoChosen').value.trim();
-
-    const nuevaAgencia = {
-        id: document.getElementById('fieldId').value,
-        agencia: document.getElementById('fieldAgencia').value.trim(),
-        departamento: document.getElementById('fieldDep').value.trim(),
-        provincia: document.getElementById('fieldProv').value.trim(),
-        distrito: document.getElementById('fieldDist').value.trim(),
-        direccion: document.getElementById('fieldDir').value.trim(),
-        texto_chosen: textoChosenManual || `${document.getElementById('fieldId').value} - ${document.getElementById('fieldDep').value.trim()} - ${document.getElementById('fieldProv').value.trim()} - ${document.getElementById('fieldDist').value.trim()} - ${document.getElementById('fieldAgencia').value.trim()} - ${currentType}`,
-        texto_chosen_terrestre: currentType === 'TERRESTRE' ? (textoChosenManual || `${document.getElementById('fieldId').value} - ${document.getElementById('fieldDep').value.trim()} - ${document.getElementById('fieldProv').value.trim()} - ${document.getElementById('fieldDist').value.trim()} - ${document.getElementById('fieldAgencia').value.trim()} - TERRESTRE`) : (document.getElementById('fieldTextoChosen').value.trim() || ''),
-        texto_chosen_aereo: currentType === 'AEREO' ? (textoChosenManual || `${document.getElementById('fieldId').value} - ${document.getElementById('fieldDep').value.trim()} - ${document.getElementById('fieldProv').value.trim()} - ${document.getElementById('fieldDist').value.trim()} - ${document.getElementById('fieldAgencia').value.trim()} - AEREO`) : (document.getElementById('fieldTextoChosen').value.trim() || ''),
-        link_mapa: document.getElementById('fieldMaps').value.trim(),
-        tamano: document.getElementById('fieldTamano').value,
-        co: document.getElementById('fieldEsCO').checked
-    };
-
-    const lista = currentType === 'AEREO' ? agenciasAereo : agenciasTerrestre;
-    if (index > -1) lista[index] = nuevaAgencia;
-    else lista.push(nuevaAgencia);
-    cerrarModal();
-    renderTable();
-};
-
-const btnRefresh = document.createElement('button');
-btnRefresh.id = 'refreshConfiguredSourceBtn';
-btnRefresh.className = 'btn btn-edit';
-btnRefresh.textContent = '↻ Sincronizar CodeRED';
-document.getElementById('saveDataSourceBtn').insertAdjacentElement('afterend', btnRefresh);
-btnRefresh.onclick = async () => {
-    try {
-        const result = await sendMessage('CATALOG_SYNC');
-        await refreshLocalLists();
-        await updateStatusUI();
-        alert(`Sincronización completada. Total de agencias: ${result.total || 0}.`);
-        renderTable();
-    } catch (err) {
-        console.error('Error al sincronizar la fuente configurada:', err);
-        alert('No se pudo sincronizar la fuente configurada.');
+        console.error('Error al limpiar token:', err);
+        alert('No fue posible limpiar el token.');
     }
 };

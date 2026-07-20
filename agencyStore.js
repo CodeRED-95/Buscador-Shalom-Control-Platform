@@ -2,9 +2,10 @@ const AGENCY_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
 const AGENCY_CACHE_SCHEMA_VERSION = 3;
 const AGENCY_CACHE_V2_KEY = 'agencyCatalogCache';
 const AGENCY_CONFIG_KEY = 'agencyDataConfig';
+const CoderedPlatformApiUrl = () => (typeof ShalomExtensionShared !== 'undefined' && ShalomExtensionShared.CODERED_API_BASE_URL)
+    || 'https://platform.codered.host/api/v1';
 const DEFAULT_AGENCY_CONFIG = {
     source: 'codered',
-    apiBaseUrl: '',
     apiToken: '',
     cacheDurationMs: AGENCY_CACHE_TTL_MS,
     lastSyncAt: null
@@ -145,11 +146,8 @@ const AGENCY_CACHE_KEYS = {
     const normalizeAgencyList = (agencies, context = {}) => (Array.isArray(agencies) ? agencies : []).map(agency => normalizeAgency(agency, context));
 
     const sanitizeAgencyConfig = (config = {}) => {
-        const source = toNullableString(config.source) || DEFAULT_AGENCY_CONFIG.source;
-        const normalizedSource = source === 'codered' ? 'codered' : 'codered';
         return {
             source: 'codered',
-            apiBaseUrl: toNullableString(config.apiBaseUrl) || '',
             apiToken: toNullableString(config.apiToken) || '',
             cacheDurationMs: toNumberOrNull(config.cacheDurationMs) || DEFAULT_AGENCY_CONFIG.cacheDurationMs,
             lastSyncAt: toNullableString(config.lastSyncAt)
@@ -157,14 +155,26 @@ const AGENCY_CACHE_KEYS = {
     };
 
     const getAgencyConfig = async () => {
-        const items = await storageGet([AGENCY_CONFIG_KEY]);
-        return sanitizeAgencyConfig(items[AGENCY_CONFIG_KEY] || {});
+        const tokenKey = typeof ShalomExtensionShared !== 'undefined' ? ShalomExtensionShared.CODERED_TOKEN_STORAGE_KEY : 'coderedApiToken';
+        const items = await storageGet([AGENCY_CONFIG_KEY, tokenKey]);
+        return {
+            ...sanitizeAgencyConfig({
+            ...(items[AGENCY_CONFIG_KEY] || {}),
+            apiToken: items[tokenKey] || items[AGENCY_CONFIG_KEY]?.apiToken || ''
+            }),
+            apiBaseUrl: CoderedPlatformApiUrl()
+        };
     };
 
     const saveAgencyConfig = async (config = {}) => {
         const next = sanitizeAgencyConfig(config);
         await storageSet({ [AGENCY_CONFIG_KEY]: next });
-        return next;
+        const tokenKey = typeof ShalomExtensionShared !== 'undefined' ? ShalomExtensionShared.CODERED_TOKEN_STORAGE_KEY : 'coderedApiToken';
+        await storageSet({ [tokenKey]: next.apiToken });
+        return {
+            ...next,
+            apiBaseUrl: CoderedPlatformApiUrl()
+        };
     };
 
     const clearAgencyConfig = async () => {
@@ -176,7 +186,6 @@ const AGENCY_CACHE_KEYS = {
             AGENCY_CACHE_KEYS.terrestre,
             AGENCY_CACHE_KEYS.aereo,
             AGENCY_CACHE_KEYS.lastUpdated,
-            AGENCY_CACHE_KEYS.gistIds,
             AGENCY_CACHE_KEYS.v2
         ]);
 
@@ -208,7 +217,7 @@ const AGENCY_CACHE_KEYS = {
     const getAgencyCacheStatus = async () => {
         const [cache, config] = await Promise.all([getCachedAgencyData(), getAgencyConfig()]);
         const ttl = config.cacheDurationMs || cache.cacheDurationMs || AGENCY_CACHE_TTL_MS;
-        const source = config.source || cache.source || 'gist';
+        const source = config.source || cache.source || 'codered';
         const stale = isExpired(cache.lastUpdated, ttl);
         const hasData = Array.isArray(cache.agencies) ? cache.agencies.length > 0 : (cache.hasTerrestre || cache.hasAereo);
 
@@ -255,7 +264,7 @@ const AGENCY_CACHE_KEYS = {
 
     const buildV3Cache = (cache, patch = {}) => ({
         schemaVersion: AGENCY_CACHE_SCHEMA_VERSION,
-        source: patch.source || cache.source || 'gist',
+        source: patch.source || cache.source || 'codered',
         apiSchemaVersion: 1,
         etag: patch.etag ?? cache.etag ?? null,
         cursor: patch.cursor ?? cache.cursor ?? null,
@@ -469,7 +478,7 @@ const AGENCY_CACHE_KEYS = {
             etag: cache.etag || null,
             cursor: cache.cursor || null,
             cacheDurationMs: cache.cacheDurationMs || AGENCY_CACHE_TTL_MS,
-            agencies: Array.isArray(cache.agencies) && cache.agencies.length ? cache.agencies : [...normalizeAgencyList(cache.terrestre, { segmento: 'TERRESTRE', source: cache.source || 'gist' }), ...normalizeAgencyList(cache.aereo, { segmento: 'AEREO', source: cache.source || 'gist' })]
+            agencies: Array.isArray(cache.agencies) && cache.agencies.length ? cache.agencies : [...normalizeAgencyList(cache.terrestre, { segmento: 'TERRESTRE', source: cache.source || 'codered' }), ...normalizeAgencyList(cache.aereo, { segmento: 'AEREO', source: cache.source || 'codered' })]
         };
     };
 

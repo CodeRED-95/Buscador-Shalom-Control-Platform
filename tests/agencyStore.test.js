@@ -207,18 +207,18 @@ test('saves and sanitizes the agency source configuration', async () => {
     const { store, storage } = loadStore();
     const config = await store.saveAgencyConfig({
         source: 'codered',
-        apiBaseUrl: ' https://api.example.com/agencies ',
         apiToken: ' token-123 ',
         cacheDurationMs: '60000',
         lastSyncAt: ' 2026-07-19T00:00:00.000Z '
     });
 
     assert.equal(config.source, 'codered');
-    assert.equal(config.apiBaseUrl, 'https://api.example.com/agencies');
+    assert.equal(config.apiBaseUrl, 'https://platform.codered.host/api/v1');
     assert.equal(config.apiToken, 'token-123');
     assert.equal(config.cacheDurationMs, 60000);
     assert.equal(config.lastSyncAt, '2026-07-19T00:00:00.000Z');
     assert.equal(storage.agencyDataConfig.source, 'codered');
+    assert.equal(storage.coderedApiToken, 'token-123');
 });
 
 test('migrates legacy fallback source configuration to CodeRED', async () => {
@@ -231,6 +231,7 @@ test('migrates legacy fallback source configuration to CodeRED', async () => {
     });
 
     assert.equal(config.source, 'codered');
+    assert.equal(config.apiBaseUrl, 'https://platform.codered.host/api/v1');
 });
 
 test('reports cache status and respects configured cache duration', async () => {
@@ -295,7 +296,7 @@ test('marks cache offline when it is stale but still has data', async () => {
 
 test('returns normalized agencies from fetchAgencies and refreshAgencies', async () => {
     const fetch = async (url) => {
-        if (url === 'https://codered.example/api/v1/catalog/metadata') {
+        if (url === 'https://platform.codered.host/api/v1/catalog/metadata') {
             return {
                 ok: true,
                 status: 200,
@@ -303,7 +304,7 @@ test('returns normalized agencies from fetchAgencies and refreshAgencies', async
                 async text() { return JSON.stringify({ cursor: 'cursor-1' }); }
             };
         }
-        if (url === 'https://codered.example/api/v1/agencies?page=1&per_page=100') {
+        if (url === 'https://platform.codered.host/api/v1/agencies?page=1&per_page=100') {
             return {
                 ok: true,
                 async text() {
@@ -329,7 +330,6 @@ test('returns normalized agencies from fetchAgencies and refreshAgencies', async
         initialStorage: {
             agencyDataConfig: {
                 source: 'codered',
-                apiBaseUrl: 'https://codered.example',
                 apiToken: '',
                 cacheDurationMs: 60000,
                 lastSyncAt: null
@@ -348,7 +348,7 @@ test('returns normalized agencies from fetchAgencies and refreshAgencies', async
 
 test('records fallback usage when CodeRED refresh fails and cache remains available', async () => {
     const fetch = async (url) => {
-        if (url === 'https://codered.example/api/v1/catalog/metadata') {
+        if (url === 'https://platform.codered.host/api/v1/catalog/metadata') {
             return { ok: false, status: 503, headers: { get() { return null; } }, async text() { return ''; } };
         }
         throw new Error(`Unexpected URL: ${url}`);
@@ -359,7 +359,6 @@ test('records fallback usage when CodeRED refresh fails and cache remains availa
         initialStorage: {
             agencyDataConfig: {
                 source: 'codered',
-                apiBaseUrl: 'https://codered.example',
                 apiToken: '',
                 cacheDurationMs: 60000,
                 lastSyncAt: null
@@ -386,7 +385,7 @@ test('records fallback usage when CodeRED refresh fails and cache remains availa
 test('handles 304 metadata responses by updating lastCheckedAt only', async () => {
     const now = Date.now();
     const fetch = async (url, options = {}) => {
-        if (url === 'https://codered.example/api/v1/catalog/metadata') {
+        if (url === 'https://platform.codered.host/api/v1/catalog/metadata') {
             return {
                 ok: true,
                 status: 304,
@@ -430,7 +429,7 @@ test('handles 304 metadata responses by updating lastCheckedAt only', async () =
 
 test('applies incremental upserts and deletes across change pages', async () => {
     const fetch = async (url) => {
-        if (url === 'https://codered.example/api/v1/catalog/metadata') {
+        if (url === 'https://platform.codered.host/api/v1/catalog/metadata') {
             return {
                 ok: true,
                 status: 200,
@@ -438,7 +437,7 @@ test('applies incremental upserts and deletes across change pages', async () => 
                 async text() { return JSON.stringify({ cursor: 'cursor-2' }); }
             };
         }
-        if (url === 'https://codered.example/api/v1/agencies/changes?per_page=100&cursor=cursor-1') {
+        if (url === 'https://platform.codered.host/api/v1/agencies/changes?per_page=100&cursor=cursor-1') {
             return {
                 ok: true,
                 status: 200,
@@ -452,7 +451,7 @@ test('applies incremental upserts and deletes across change pages', async () => 
                 },
             };
         }
-        if (url === 'https://codered.example/api/v1/agencies/changes?per_page=100&cursor=cursor-2') {
+        if (url === 'https://platform.codered.host/api/v1/agencies/changes?per_page=100&cursor=cursor-2') {
             return {
                 ok: true,
                 status: 200,
@@ -474,7 +473,6 @@ test('applies incremental upserts and deletes across change pages', async () => 
         initialStorage: {
             agencyDataConfig: {
                 source: 'codered',
-                apiBaseUrl: 'https://codered.example',
                 apiToken: 'secret',
                 cacheDurationMs: 60000,
                 lastSyncAt: null

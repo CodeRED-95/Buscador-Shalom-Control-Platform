@@ -56,7 +56,7 @@ const CODE_RED_MAX_PAGES = 100;
                     throw createError('INVALID_JSON', 'Respuesta JSON inválida', response.status);
                 }
             }
-            if (!response.ok) {
+            if (!response.ok && response.status !== 304) {
                 const typeByStatus = {
                     401: 'UNAUTHORIZED',
                     403: 'FORBIDDEN',
