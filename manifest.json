@@ -30,7 +30,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*.shalom.pe/*", "https://*.shalomcontrol.com/*"],
+      "matches": ["https://*.shalom.pe/*", "https://*.shalomcontrol.com/*", "https://platform.codered.host/*"],
       "js": ["agencyStore.js", "content.js"],
       "run_at": "document_end"
     }

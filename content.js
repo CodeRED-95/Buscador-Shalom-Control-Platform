@@ -3,6 +3,19 @@ let currentType = 'TERRESTRE';
 let currentChosenChannel = 'AUTO';
 let ultimaCargaSolicitada = 0;
 const CHANNEL_STORAGE_KEY = 'pref_canal_agencia';
+const serializeSafeError = (error) => {
+    if (error instanceof Error) {
+        return { name: error.name, message: error.message };
+    }
+    if (error && typeof error === 'object') {
+        return {
+            code: error.code ?? error.tipo ?? 'unknown',
+            message: error.message ?? 'Error no identificado',
+            status: error.status ?? null
+        };
+    }
+    return { code: 'unknown', message: String(error) };
+};
 
 // 1. Cargar la data desde la copia local.
 async function cargarDatos(tipo = 'TERRESTRE') {
@@ -12,17 +25,19 @@ async function cargarDatos(tipo = 'TERRESTRE') {
         const cache = await ShalomAgencyStore.ensureAgencyCache({ allowRefresh: false });
         if (idCarga !== ultimaCargaSolicitada || tipo !== currentType) return;
 
-        const agencias = tipo === 'AEREO' ? cache.aereo : cache.terrestre;
+        const agencias = Array.isArray(cache.agencies) && cache.agencies.length
+            ? cache.agencies
+            : (tipo === 'AEREO' ? cache.aereo : cache.terrestre);
         listaAgencias = ShalomAgencyStore.prepareAgencies(agencias, tipo);
         actualizarSelectorCanal(currentChosenChannel);
 
         if (cache.errors && cache.errors.length) {
-            console.warn("[Shalom Pro] Se usara la ultima copia local disponible:", cache.errors);
+            console.warn("[Shalom Pro] Se usara la ultima copia local disponible.", cache.errors.map(serializeSafeError));
         }
         
         console.log(`[Shalom Pro] Agencias ${tipo} cargadas desde almacenamiento local:`, listaAgencias.length);
     } catch (error) {
-        console.error("[Shalom Pro] Error al cargar agencias locales:", error);
+        console.error("[Shalom Pro] Error al cargar agencias locales:", serializeSafeError(error));
     }
 }
 

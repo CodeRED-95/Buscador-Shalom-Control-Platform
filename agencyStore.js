@@ -144,6 +144,28 @@ const AGENCY_CACHE_KEYS = {
 
     const agencyHasChannel = (agency, channel) => Boolean(getChosenTextForChannel(agency, channel));
     const normalizeAgencyList = (agencies, context = {}) => (Array.isArray(agencies) ? agencies : []).map(agency => normalizeAgency(agency, context));
+    const splitAgenciesByChannel = (agencies = []) => {
+        const terrestre = [];
+        const aereo = [];
+        normalizeAgencyList(agencies, { source: 'codered' }).forEach((agency) => {
+            if (agencyHasChannel(agency, 'TERRESTRE')) terrestre.push(agency);
+            if (agencyHasChannel(agency, 'AEREO')) aereo.push(agency);
+        });
+        return { terrestre, aereo };
+    };
+    const serializeSafeError = (error) => {
+        if (error instanceof Error) {
+            return { name: error.name, message: error.message };
+        }
+        if (error && typeof error === 'object') {
+            return {
+                code: error.code ?? error.tipo ?? 'unknown',
+                message: error.message ?? 'Error no identificado',
+                status: error.status ?? null
+            };
+        }
+        return { code: 'unknown', message: String(error) };
+    };
 
     const sanitizeAgencyConfig = (config = {}) => ({
             source: 'codered',
@@ -191,7 +213,8 @@ const AGENCY_CACHE_KEYS = {
         const hasTerrestre = Array.isArray(items[AGENCY_CACHE_KEYS.terrestre]);
         const hasAereo = Array.isArray(items[AGENCY_CACHE_KEYS.aereo]);
         const v3Agencies = Array.isArray(cacheV2?.agencies) ? cacheV2.agencies : [];
-        const agencies = v3Agencies;
+        const agencies = v3Agencies.length ? v3Agencies : [...(hasTerrestre ? items[AGENCY_CACHE_KEYS.terrestre] : []), ...(hasAereo ? items[AGENCY_CACHE_KEYS.aereo] : [])];
+        const derivedByChannel = splitAgenciesByChannel(agencies);
 
         return {
             schemaVersion: Number(cacheV2?.schemaVersion || (hasTerrestre || hasAereo ? 2 : 0)),
@@ -202,11 +225,12 @@ const AGENCY_CACHE_KEYS = {
             cursor: cacheV2?.cursor || null,
             cacheDurationMs: cacheV2?.cacheDurationMs || AGENCY_CACHE_TTL_MS,
             agencies,
-            terrestre: hasTerrestre ? items[AGENCY_CACHE_KEYS.terrestre] : [],
-            aereo: hasAereo ? items[AGENCY_CACHE_KEYS.aereo] : [],
+            terrestre: hasTerrestre ? items[AGENCY_CACHE_KEYS.terrestre] : derivedByChannel.terrestre,
+            aereo: hasAereo ? items[AGENCY_CACHE_KEYS.aereo] : derivedByChannel.aereo,
             lastUpdated: toTimestampOrNull(items[AGENCY_CACHE_KEYS.lastUpdated] || cacheV2?.syncedAt) || 0,
             hasTerrestre,
-            hasAereo
+            hasAereo,
+            errors: Array.isArray(cacheV2?.errors) ? cacheV2.errors : []
         };
     };
 
@@ -402,7 +426,7 @@ const AGENCY_CACHE_KEYS = {
                 ...cached,
                 updated: false,
                 source: 'codered',
-                errors: [...(cached.errors || []), { tipo: 'CODERED', message: error.message }]
+                errors: [...(cached.errors || []), serializeSafeError(error)]
             };
         }
     };
@@ -525,6 +549,7 @@ const AGENCY_CACHE_KEYS = {
         refreshCodeRedAgencyCache,
         applyAgencyChanges,
         saveAgencyCache,
+        serializeSafeError,
         isAgencyCO: (value) => value === true
             || String(value).toUpperCase() === 'TRUE'
             || String(value).toUpperCase() === 'SI'
