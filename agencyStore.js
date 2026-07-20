@@ -145,22 +145,20 @@ const AGENCY_CACHE_KEYS = {
     const agencyHasChannel = (agency, channel) => Boolean(getChosenTextForChannel(agency, channel));
     const normalizeAgencyList = (agencies, context = {}) => (Array.isArray(agencies) ? agencies : []).map(agency => normalizeAgency(agency, context));
 
-    const sanitizeAgencyConfig = (config = {}) => {
-        return {
+    const sanitizeAgencyConfig = (config = {}) => ({
             source: 'codered',
             apiToken: toNullableString(config.apiToken) || '',
             cacheDurationMs: toNumberOrNull(config.cacheDurationMs) || DEFAULT_AGENCY_CONFIG.cacheDurationMs,
             lastSyncAt: toNullableString(config.lastSyncAt)
-        };
-    };
+        });
 
     const getAgencyConfig = async () => {
         const tokenKey = typeof ShalomExtensionShared !== 'undefined' ? ShalomExtensionShared.CODERED_TOKEN_STORAGE_KEY : 'coderedApiToken';
         const items = await storageGet([AGENCY_CONFIG_KEY, tokenKey]);
         return {
             ...sanitizeAgencyConfig({
-            ...(items[AGENCY_CONFIG_KEY] || {}),
-            apiToken: items[tokenKey] || items[AGENCY_CONFIG_KEY]?.apiToken || ''
+                ...(items[AGENCY_CONFIG_KEY] || {}),
+                apiToken: items[tokenKey] || items[AGENCY_CONFIG_KEY]?.apiToken || ''
             }),
             apiBaseUrl: CoderedPlatformApiUrl()
         };
@@ -274,8 +272,7 @@ const AGENCY_CACHE_KEYS = {
         cacheDurationMs: patch.cacheDurationMs ?? cache.cacheDurationMs ?? AGENCY_CACHE_TTL_MS,
         agencies: Array.isArray(patch.agencies) ? patch.agencies : (Array.isArray(cache.agencies) ? cache.agencies : []),
         agenciasTerrestre: Array.isArray(patch.terrestre) ? patch.terrestre : (Array.isArray(cache.terrestre) ? cache.terrestre : []),
-        agenciasAereo: Array.isArray(patch.aereo) ? patch.aereo : (Array.isArray(cache.aereo) ? cache.aereo : []),
-        gistIds: patch.gistIds ?? cache.gistIds ?? null
+        agenciasAereo: Array.isArray(patch.aereo) ? patch.aereo : (Array.isArray(cache.aereo) ? cache.aereo : [])
     });
 
     const saveV3CacheAtomically = async (cachePatch) => {

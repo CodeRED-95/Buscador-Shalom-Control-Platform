@@ -13,6 +13,11 @@ const scheduleAgencyRefresh = () => {
 const initializeAgencyCache = async () => {
     scheduleAgencyRefresh();
     try {
+        const config = await ShalomAgencyStore.getAgencyConfig();
+        if (!config.apiToken) {
+            await ShalomAgencyStore.ensureAgencyCache({ allowRefresh: false });
+            return;
+        }
         const result = await ShalomAgencyStore.ensureAgencyCache();
         if (result.errors && result.errors.length) {
             console.warn('[Shalom Pro] Cache de agencias inicializado con copia local. Errores:', result.errors);
@@ -82,7 +87,14 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
     if (type === 'CONFIG_SAVE') {
         ShalomAgencyStore.saveAgencyConfig(payload.config || {})
-            .then((config) => respond({ config }))
+            .then(async (config) => {
+                if (config.apiToken) {
+                    const sync = await syncCatalog();
+                    respond({ config, sync });
+                    return;
+                }
+                respond({ config });
+            })
             .catch(reject);
         return true;
     }

@@ -86,31 +86,27 @@ const loadTokenState = async () => {
     }
 };
 
-const saveToken = async ({ runSync = true } = {}) => {
+const saveToken = async () => {
     const token = normalizeToken(tokenInput.value);
-    await sendMessage('CONFIG_SAVE', {
+    const result = await sendMessage('CONFIG_SAVE', {
         config: {
             apiToken: token
         }
     });
-        if (token) {
-            setConnectionStatus('conectando...');
-            const test = await testConnection({ silent: true });
-            if (test.ok && runSync) {
-                const syncResult = await sendMessage('CATALOG_SYNC');
-                await refreshReadOnlyStatus();
-                setConnectionStatus('conectado');
-                return syncResult;
-            }
-            if (!test.ok) {
-                await refreshReadOnlyStatus();
-                return null;
-            }
-        } else {
-            setConnectionStatus('sin configurar');
+    if (token) {
+        setConnectionStatus('conectando...');
+        const test = await testConnection({ silent: true });
+        if (test.ok) {
+            setConnectionStatus('conectado');
+            await refreshReadOnlyStatus();
+            return result.sync || result;
         }
         await refreshReadOnlyStatus();
         return null;
+    }
+    setConnectionStatus('sin configurar');
+    await refreshReadOnlyStatus();
+    return null;
 };
 
 const testConnection = async ({ silent = false } = {}) => {
@@ -186,7 +182,7 @@ document.getElementById('toggleApiToken').onclick = () => {
 
 document.getElementById('saveTokenBtn').onclick = async () => {
     try {
-        const result = await saveToken({ runSync: true });
+        const result = await saveToken();
         if (result) alert('Token guardado y sincronización iniciada.');
         else alert('Token guardado.');
     } catch (err) {

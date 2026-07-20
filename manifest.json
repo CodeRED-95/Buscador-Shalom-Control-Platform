@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Buscador Shalom Control",
   "version": "2.0.0",
-  "description": "Buscador avanzado y catálogo de agencias para el sistema de control de Shalom.",
+  "description": "Buscador y sincronización de agencias para el sistema de control de Shalom.",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
